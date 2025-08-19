@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статьи о славянской мифологии</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Comfortaa', 'Russo One', Arial, sans-serif;
+            background:
+                linear-gradient(rgba(25, 25, 112, 0.85), rgba(43, 15, 0, 0.85)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%238B4513" opacity="0.1"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23FFD700" stroke-width="1" opacity="0.1"/></svg>');
+            color: #f5f5f5;
+            line-height: 1.6;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        .articles-container { max-width: 1200px; margin: 0 auto; padding: 10px; }
+
+        /* Навигация */
+        .main-nav {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
+            color: #ffd700;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            color: #000;
+            border-color: #ffd700;
+        }
+
+        /* Заголовок */
+        .articles-header {
+            text-align: center;
+            padding: 20px 5px;
+            margin-bottom: 30px;
+        }
+
+        .articles-title {
+            font-family: 'Russo One', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .articles-subtitle {
+            font-size: 1rem;
+            color: #bdc3c7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Фильтры и поиск */
+        .articles-controls {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .controls-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 45px 12px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ffd700;
+        }
+
+        .tag-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag-btn {
+            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            color: #bdc3c7;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .tag-btn:hover {
+            border-color: #ffd700;
+            color: #ffd700;
+        }
+
+        .tag-btn.active {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            color: #000;
+            border-color: #ffd700;
+        }
+
+        /* Сетка статей */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .article-card {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .article-tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            background: rgba(255, 215, 0, 0.2);
+            border-radius: 15px;
+            color: #ffd700;
+        }
+
+        .article-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #ffd700;
+            font-family: 'Russo One', sans-serif;
+            line-height: 1.3;
+        }
+
+        .article-excerpt {
+            font-size: 0.95rem;
+            color: #ecf0f1;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .article-readtime {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Модальное окно для полной статьи */
+        .article-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            display: none;
+            overflow-y: auto;
+        }
+
+        .article-modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(25, 25, 112, 0.95);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #ffd700;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 215, 0, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .article-full {
+            padding: 40px;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .article-full-title {
+            font-size: 2rem;
+            color: #ffd700;
+            font-family: 'Russo One', sans-serif;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .article-full-meta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        .article-full-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .article-body {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #ecf0f1;
+        }
+
+        .article-body h2 {
+            font-size: 1.6rem;
+            color: #ffd700;
+            margin: 30px 0 15px;
+            font-family: 'Russo One', sans-serif;
+        }
+
+        .article-body h3 {
+            font-size: 1.3rem;
+            color: #ff8c00;
+            margin: 25px 0 12px;
+        }
+
+        .article-body p {
+            margin-bottom: 15px;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 15px 0 15px 30px;
+        }
+
+        .article-body li {
+            margin-bottom: 8px;
+        }
+
+        .article-body blockquote {
+            background: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid #ffd700;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .article-body img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        /* Пагинация */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0;
+        }
+
+        .page-btn {
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            color: #ffd700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .page-btn:hover {
+            background: rgba(255, 215, 0, 0.2);
+        }
+
+        .page-btn.active {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            color: #000;
+            border-color: #ffd700;
+        }
+
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .articles-title { font-size: 1.6rem; }
+            .articles-grid { grid-template-columns: 1fr; }
+            .article-full { padding: 20px; }
+            .article-full-title { font-size: 1.5rem; }
+            .controls-row { flex-direction: column; }
+            .search-box { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="articles-container">
+        <!-- Навигация -->
+        <nav class="main-nav">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Пантеон богов</span>
+                </a>
+                <a href="articles.html" class="nav-link active">
+                    <i class="fas fa-scroll"></i>
+                    <span>Статьи</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Заголовок -->
+        <header class="articles-header">
+            <h1 class="articles-title">Статьи о славянской мифологии</h1>
+            <p class="articles-subtitle">Исследования, легенды и интересные факты о древнерусских богах и традициях</p>
+        </header>
+
+        <!-- Фильтры и поиск -->
+        <div class="articles-controls">
+            <div class="controls-row">
+                <div class="search-box">
+                    <input type="text" class="search-input" id="articleSearch" placeholder="Поиск статей...">
+                    <i class="search-icon fas fa-search"></i>
+                </div>
+                <div class="tag-filters">
+                    <button class="tag-btn active" data-tag="all">Все статьи</button>
+                    <button class="tag-btn" data-tag="gods">Боги</button>
+                    <button class="tag-btn" data-tag="rituals">Обряды</button>
+                    <button class="tag-btn" data-tag="holidays">Праздники</button>
+                    <button class="tag-btn" data-tag="myths">Мифы</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Сетка статей -->
+        <div class="articles-grid" id="articlesGrid">
+            <!-- Статьи будут добавлены через JavaScript -->
+        </div>
+
+        <!-- Пагинация -->
+        <div class="pagination" id="pagination">
+            <button class="page-btn" id="prevPage"><i class="fas fa-chevron-left"></i></button>
+            <div id="pageNumbers"></div>
+            <button class="page-btn" id="nextPage"><i class="fas fa-chevron-right"></i></button>
+        </div>
+
+        <!-- Модальное окно для статьи -->
+        <div class="article-modal" id="articleModal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeArticle()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <article class="article-full" id="articleFull">
+                    <!-- Содержимое статьи -->
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // База данных статей
+        const articlesData = [
+            {
+                id: 1,
+                title: "Перун и Велес: вечное противостояние",
+                excerpt: "История космической битвы между богом неба и хозяином подземного мира, которая легла в основу многих славянских мифов и обрядов.",
+                tags: ["gods", "myths"],
+                date: "2024-01-15",
+                readTime: "10 мин",
+                image: "images/articles/perun-veles.jpg",
+                content: `
+                    <h2>Космическая битва</h2>
+                    <p>В славянской мифологии противостояние Перуна и Велеса представляет собой один из основных космогонических мифов. Это не просто борьба двух богов, а символическое отражение вечного конфликта между порядком и хаосом, верхним и нижним мирами.</p>
+                    
+                    <h3>Перун — страж порядка</h3>
+                    <p>Перун, бог-громовержец, восседает на вершине Мирового древа. Он охраняет небесный порядок, защищает мир людей от хаотических сил. Его молнии — это не только оружие, но и инструмент установления космической справедливости.</p>
+                    
+                    <blockquote>
+                        "И ударил Перун золотой стрелой-молнией, и расступилась земля, и скрылся Велес в подземных чертогах своих..."
+                        <cite>— Из древнерусских преданий</cite>
+                    </blockquote>
+                    
+                    <h3>Велес — хранитель тайн</h3>
+                    <p>Велес же, напротив, связан с нижним миром, с водами и подземельями. Он не является злом в абсолютном смысле — скорее, он представляет иную, хтоническую силу, необходимую для баланса мироздания. Велес — хранитель мудрости предков, проводник душ, покровитель богатства.</p>
+                    
+                    <h2>Цикличность конфликта</h2>
+                    <p>Важнейшая особенность этого мифа — его цикличность. Перун побеждает Велеса, но тот возрождается вновь. Этот цикл отражает смену времён года: летом торжествует Перун, зимой сила переходит к Велесу.</p>
+                    
+                    <h3>Отголоски в фольклоре</h3>
+                    <p>Мотивы этого противостояния прослеживаются во множестве сказок и былин:</p>
+                    <ul>
+                        <li>Борьба богатыря со Змеем (Велес часто принимает образ змея)</li>
+                        <li>Похищение скота или женщин драконом и их освобождение героем</li>
+                        <li>Сказки о подземных царствах и их владыках</li>
+                    </ul>
+                    
+                    <h2>Ритуальное воплощение</h2>
+                    <p>В обрядовой практике славян это противостояние воплощалось в:</p>
+                    <ul>
+                        <li>Весенних обрядах изгнания зимы (победа Перуна)</li>
+                        <li>Осенних праздниках урожая (дары Велеса)</li>
+                        <li>Грозовых ритуалах для вызова дождя</li>
+                    </ul>
+                    
+                    <p>Таким образом, миф о Перуне и Велесе — это не просто история о вражде двух богов, а глубокая космологическая концепция, объясняющая устройство мира и природные циклы.</p>
+                `
+            },
+            {
+                id: 2,
+                title: "Купальская ночь: магия летнего солнцестояния",
+                excerpt: "Самый мистический праздник славян, когда стираются границы между мирами, расцветает папоротник и исполняются желания.",
+                tags: ["holidays", "rituals"],
+                date: "2024-01-20",
+                readTime: "8 мин",
+                image: "images/articles/kupala.jpg",
+                content: `
+                    <h2>Ночь чудес и волшебства</h2>
+                    <p>Купальская ночь — один из важнейших праздников славянского календаря, приходящийся на летнее солнцестояние. В эту ночь, по поверьям, происходят настоящие чудеса: травы обретают целебную силу, вода становится священной, а в лесу расцветает волшебный цветок папоротника.</p>
+                    
+                    <h3>Священный огонь</h3>
+                    <p>Центральным элементом празднования были купальские костры. Их разжигали на возвышенностях, часто у воды. Огонь добывался древним способом — трением дерева о дерево, что придавало ему особую сакральную силу.</p>
+                    
+                    <h2>Обряды и традиции</h2>
+                    <p>Купальская ночь была наполнена разнообразными обрядами:</p>
+                    <ul>
+                        <li><strong>Прыжки через костёр</strong> — очищение от болезней и сглаза</li>
+                        <li><strong>Пускание венков по воде</strong> — девичьи гадания на суженого</li>
+                        <li><strong>Сбор трав</strong> — в эту ночь растения обретают максимальную силу</li>
+                        <li><strong>Поиск цветка папоротника</strong> — дарующего ясновидение и клады</li>
+                        <li><strong>Обливание водой</strong> — ритуальное очищение</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "На Купалу ночь мала, а сила в ней велика"
+                        <cite>— Народная поговорка</cite>
+                    </blockquote>
+                    
+                    <h3>Любовная магия</h3>
+                    <p>Купала считался праздником любви и плодородия. Молодые пары прыгали через костёр, держась за руки — если руки не разомкнутся, быть свадьбе. Одинокие искали свою пару в хороводах и играх.</p>
+                    
+                    <h2>Травы и зелья</h2>
+                    <p>Особое значение имел сбор трав. Считалось, что именно в купальскую ночь растения обретают волшебные свойства:</p>
+                    <ul>
+                        <li><strong>Полынь</strong> — защита от злых духов</li>
+                        <li><strong>Чабрец</strong> — для привлечения любви</li>
+                        <li><strong>Зверобой</strong> — от всех болезней</li>
+                        <li><strong>Иван-да-марья</strong> — для семейного счастья</li>
+                    </ul>
+                    
+                    <h3>Мистические опасности</h3>
+                    <p>Но Купальская ночь таила и опасности. Считалось, что в эту ночь особенно активны русалки, мавки и прочая нечисть. Чтобы защититься, люди носили с собой полынь, крапиву и чеснок.</p>
+                    
+                    <h2>Современное празднование</h2>
+                    <p>Сегодня традиция празднования Ивана Купалы возрождается. Во многих местах устраивают фестивали с кострами, хороводами, народными песнями. Это не просто дань традиции, но и способ почувствовать связь с природой и предками.</p>
+                `
+            },
+            {
+                id: 3,
+                title: "Мокошь: Великая Мать и её культ",
+                excerpt: "Единственная богиня в пантеоне князя Владимира. История почитания женского божества от древности до наших дней.",
+                tags: ["gods", "rituals"],
+                date: "2024-02-01",
+                readTime: "12 мин",
+                image: "images/articles/mokosh.jpg",
+                content: `
+                    <h2>Великая богиня славян</h2>
+                    <p>Мокошь занимает особое место в славянском пантеоне — она единственная богиня, упомянутая в летописном списке идолов князя Владимира 980 года. Это свидетельствует о её исключительной важности в религиозной жизни древних славян.</p>
+                    
+                    <h3>Имя и его значение</h3>
+                    <p>Этимология имени Мокошь до сих пор вызывает споры среди учёных. Наиболее вероятные версии связывают его с:</p>
+                    <ul>
+                        <li>Корнем "мок-" (мокрый, влажный) — связь с водой и плодородием</li>
+                        <li>Словом "кош" (жребий, судьба) — Мокошь как богиня судьбы</li>
+                        <li>Древним корнем "мок" (прясть) — покровительница женских ремёсел</li>
+                    </ul>
+                    
+                    <h2>Сферы влияния</h2>
+                    <p>Мокошь была многофункциональным божеством, покровительствующим:</p>
+                    
+                    <h3>Женским ремёслам</h3>
+                    <p>Прежде всего, Мокошь — покровительница прядения и ткачества. По поверьям, она могла помогать прилежным пряхам, но наказывала ленивых — путала пряжу, рвала нити.</p>
+                    
+                    <blockquote>
+                        "Мокошь пряжу прядёт, судьбы людские вяжет"
+                        <cite>— Народное поверье</cite>
+                    </blockquote>
+                    
+                    <h3>Судьбе и роду</h3>
+                    <p>Вместе с Долей и Недолей Мокошь вершила людские судьбы. Нить, которую она пряла, символизировала жизненный путь человека.</p>
+                    
+                    <h3>Плодородию и воде</h3>
+                    <p>Связь с влагой делала Мокошь ответственной за плодородие земли. Ей молились о дожде в засуху, о хорошем урожае льна для прядения.</p>
+                    
+                    <h2>Культ и обряды</h2>
+                    <p>Почитание Мокоши имело свои особенности:</p>
+                    <ul>
+                        <li><strong>Пятница</strong> — день Мокоши, когда запрещалось прясть</li>
+                        <li><strong>Обряд "кормления Мокоши"</strong> — оставление пряжи у колодца</li>
+                        <li><strong>Стрижка овец</strong> — первую шерсть посвящали богине</li>
+                        <li><strong>Вышивка оберегов</strong> — с символами Мокоши для защиты</li>
+                    </ul>
+                    
+                    <h2>Символика</h2>
+                    <p>Основные символы Мокоши:</p>
+                    <ul>
+                        <li>Веретено и прялка</li>
+                        <li>Ромб с точками (засеянное поле)</li>
+                        <li>Женская фигура с поднятыми руками</li>
+                        <li>Переплетённые нити</li>
+                    </ul>
+                    
+                    <h3>Христианская трансформация</h3>
+                    <p>После крещения Руси образ Мокоши не исчез, а трансформировался. Её функции перешли к:</p>
+                    <ul>
+                        <li><strong>Параскеве Пятнице</strong> — покровительнице женских работ</li>
+                        <li><strong>Богородице</strong> — в аспекте защитницы и заступницы</li>
+                        <li><strong>Святой Анастасии</strong> — "разрешительнице уз"</li>
+                    </ul>
+                    
+                    <h2>Наследие Мокоши</h2>
+                    <p>Следы культа Мокоши сохранились в:</p>
+                    <ul>
+                        <li>Запретах на работу в пятницу</li>
+                        <li>Обрядах первой пряжи</li>
+                        <li>Народной вышивке</li>
+                        <li>Поверьях о "пряхах судьбы"</li>
+                    </ul>
+                    
+                    <p>Мокошь остаётся одним из самых загадочных и важных божеств славянского пантеона, воплощением женского начала и творческой силы.</p>
+                `
+            },
+            {
+                id: 4,
+                title: "Домовой: невидимый хранитель очага",
+                excerpt: "Самый близкий к человеку дух в славянской мифологии. Как жить в ладу с домовым и почему он может как помогать, так и вредить.",
+                tags: ["myths", "rituals"],
+                date: "2024-02-10",
+                readTime: "7 мин",
+                image: "images/articles/domovoy.jpg",
+                content: `
+                    <h2>Дух-хранитель дома</h2>
+                    <p>Домовой — пожалуй, самый известный и почитаемый из всех духов в славянской традиции. В отличие от многих других мифологических существ, вера в домового сохранилась до наших дней, причём не только в деревнях, но и в городах.</p>
+                    
+                    <h3>Кто такой домовой?</h3>
+                    <p>Домовой — это дух-хранитель дома и семьи, живущей в нём. По поверьям, он:</p>
+                    <ul>
+                        <li>Следит за порядком в доме</li>
+                        <li>Охраняет имущество от воров и пожара</li>
+                        <li>Заботится о домашних животных</li>
+                        <li>Предупреждает о бедах и опасностях</li>
+                        <li>Может помогать в домашних делах</li>
+                    </ul>
+                    
+                    <h2>Облик и характер</h2>
+                    <p>Представления о внешности домового разнятся, но чаще всего его описывают как:</p>
+                    <ul>
+                        <li>Маленького старичка с бородой</li>
+                        <li>Покрытого шерстью существа</li>
+                        <li>Способного принимать облик хозяина дома</li>
+                        <li>Невидимого большую часть времени</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "Домовой любит тепло и уют, чистоту и порядок, уважение и ласковое слово"
+                        <cite>— Народная мудрость</cite>
+                    </blockquote>
+                    
+                    <h3>Где живёт домовой?</h3>
+                    <p>Традиционные места обитания:</p>
+                    <ul>
+                        <li><strong>За печью</strong> — самое тёплое место в доме</li>
+                        <li><strong>В подполе</strong> — ближе к земле и предкам</li>
+                        <li><strong>На чердаке</strong> — откуда видно весь дом</li>
+                        <li><strong>В красном углу</strong> — священном месте дома</li>
+                    </ul>
+                    
+                    <h2>Как ладить с домовым</h2>
+                    <p>Чтобы домовой был добрым помощником, а не вредителем, следует:</p>
+                    
+                    <h3>Соблюдать правила</h3>
+                    <ul>
+                        <li>Поддерживать чистоту и порядок</li>
+                        <li>Не ругаться и не сквернословить</li>
+                        <li>Уважительно относиться к дому</li>
+                        <li>Не свистеть в помещении</li>
+                        <li>Закрывать на ночь посуду и еду</li>
+                    </ul>
+                    
+                    <h3>Задабривать домового</h3>
+                    <ul>
+                        <li>Оставлять угощение (хлеб, соль, кашу)</li>
+                        <li>Говорить с ним уважительно</li>
+                        <li>Поздравлять с праздниками</li>
+                        <li>Приглашать при переезде</li>
+                    </ul>
+                    
+                    <h2>Проказы домового</h2>
+                    <p>Недовольный домовой может:</p>
+                    <ul>
+                        <li>Прятать вещи</li>
+                        <li>Шуметь по ночам</li>
+                        <li>Наваливаться на спящих</li>
+                        <li>Путать волосы и пряжу</li>
+                        <li>Пугать домашних животных</li>
+                    </ul>
+                    
+                    <h3>Домовой и переезд</h3>
+                    <p>При переезде обязательно нужно позвать домового с собой:</p>
+                    <blockquote>
+                        "Хозяин-батюшка, пойдём с нами жить!"
+                    </blockquote>
+                    <p>Для этого брали уголёк из старой печи или горшок с углями и переносили в новый дом.</p>
+                    
+                    <h2>Современные поверья</h2>
+                    <p>В городских квартирах домовой, по поверьям:</p>
+                    <ul>
+                        <li>Живёт в ванной или кладовке</li>
+                        <li>Следит за бытовой техникой</li>
+                        <li>Охраняет от воров и аварий</li>
+                        <li>Предупреждает о поломках</li>
+                    </ul>
+                    
+                    <p>Вера в домового — это не просто суеверие, а способ одушевить дом, сделать его живым и родным, научиться ценить и беречь своё жилище.</p>
+                `
+            },
+            {
+                id: 5,
+                title: "Масленица: проводы зимы и встреча весны",
+                excerpt: "Древний славянский праздник, сохранивший языческие корни. Символика блинов, чучела и огненного колеса.",
+                tags: ["holidays", "rituals"],
+                date: "2024-02-15",
+                readTime: "9 мин",
+                image: "images/articles/maslenitsa.jpg",
+                content: `
+                    <h2>Солнечный праздник</h2>
+                    <p>Масленица — один из самых древних и любимых праздников, дошедших до наших дней. Этот праздник проводов зимы и встречи весны сохранил множество архаичных элементов, уходящих корнями в дохристианскую эпоху.</p>
+                    
+                    <h3>Языческие корни</h3>
+                    <p>Изначально праздник был связан с весенним равноденствием и почитанием солнечных богов — Ярилы и Даждьбога. Круглые блины символизировали солнце, а все обряды были направлены на пробуждение земли от зимнего сна.</p>
+                    
+                    <h2>Неделя гуляний</h2>
+                    <p>Каждый день Масленицы имел своё название и обряды:</p>
+                    
+                    <h3>Понедельник — Встреча</h3>
+                    <ul>
+                        <li>Изготовление чучела Масленицы</li>
+                        <li>Начало выпечки блинов</li>
+                        <li>Постройка снежных городков</li>
+                    </ul>
+                    
+                    <h3>Вторник — Заигрыши</h3>
+                    <ul>
+                        <li>Начало массовых гуляний</li>
+                        <li>Катания с горок</li>
+                        <li>Смотрины невест</li>
+                    </ul>
+                    
+                    <h3>Среда — Лакомка</h3>
+                    <ul>
+                        <li>Тёщины блины для зятьёв</li>
+                        <li>Семейные застолья</li>
+                        <li>Состязания в поедании блинов</li>
+                    </ul>
+                    
+                    <h3>Четверг — Разгул</h3>
+                    <ul>
+                        <li>Кулачные бои</li>
+                        <li>Взятие снежного городка</li>
+                        <li>Катание на лошадях</li>
+                        <li>Огненные колёса с горы</li>
+                    </ul>
+                    
+                    <h3>Пятница — Тёщины вечёрки</h3>
+                    <ul>
+                        <li>Зятья угощают тёщ блинами</li>
+                        <li>Семейные посиделки</li>
+                    </ul>
+                    
+                    <h3>Суббота — Золовкины посиделки</h3>
+                    <ul>
+                        <li>Невестки принимают родню мужа</li>
+                        <li>Дарение подарков</li>
+                    </ul>
+                    
+                    <h3>Воскресенье — Проводы</h3>
+                    <ul>
+                        <li>Сжигание чучела</li>
+                        <li>Прощёное воскресенье</li>
+                        <li>Очищение огнём и водой</li>
+                    </ul>
+                    
+                    <h2>Символика обрядов</h2>
+                    
+                    <h3>Блины — солнечный символ</h3>
+                    <p>Блины на Масленицу — это не просто угощение:</p>
+                    <ul>
+                        <li>Круглая форма — символ солнца</li>
+                        <li>Золотистый цвет — солнечный свет</li>
+                        <li>Тепло блинов — тепло весны</li>
+                        <li>Первый блин — поминальный, "за упокой"</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "Как на масляной неделе в потолок блины летели"
+                        <cite>— Народная песня</cite>
+                    </blockquote>
+                    
+                    <h3>Чучело Масленицы</h3>
+                    <p>Соломенное чучело воплощало:</p>
+                    <ul>
+                        <li>Уходящую зиму</li>
+                        <li>Смерть старого года</li>
+                        <li>Плодородие (пепел рассеивали по полям)</li>
+                    </ul>
+                    
+                    <h2>Игры и забавы</h2>
+                    <p>Масленичные развлечения имели ритуальный характер:</p>
+                    <ul>
+                        <li><strong>Кулачные бои</strong> — борьба зимы с весной</li>
+                        <li><strong>Взятие городка</strong> — победа над зимой</li>
+                        <li><strong>Катание с гор</strong> — магия плодородия</li>
+                        <li><strong>Качели</strong> — приближение к небу и солнцу</li>
+                    </ul>
+                    
+                    <h2>Масленица сегодня</h2>
+                    <p>Современное празднование сохранило основные элементы:</p>
+                    <ul>
+                        <li>Массовые гулянья в парках</li>
+                        <li>Блинные ярмарки</li>
+                        <li>Театрализованные представления</li>
+                        <li>Сжигание чучела</li>
+                        <li>Народные игры и конкурсы</li>
+                    </ul>
+                    
+                    <p>Масленица остаётся одним из самых живых народных праздников, объединяющим людей всех возрастов в радостном прощании с зимой и встрече весны.</p>
+                `
+            },
+            {
+                id: 6,
+                title: "Род и Рожаницы: забытый культ предков",
+                excerpt: "Древнейшие божества славян, чей культ был распространён повсеместно, но почти полностью забыт. Реконструкция верований.",
+                tags: ["gods", "myths"],
+                date: "2024-02-20",
+                readTime: "11 мин",
+                image: "images/articles/rod-rozhanitsy.jpg",
+                content: `
+                    <h2>Верховное божество славян?</h2>
+                    <p>Род — одно из самых загадочных божеств славянского пантеона. Некоторые исследователи, особенно академик Б.А. Рыбаков, считали его верховным богом древних славян, предшествовавшим Перуну. Другие видят в нём персонификацию рода, семьи и предков.</p>
+                    
+                    <h3>Свидетельства источников</h3>
+                    <p>Упоминания Рода встречаются в:</p>
+                    <ul>
+                        <li>Поучениях против язычества XI-XIV веков</li>
+                        <li>"Слове об идолах" — Род ставится в один ряд с античными богами</li>
+                        <li>Комментариях к Евангелию — Род сравнивается с Осирисом</li>
+                        <li>Списках "отречённых" верований</li>
+                    </ul>
+                    
+                    <blockquote>
+                        "И веруют в Рода и в Рожаниц, и в Перуна, и во Хорса..."
+                        <cite>— "Слово некоего христолюбца"</cite>
+                    </blockquote>
+                    
+                    <h2>Функции Рода</h2>
+                    <p>Анализ источников позволяет выделить основные аспекты Рода:</p>
+                    
+                    <h3>Творец мира</h3>
+                    <p>В некоторых текстах Род выступает как демиург:</p>
+                    <ul>
+                        <li>Создатель вселенной и всего живого</li>
+                        <li>"Вдувающий" жизнь в людей</li>
+                        <li>Источник дождя и росы (влаги жизни)</li>
+                        <li>Определяющий судьбу при рождении</li>
+                    </ul>
+                    
+                    <h3>Покровитель рода</h3>
+                    <p>Более приземлённые функции связывают Рода с:</p>
+                    <ul>
+                        <li>Единством семьи и рода</li>
+                        <li>Плодородием и размножением</li>
+                        <li>Связью поколений</li>
+                        <li>Культом предков</li>
+                    </ul>
+                    
+                    <h2>Рожаницы — подательницы судьбы</h2>
+                    <p>Рожаницы всегда упоминаются вместе с Родом. Это женские божества, связанные с:</p>
+                    <ul>
+                        <li>Рождением детей</li>
+                        <li>Определением судьбы новорождённых</li>
+                        <li>Женским плодородием</li>
+                        <li>Покровительством роженицам</li>
+                    </ul>
+                    
+                    <h3>Две или три?</h3>
+                    <p>Количество Рожаниц в источниках варьируется:</p>
+                    <ul>
+                        <li><strong>Две Рожаницы</strong> — мать и дочь, старая и молодая</li>
+                        <li><strong>Три Рожаницы</strong> — подобно греческим мойрам или норнам</li>
+                        <li>Возможно, Лада и Леля как конкретные имена Рожаниц</li>
+                    </ul>
+                    
+                    <h2>Культ и обряды</h2>
+                    
+                    <h3>Трапезы Роду и Рожаницам</h3>
+                    <p>Главным обрядом были ритуальные трапезы:</p>
+                    <ul>
+                        <li>Проводились после сбора урожая</li>
+                        <li>Включали хлеб, мёд, творог, кашу</li>
+                        <li>Обязательны были питьё — мёд, пиво</li>
+                        <li>Часть еды оставляли божествам</li>
+                    </ul>
+                    
+                    <h3>Праздники</h3>
+                    <p>Основные празднования приходились на:</p>
+                    <ul>
+                        <li><strong>8 сентября</strong> — Рождество Богородицы (наложилось на праздник Рожаниц)</li>
+                        <li><strong>26 декабря</strong> — следующий день после Рождества (второй праздник Рода)</li>
+                        <li>Возможно, весенние праздники плодородия</li>
+                    </ul>
+                    
+                    <h2>Христианская борьба с культом</h2>
+                    <p>Церковь особенно активно боролась именно с культом Рода и Рожаниц:</p>
+                    <ul>
+                        <li>Многочисленные поучения и запреты</li>
+                        <li>Наложение христианских праздников</li>
+                        <li>Переосмысление образов (Род → Бог-отец, Рожаницы → Богородица)</li>
+                        <li>Но трапезы Рожаницам справляли ещё в XV веке!</li>
+                    </ul>
+                    
+                    <h2>Наследие культа</h2>
+                    <p>Следы почитания Рода и Рожаниц сохранились в:</p>
+                    <ul>
+                        <li>Языке: род, народ, природа, родина, урожай</li>
+                        <li>Обрядах: поминальные трапезы, родительские дни</li>
+                        <li>Фольклоре: сказки о судьбе, пряхах жизни</li>
+                        <li>Вышивке: символы рожаниц — женские фигуры</li>
+                    </ul>
+                    
+                    <p>Культ Рода и Рожаниц представляет древнейший пласт славянских верований, связанный с почитанием жизненной силы, продолжения рода и единства поколений.</p>
+                `
+            }
+        ];
+
+        // Состояние приложения
+        let currentPage = 1;
+        const articlesPerPage = 6;
+        let filteredArticles = [...articlesData];
+        let activeTag = 'all';
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', function() {
+            renderArticles();
+            initializeControls();
+        });
+
+        // Функция отрисовки статей
+        function renderArticles() {
+            const grid = document.getElementById('articlesGrid');
+            const start = (currentPage - 1) * articlesPerPage;
+            const end = start + articlesPerPage;
+            const pageArticles = filteredArticles.slice(start, end);
+
+            grid.innerHTML = pageArticles.map(article => `
+                <article class="article-card" onclick="openArticle(${article.id})">
+                    <img src="${article.image || createPlaceholderImage(article.title)}" 
+                         alt="${article.title}" 
+                         class="article-image"
+                         onerror="this.src='${createPlaceholderImage(article.title)}'">
+                    <div class="article-content">
+                        <div class="article-tags">
+                            ${article.tags.map(tag => `
+                                <span class="article-tag">${getTagName(tag)}</span>
+                            `).join('')}
+                        </div>
+                        <h2 class="article-title">${article.title}</h2>
+                        <p class="article-excerpt">${article.excerpt}</p>
+                        <div class="article-meta">
+                            <span class="article-date">
+                                <i class="fas fa-calendar"></i>
+                                ${formatDate(article.date)}
+                            </span>
+                            <span class="article-readtime">
+                                <i class="fas fa-clock"></i>
+                                ${article.readTime}
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+
+            renderPagination();
+        }
+
+        // Функция создания заглушки для изображения
+        function createPlaceholderImage(title) {
+            const colors = ['#00bcd4', '#4caf50', '#f44336', '#ff9800', '#9c27b0'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            return `data:image/svg+xml;charset=UTF-8,%3Csvg width='400' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='400' height='200' fill='${encodeURIComponent(color)}'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Russo One' font-size='24' fill='white'%3E${encodeURIComponent(title.substring(0, 20))}%3C/text%3E%3C/svg%3E`;
+        }
+
+        // Пагинация
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+            const pageNumbers = document.getElementById('pageNumbers');
+            
+            pageNumbers.innerHTML = '';
+            
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+                pageBtn.textContent = i;
+                pageBtn.onclick = () => goToPage(i);
+                pageNumbers.appendChild(pageBtn);
+            }
+
+            // Управление кнопками prev/next
+            document.getElementById('prevPage').disabled = currentPage === 1;
+            document.getElementById('nextPage').disabled = currentPage === totalPages;
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            renderArticles();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Инициализация контролов
+        function initializeControls() {
+            // Поиск
+            const searchInput = document.getElementById('articleSearch');
+            let searchTimeout;
+            
+            searchInput.addEventListener('input', function(e) {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    filterArticles();
+                }, 300);
+            });
+
+            // Теги
+            document.querySelectorAll('.tag-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    activeTag = this.getAttribute('data-tag');
+                    filterArticles();
+                });
+            });
+
+            // Пагинация
+            document.getElementById('prevPage').onclick = () => {
+                if (currentPage > 1) goToPage(currentPage - 1);
+            };
+
+            document.getElementById('nextPage').onclick = () => {
+                const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+                if (currentPage < totalPages) goToPage(currentPage + 1);
+            };
+        }
+
+        // Фильтрация статей
+        function filterArticles() {
+            const searchTerm = document.getElementById('articleSearch').value.toLowerCase();
+            
+            filteredArticles = articlesData.filter(article => {
+                const matchesSearch = searchTerm === '' || 
+                    article.title.toLowerCase().includes(searchTerm) ||
+                    article.excerpt.toLowerCase().includes(searchTerm);
+                
+                const matchesTag = activeTag === 'all' || article.tags.includes(activeTag);
+                
+                return matchesSearch && matchesTag;
+            });
+
+            currentPage = 1;
+            renderArticles();
+        }
+
+        // Открытие статьи
+        function openArticle(id) {
+            const article = articlesData.find(a => a.id === id);
+            if (!article) return;
+
+            const modal = document.getElementById('articleModal');
+            const fullArticle = document.getElementById('articleFull');
+
+            fullArticle.innerHTML = `
+                <div class="article-header">
+                    <h1 class="article-full-title">${article.title}</h1>
+                    <div class="article-full-meta">
+                        <span><i class="fas fa-calendar"></i> ${formatDate(article.date)}</span>
+                        <span><i class="fas fa-clock"></i> ${article.readTime}</span>
+                        <span><i class="fas fa-tags"></i> ${article.tags.map(tag => getTagName(tag)).join(', ')}</span>
+                    </div>
+                </div>
+                <img src="${article.image || createPlaceholderImage(article.title)}" 
+                     alt="${article.title}" 
+                     class="article-full-image"
+                     onerror="this.src='${createPlaceholderImage(article.title)}'">
+                <div class="article-body">
+                    ${article.content}
+                </div>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Закрытие статьи
+        function closeArticle() {
+            const modal = document.getElementById('articleModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Закрытие по клику вне модального окна
+        document.getElementById('articleModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeArticle();
+            }
+        });
+
+        // Вспомогательные функции
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const months = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+            return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+        }
+
+        function getTagName(tag) {
+            const tagNames = {
+                'gods': 'Боги',
+                'rituals': 'Обряды',
+                'holidays': 'Праздники',
+                'myths': 'Мифы'
+            };
+            return tagNames[tag] || tag;
+        }
+
+        // Закрытие по Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeArticle();
+            }
+        });
+    </script>
+</body>
+</html>
