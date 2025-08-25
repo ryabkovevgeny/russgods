@@ -214,16 +214,18 @@
     </style>
 </head>
 <body>
-<!-- Навигация между страницами -->
+<!-- ИЗМЕНЕННАЯ НАВИГАЦИЯ -->
 <nav class="main-nav" style="
     background: rgba(0, 0, 0, 0.6);
     padding: 15px;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Добавлено для мобильных устройств */
     gap: 15px;
     border-bottom: 1px solid rgba(255, 215, 0, 0.2);
 ">
+    <!-- Кнопка 1: Восточно-славянский пантеон (текущая страница) -->
     <a href="index.html" class="nav-link" style="
         padding: 10px 20px;
         background: linear-gradient(45deg, #ffd700, #ff8c00);
@@ -237,9 +239,31 @@
         gap: 8px;
         transition: all 0.3s;
     ">
-        <i class="fas fa-home"></i>
-        <span>Пантеон богов</span>
+        <i class="fas fa-sun"></i>
+        <!-- ТЕКСТ ИЗМЕНЕН -->
+        <span>Восточно-славянский пантеон</span>
     </a>
+
+    <!-- Кнопка 2: Западно-славянский пантеон (новая страница) -->
+    <a href="western.html" class="nav-link" style="
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        border-radius: 25px;
+        color: #ffd700;
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+    " onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'" onmouseout="this.style.background='rgba(0, 0, 0, 0.3)'">
+        <i class="fas fa-gavel"></i>
+        <!-- НОВАЯ КНОПКА -->
+        <span>Западно-славянский пантеон</span>
+    </a>
+
+    <!-- Кнопка 3: Статьи (без изменений) -->
     <a href="articles.html" class="nav-link" style="
         padding: 10px 20px;
         background: rgba(0, 0, 0, 0.3);
