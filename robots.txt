@@ -1,14 +1,4 @@
-# Инструкции для всех поисковых роботов
 User-agent: *
-# Разрешаем сканировать всё, так как сайт одностраничный и открытый
-Disallow:
+Allow: /
 
-# Отдельные инструкции для робота Яндекса
-User-agent: Yandex
-Disallow:
-
-# Указываем Яндексу основной домен (рекомендуется)
-Host: https://ryabkovevgeny.github.io
-
-# Указываем путь к карте сайта (добавим на следующем шаге)
 Sitemap: https://ryabkovevgeny.github.io/russgods/sitemap.xml

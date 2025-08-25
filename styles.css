@@ -1,0 +1,240 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Comfortaa', 'Russo One', Arial, sans-serif;
+    background:
+        linear-gradient(rgba(25, 25, 112, 0.85), rgba(43, 15, 0, 0.85)),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%238B4513" opacity="0.1"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23FFD700" stroke-width="1" opacity="0.1"/></svg>');
+    color: #f5f5f5;
+    line-height: 1.6;
+    padding: 10px;
+    min-height: 100vh;
+}
+
+.slavic-pantheon-container { max-width: 1400px; margin: 0 auto; padding: 10px; }
+
+.slavic-header { text-align: center; padding: 15px 5px; margin-bottom: 15px; position: relative; }
+
+.slavic-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    background: linear-gradient(45deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+}
+
+.slavic-subtitle { font-size: 0.9rem; color: #bdc3c7; max-width: 100%; margin: 0 auto; line-height: 1.4; padding: 0 5px; }
+
+/* Панель управления */
+.control-panel {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+.controls-wrapper { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center; }
+
+.search-container { flex: 1; min-width: 200px; max-width: 400px; position: relative; }
+.search-input {
+    width: 100%; padding: 10px 40px 10px 15px; border-radius: 25px;
+    border: 1px solid rgba(255, 215, 0, 0.3); background: rgba(0, 0, 0, 0.3);
+    color: #fff; font-size: 0.9rem; transition: all 0.3s;
+}
+.search-input:focus { outline: none; border-color: #ffd700; box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+.search-input::placeholder { color: #95a5a6; }
+.search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #ffd700; pointer-events: none; }
+
+.filter-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.filter-btn {
+    padding: 8px 20px; border: 1px solid rgba(255, 215, 0, 0.3); background: rgba(0, 0, 0, 0.3);
+    color: #bdc3c7; border-radius: 20px; cursor: pointer; transition: all 0.3s;
+    font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 5px;
+}
+.filter-btn:hover { border-color: #ffd700; color: #ffd700; }
+.filter-btn.active {
+    background: linear-gradient(45deg, #ffd700, #ff8c00); color: #000;
+    border-color: #ffd700; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.main-content { display: flex; flex-direction: column; gap: 15px; margin-top: 10px; }
+.detail-container {
+    background: rgba(0, 0, 0, 0.5); border-radius: 10px; padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 215, 0, 0.2); width: 100%;
+    position: relative;
+}
+.tree-container {
+    background: rgba(0, 0, 0, 0.5); border-radius: 10px; padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 215, 0, 0.2); width: 100%;
+}
+
+.pantheon-levels { display: flex; flex-direction: column; gap: 20px; }
+.pantheon-level { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 15px; transition: opacity 0.3s; }
+.pantheon-level.hidden { display: none; }
+
+.world-title {
+    text-align: center; font-size: 1.2rem; padding: 8px; margin: 0 auto 12px; border-radius: 6px;
+    font-weight: bold; width: 100%; font-family: 'Russo One', sans-serif; letter-spacing: 0.5px;
+}
+.praw .world-title { background: linear-gradient(to right, #00838f, #006064); border: 1px solid #00bcd4; }
+.jaw .world-title { background: linear-gradient(to right, #2e7d32, #1b5e20); border: 1px solid #4caf50; }
+.naw .world-title { background: linear-gradient(to right, #c62828, #b71c1c); border: 1px solid #f44336; }
+
+.deity-card {
+    width: 110px; height: 110px; background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 10px; cursor: pointer; position: relative;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); margin-bottom: 5px; transition: all 0.3s; opacity: 1;
+}
+.deity-card.hidden { display: none; }
+.deity-card.dimmed { opacity: 0.3; transform: scale(0.9); }
+.deity-card.active { box-shadow: 0 0 15px currentColor, inset 0 0 10px rgba(255, 215, 0, 0.2); transform: scale(1.05); z-index: 10; }
+.deity-icon { font-size: 1.5rem; margin-bottom: 6px; filter: drop-shadow(0 0 3px currentColor); }
+.deity-card-name { font-size: 0.8rem; font-weight: bold; font-family: 'Russo One', sans-serif; text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
+
+.deity-type-badge {
+    position: absolute; top: -5px; right: -5px; background: rgba(255, 215, 0, 0.9);
+    color: #000; font-size: 0.65rem; padding: 2px 6px; border-radius: 10px; font-weight: bold;
+}
+
+.praw .deity-card { border: 2px solid #00bcd4; }
+.jaw .deity-card { border: 2px solid #4caf50; }
+.naw .deity-card { border: 2px solid #f44336; }
+
+.detail-placeholder { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 200px; color: #95a5a6; padding: 20px; }
+.placeholder-icon { font-size: 2.5rem; margin-bottom: 15px; opacity: 0.3; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+.placeholder-text { font-size: 1rem; max-width: 100%; line-height: 1.5; }
+
+.deity-detail { display: none; }
+.deity-name { font-size: 1.7rem; margin-bottom: 10px; color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); font-family: 'Russo One', sans-serif; }
+.deity-level { font-size: 0.95rem; display: inline-block; padding: 6px 15px; border-radius: 15px; margin-bottom: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+.praw-bg { background: linear-gradient(to right, #00bcd4, #00838f); }
+.jaw-bg { background: linear-gradient(to right, #4caf50, #2e7d32); }
+.naw-bg { background: linear-gradient(to right, #f44336, #c62828); }
+
+/* Блок изображения в деталях */
+.deity-figure {
+    margin-bottom: 12px; border-radius: 10px; overflow: hidden;
+    border: 1px solid rgba(255, 215, 0, 0.15); background: rgba(0, 0, 0, 0.25);
+}
+.deity-image {
+    width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block;
+    background: rgba(0,0,0,0.15);
+}
+.deity-caption {
+    font-size: 0.8rem; color: #bdc3c7; padding: 6px 10px;
+    background: rgba(0,0,0, 0.25); border-top: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.deity-description {
+    font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px; color: #ecf0f1;
+    padding: 12px; background: rgba(0, 0, 0, 0.3); border-radius: 6px; border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.relations { background: rgba(0, 0, 0, 0.3); padding: 12px; border-radius: 6px; margin-top: 12px; border: 1px solid rgba(255, 215, 0, 0.1); }
+.relations h3 { margin-bottom: 10px; color: #ffd700; font-size: 1.2rem; font-family: 'Russo One', sans-serif; }
+.relation-item { display: flex; margin-bottom: 8px; padding: 8px; border-radius: 5px; background: rgba(255, 255, 255, 0.07); cursor: pointer; align-items: center; font-size: 0.85rem; }
+.relation-icon { margin-right: 8px; font-size: 0.9rem; width: 20px; text-align: center; color: #ffd700; }
+.relation-type { width: 90px; color: #bdc3c7; font-weight: bold; flex-shrink: 0; font-size: 0.8rem; }
+
+.sphere-item { display: flex; align-items: center; margin-bottom: 6px; padding: 6px; background: rgba(255, 255, 255, 0.07); border-radius: 5px; font-size: 0.85rem; }
+.sphere-item i { margin-right: 8px; font-size: 0.9rem; width: 20px; text-align: center; color: #ffd700; }
+
+.share-button {
+    position: absolute; top: 10px; right: 10px;
+    background: rgba(255, 215, 0, 0.2); border: 1px solid rgba(255, 215, 0, 0.5); color: #ffd700;
+    padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.85rem;
+    transition: all 0.3s; display: flex; align-items: center; gap: 5px;
+}
+.share-button:hover { background: rgba(255, 215, 0, 0.3); box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+.share-button.copied { background: rgba(76, 175, 80, 0.3); border-color: #4caf50; color: #4caf50; }
+
+.slavic-footer { text-align: center; padding: 15px 0; margin-top: 20px; color: #95a5a6; font-size: 0.8rem; }
+
+.search-results {
+    position: absolute; top: 100%; left: 0; right: 0; margin-top: 5px;
+    background: rgba(0, 0, 0, 0.9); border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10px; max-height: 300px; overflow-y: auto; display: none; z-index: 100;
+}
+.search-result-item { padding: 10px 15px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.search-result-item:last-child { border-bottom: none; }
+.search-result-item:hover { background: rgba(255, 215, 0, 0.1); }
+.search-result-icon { font-size: 1.2rem; width: 30px; text-align: center; color: #ffd700; }
+.search-result-text { flex: 1; }
+.search-result-name { font-weight: bold; color: #ffd700; }
+.search-result-desc { font-size: 0.8rem; color: #95a5a6; }
+
+/* Навигация */
+.main-nav {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.nav-link {
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 25px;
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.nav-link.active {
+    background: linear-gradient(45deg, #ffd700, #ff8c00);
+    border: 1px solid #ffd700;
+    color: #000;
+}
+
+.nav-link:hover:not(.active) {
+    background: rgba(255, 215, 0, 0.2);
+}
+
+/* Медиа */
+@media (min-width: 600px) {
+    .slavic-title { font-size: 2rem; }
+    .slavic-subtitle { font-size: 1rem; }
+    .deity-card { width: 120px; height: 120px; }
+    .world-title { font-size: 1.3rem; }
+    .deity-name { font-size: 1.9rem; }
+}
+@media (min-width: 768px) {
+    .main-content { flex-direction: row; }
+    .detail-container {
+        flex: 1; margin-right: 15px; position: sticky; top: 10px;
+        max-height: calc(100vh - 20px); overflow-y: auto;
+    }
+    .tree-container { flex: 1; }
+    .slavic-title { font-size: 2.2rem; }
+    .deity-card { width: 110px; height: 110px; }
+    .deity-card:hover:not(.active):not(.dimmed) { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+}
+@media (min-width: 1024px) {
+    .slavic-pantheon-container { padding: 20px; }
+    .slavic-title { font-size: 2.5rem; }
+    .slavic-subtitle { font-size: 1.1rem; }
+    .deity-card { width: 130px; height: 130px; }
+    .deity-icon { font-size: 1.8rem; }
+    .deity-card-name { font-size: 0.9rem; }
+    .world-title { font-size: 1.4rem; }
+    .deity-name { font-size: 2.2rem; }
+}
+@media (min-width: 1200px) {
+    .deity-card { width: 140px; height: 140px; }
+    .pantheon-level { gap: 15px; }
+}
