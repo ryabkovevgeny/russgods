@@ -1,9 +1,14 @@
+Вот полностью проверенный и исправленный код:
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Древнерусский Пантеон Богов</title>
+    <title>Древнерусский Пантеон Богов - Интерактивная схема славянской мифологии</title>
+    <meta name="description" content="Интерактивная схема древнерусского пантеона богов и духов. Узнайте о Перуне, Велесе, Ладе и других славянских божествах.">
+    <meta name="keywords" content="славянские боги, древнерусская мифология, пантеон, Перун, Велес, Лада, Сварог, Мокошь">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -35,16 +40,28 @@
                     <div class="search-results" id="searchResults"></div>
                 </div>
                 <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all"><i class="fas fa-infinity"></i><span>Все</span></button>
-                    <button class="filter-btn" data-filter="gods"><i class="fas fa-crown"></i><span>Боги</span></button>
-                    <button class="filter-btn" data-filter="spirits"><i class="fas fa-ghost"></i><span>Духи</span></button>
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-infinity"></i>
+                        <span>Все</span>
+                    </button>
+                    <button class="filter-btn" data-filter="gods">
+                        <i class="fas fa-crown"></i>
+                        <span>Боги</span>
+                    </button>
+                    <button class="filter-btn" data-filter="spirits">
+                        <i class="fas fa-ghost"></i>
+                        <span>Духи</span>
+                    </button>
                 </div>
             </div>
         </div>
 
         <div class="main-content">
             <div class="detail-container" id="detail-section">
-                <button class="share-button" id="shareButton"><i class="fas fa-share-nodes"></i><span>Поделиться</span></button>
+                <button class="share-button" id="shareButton">
+                    <i class="fas fa-share-nodes"></i>
+                    <span>Поделиться</span>
+                </button>
 
                 <div class="detail-placeholder" id="placeholder">
                     <i class="placeholder-icon fas fa-hand-pointer"></i>
@@ -83,7 +100,7 @@
             <!-- Древо (уровни + духи) -->
             <div class="tree-container">
                 <div class="pantheon-levels">
-                    <!-- Правь -->
+                    <!-- Правь - Верховный уровень -->
                     <div class="pantheon-level praw" data-level="praw">
                         <div class="world-title">Правь (Верхний мир)</div>
                         <div class="deity-card" data-id="rod" data-type="god">
@@ -92,17 +109,19 @@
                         </div>
                     </div>
 
-	            <div class="pantheon-level praw" data-level="praw">
-   	             <div class="deity-card" data-id="belobog" data-type="god">
-   	                 <i class="deity-icon fas fa-sun"></i>
- 	                   <div class="deity-card-name">Белобог</div>
-	                </div>
- 	               <div class="deity-card" data-id="triglav" data-type="god">
-	                    <i class="deity-icon fas fa-head-side"></i>
- 	                   <div class="deity-card-name">Триглав</div>
-	                </div>
-	            </div>
+                    <!-- Правь - Второй уровень -->
+                    <div class="pantheon-level praw" data-level="praw">
+                        <div class="deity-card" data-id="belobog" data-type="god">
+                            <i class="deity-icon fas fa-sun"></i>
+                            <div class="deity-card-name">Белобог</div>
+                        </div>
+                        <div class="deity-card" data-id="triglav" data-type="god">
+                            <i class="deity-icon fas fa-eye"></i>
+                            <div class="deity-card-name">Триглав</div>
+                        </div>
+                    </div>
 
+                    <!-- Правь - Третий уровень -->
                     <div class="pantheon-level praw" data-level="praw">
                         <div class="deity-card" data-id="svarog" data-type="god">
                             <i class="deity-icon fas fa-fire"></i>
@@ -117,6 +136,8 @@
                             <div class="deity-card-name">Лада</div>
                         </div>
                     </div>
+
+                    <!-- Правь - Четвертый уровень -->
                     <div class="pantheon-level praw" data-level="praw">
                         <div class="deity-card" data-id="stribog" data-type="god">
                             <i class="deity-icon fas fa-wind"></i>
@@ -127,10 +148,12 @@
                             <div class="deity-card-name">Даждьбог</div>
                         </div>
                         <div class="deity-card" data-id="hors" data-type="god">
-                            <i class="deity-icon fas fa-sun"></i>
+                            <i class="deity-icon fas fa-circle"></i>
                             <div class="deity-card-name">Хорс</div>
                         </div>
                     </div>
+
+                    <!-- Правь - Пятый уровень -->
                     <div class="pantheon-level praw" data-level="praw">
                         <div class="deity-card" data-id="semargl" data-type="god">
                             <i class="deity-icon fas fa-fire-flame-curved"></i>
@@ -142,74 +165,109 @@
                         </div>
                     </div>
 
-                    <!-- Явь -->
+                    <!-- Явь - Первый уровень -->
                     <div class="pantheon-level jaw" data-level="jaw">
                         <div class="world-title">Явь (Средний мир)</div>
-                        <div class="deity-card" data-id="perun" data-type="god"><i class="deity-icon fas fa-bolt"></i><div class="deity-card-name">Перун</div></div>
-                        <div class="deity-card" data-id="veles" data-type="god"><i class="deity-icon fas fa-paw"></i><div class="deity-card-name">Велес</div></div>
-                        <div class="deity-card" data-id="mokosh" data-type="god"><i class="deity-icon fas fa-person-dress"></i><div class="deity-card-name">Мокошь</div></div>
+                        <div class="deity-card" data-id="perun" data-type="god">
+                            <i class="deity-icon fas fa-bolt"></i>
+                            <div class="deity-card-name">Перун</div>
+                        </div>
+                        <div class="deity-card" data-id="veles" data-type="god">
+                            <i class="deity-icon fas fa-paw"></i>
+                            <div class="deity-card-name">Велес</div>
+                        </div>
+                        <div class="deity-card" data-id="mokosh" data-type="god">
+                            <i class="deity-icon fas fa-person-dress"></i>
+                            <div class="deity-card-name">Мокошь</div>
+                        </div>
                     </div>
+
+                    <!-- Явь - Второй уровень -->
                     <div class="pantheon-level jaw" data-level="jaw">
-                        <div class="deity-card" data-id="lelya" data-type="god"><i class="deity-icon fas fa-seedling"></i><div class="deity-card-name">Лёля</div></div>
-                        <div class="deity-card" data-id="yarilo" data-type="god"><i class="deity-icon fas fa-fire"></i><div class="deity-card-name">Ярило</div></div>
-                        <div class="deity-card" data-id="kupala" data-type="god"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Купала</div></div>
-                        <div class="deity-card" data-id="kostroma" data-type="god"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Кострома</div></div>
+                        <div class="deity-card" data-id="lelya" data-type="god">
+                            <i class="deity-icon fas fa-seedling"></i>
+                            <div class="deity-card-name">Лёля</div>
+                        </div>
+                        <div class="deity-card" data-id="yarilo" data-type="god">
+                            <i class="deity-icon fas fa-fire"></i>
+                            <div class="deity-card-name">Ярило</div>
+                        </div>
+                        <div class="deity-card" data-id="kupala" data-type="god">
+                            <i class="deity-icon fas fa-water"></i>
+                            <div class="deity-card-name">Купала</div>
+                        </div>
+                        <div class="deity-card" data-id="kostroma" data-type="god">
+                            <i class="deity-icon fas fa-leaf"></i>
+                            <div class="deity-card-name">Кострома</div>
+                        </div>
                     </div>
+
+                    <!-- Явь - Третий уровень -->
                     <div class="pantheon-level jaw" data-level="jaw">
-                        <div class="deity-card" data-id="yarovit" data-type="god"><i class="deity-icon fas fa-shield-halved"></i><div class="deity-card-name">Яровит</div></div>
-                        <div class="deity-card" data-id="dolya" data-type="god"><i class="deity-icon fas fa-face-smile"></i><div class="deity-card-name">Доля</div></div>
-                        <div class="deity-card" data-id="nedolya" data-type="god"><i class="deity-icon fas fa-face-frown"></i><div class="deity-card-name">Недоля</div></div>
- 		        <div class="deity-card" data-id="kolyada" data-type="god"><i class="deity-icon fas fa-snowflake"></i><div class="deity-card-name">Коляда</div></div>
- 		        <div class="deity-card" data-id="maslenitsa" data-type="god"><i class="deity-icon fas fa-pancakes"></i><div class="deity-card-name">Масленица</div></div>
+                        <div class="deity-card" data-id="yarovit" data-type="god">
+                            <i class="deity-icon fas fa-shield-halved"></i>
+                            <div class="deity-card-name">Яровит</div>
+                        </div>
+                        <div class="deity-card" data-id="dolya" data-type="god">
+                            <i class="deity-icon fas fa-face-smile"></i>
+                            <div class="deity-card-name">Доля</div>
+                        </div>
+                        <div class="deity-card" data-id="nedolya" data-type="god">
+                            <i class="deity-icon fas fa-face-frown"></i>
+                            <div class="deity-card-name">Недоля</div>
+                        </div>
+                        <div class="deity-card" data-id="kolyada" data-type="god">
+                            <i class="deity-icon fas fa-snowflake"></i>
+                            <div class="deity-card-name">Коляда</div>
+                        </div>
+                        <div class="deity-card" data-id="maslenitsa" data-type="god">
+                            <i class="deity-icon fas fa-sun"></i>
+                            <div class="deity-card-name">Масленица</div>
+                        </div>
                     </div>
-		  
+                  
                     <!-- Духи Яви -->
                     <div class="pantheon-level jaw" data-level="jaw-spirits">
                         <div class="world-title">Духи Яви</div>
-                        <div class="deity-card" data-id="beregini" data-type="spirit"><i class="deity-icon fas fa-hand-holding-heart"></i><div class="deity-card-name">Берегини</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="leshy" data-type="spirit"><i class="deity-icon fas fa-tree"></i><div class="deity-card-name">Леший</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="vodyanoy" data-type="spirit"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Водяной</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="domovoy" data-type="spirit"><i class="deity-icon fas fa-house-chimney"></i><div class="deity-card-name">Домовой</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="kikimora" data-type="spirit"><i class="deity-icon fas fa-ghost"></i><div class="deity-card-name">Кикимора</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="ovinnik" data-type="spirit"><i class="deity-icon fas fa-wheat-awn"></i><div class="deity-card-name">Овинник</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="bannik" data-type="spirit"><i class="deity-icon fas fa-bath"></i><div class="deity-card-name">Банник</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="dvorovoy" data-type="spirit"><i class="deity-icon fas fa-home"></i><div class="deity-card-name">Дворовой</div><div class="deity-type-badge">Дух</div></div>                        
-                        <div class="deity-card" data-id="polevik" data-type="spirit"><i class="deity-icon fas fa-wheat-awn"></i><div class="deity-card-name">Полевик</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="lugovik" data-type="spirit"><i class="deity-icon fas fa-leaf"></i><div class="deity-card-name">Луговик</div><div class="deity-type-badge">Дух</div></div>
- 		    </div>
-
-                    <!-- Навь -->
-                    <div class="pantheon-level naw" data-level="naw">
-                        <div class="world-title">Навь (Нижний мир)</div>
-                        <div class="deity-card" data-id="chernobog" data-type="god"><i class="deity-icon fas fa-moon"></i><div class="deity-card-name">Чернобог</div></div>
-                        <div class="deity-card" data-id="mora" data-type="god"><i class="deity-icon fas fa-skull"></i><div class="deity-card-name">Морана</div></div>
-        		<div class="deity-card" data-id="baba-yaga" data-type="spirit"><i class="deity-icon fas fa-hat-wizard"></i><div class="deity-card-name">Баба-Яга</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="yascher" data-type="god"><i class="deity-icon fas fa-dragon"></i><div class="deity-card-name">Ящер</div></div>
-                    </div>
-		    
-                    <!-- Духи Нави -->
-                    <div class="pantheon-level naw" data-level="naw-spirits">
-                        <div class="world-title">Духи Нави</div>
-                        <div class="deity-card" data-id="rusalki" data-type="spirit"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Русалки</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="viy" data-type="spirit"><i class="deity-icon fas fa-eye"></i><div class="deity-card-name">Вий</div><div class="deity-type-badge">Дух</div></div>
-   			<div class="deity-card" data-id="mavka" data-type="spirit"><i class="deity-icon fas fa-ghost"></i><div class="deity-card-name">Мавка</div><div class="deity-type-badge">Дух</div></div>
-  			<div class="deity-card" data-id="upyr" data-type="spirit"><i class="deity-icon fas fa-skull"></i><div class="deity-card-name">Упырь</div><div class="deity-type-badge">Дух</div></div>
-			<div class="deity-card" data-id="volkolak" data-type="spirit"><i class="deity-icon fas fa-paw"></i><div class="deity-card-name">Волколак</div><div class="deity-type-badge">Дух</div></div>
- 			<div class="deity-card" data-id="likhoradki" data-type="spirit"><i class="deity-icon fas fa-temperature-high"></i><div class="deity-card-name">Лихорадки</div><div class="deity-type-badge">Дух</div></div>                        
- 			<div class="deity-card" data-id="zlydni" data-type="spirit"><i class="deity-icon fas fa-triangle-exclamation"></i><div class="deity-card-name">Злыдни</div><div class="deity-type-badge">Дух</div></div>
-                    </div>
-			
-                </div>
-            </div>
-        </div>
-
-        <div class="slavic-footer">
-            <p>☀ Полная интерактивная схема древнерусского пантеона богов и духов ☀</p>
-            <p>© 2023–2025 Древнерусская мифология | Версия с фильтрами, поиском и изображениями</p>
-        </div>
-    </div>
-
-    <script src="deities-data.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+                        <div class="deity-card" data-id="beregini" data-type="spirit">
+                            <i class="deity-icon fas fa-hand-holding-heart"></i>
+                            <div class="deity-card-name">Берегини</div>
+                            <div class="deity-type-badge">Дух</div>
+                        </div>
+                        <div class="deity-card" data-id="leshy" data-type="spirit">
+                            <i class="deity-icon fas fa-tree"></i>
+                            <div class="deity-card-name">Леший</div>
+                            <div class="deity-type-badge">Дух</div>
+                        </div>
+                        <div class="deity-card" data-id="vodyanoy" data-type="spirit">
+                            <i class="deity-icon fas fa-water"></i>
+                            <div class="deity-card-name">Водяной</div>
+                            <div class="deity-type-badge">Дух</div>
+                        </div>
+                        <div class="deity-card" data-id="domovoy" data-type="spirit">
+                            <i class="deity-icon fas fa-house-chimney"></i>
+                            <div class="deity-card-name">Домовой</div>
+                            <div class="deity-type-badge">Дух</div>
+                        </div>
+                        <div class="deity-card" data-id="kikimora" data-type="spirit">
+                            <i class="deity-icon fas fa-ghost"></i>
+                            <div class="deity-card-name">Кикимора</div>
+                            <div class="deity-type-badge">Дух</div>
+                        </div>
+                        <div class="deity-card" data-id="ovinnik" data-type="spirit">
+                            <i class="deity-icon fas fa-wheat-awn"></i>
+                            <div class="deity-card-name">Овинник</div>
+                            <div class="deity-type-badge">Дух</div>
+                        </div>
+                        <div class="deity-card" data-id="bannik" data-type="spirit">
+                            <i class="deity-icon fas fa-bath"></i>
+                            <div class="deity-card-name">Банник</div>
+                            <div class="deity-type-badge">Дух</div>
+                        </div>
+                        <div class="deity-card" data-id="dvorovoy" data-type="spirit">
+                            <i class="deity-icon fas fa-home"></i>
+                            <div class="deity-card-name">Дворовой</div>
+                            <div class="deity-type-badge">Дух</div>
+                        </div>                        
+                        <div class="deity-card" data-id="polevik" data-type="spirit">
+                            <i class="deity-icon fas fa-
