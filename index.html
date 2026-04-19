@@ -1,957 +1,189 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RVZMB5ZP8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6RVZMB5ZP8');
-</script>
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104200189', 'ym');
-
-    ym(104200189, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/104200189" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Древнерусский Пантеон Богов</title>
     
-        <!-- 🔽 СНИППЕТЫ ДЛЯ СОЦСЕТЕЙ И ПОИСКОВИКОВ 🔽 -->
-    <!-- Open Graph (для соцсетей: VK, Telegram, Facebook и т.д.) -->
-    <meta property="og:title" content="Древнерусский Пантеон Богов" />
-    <meta property="og:description" content="Интерактивная схема славянской мифологии: боги, духи, родственные связи и сферы влияния." />
-    <meta property="og:image" content="https://ryabkovevgeny.github.io/russgods/images/social-preview.jpg" />
-    <meta property="og:url" content="https://ryabkovevgeny.github.io/russgods/" />
-    <meta property="og:type" content="website" />
-
-    <!-- Schema.org JSON-LD (для поисковиков: Google, Yandex) -->
+    <!-- SEO -->
+    <title>ВсеБогиДухи — Интерактивное древо славянских богов и духов</title>
+    <meta name="description" content="Интерактивная энциклопедия древнерусской мифологии: Род, Перун, Велес, Домовой и другие боги и духи. Схемы, описания, родственные связи.">
+    <meta name="keywords" content="славянские боги, мифология, Род, Перун, Велес, древняя Русь, язычество, пантеон, духи, энциклопедия">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Евгений Рябков">
+    <link rel="canonical" href="https://ryabkovevgeny.github.io/russgods/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ВсеБогиДухи — Славянские боги и духи">
+    <meta property="og:description" content="Интерактивное древо пантеона: Род, Перун, Велес, Домовой и другие персонажи">
+    <meta property="og:image" content="https://ryabkovevgeny.github.io/russgods/images/og-image.jpg">
+    <meta property="og:url" content="https://ryabkovevgeny.github.io/russgods/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ВсеБогиДухи — Славянская мифология">
+    <meta name="twitter:description" content="Интерактивная энциклопедия богов и духов Древней Руси">
+    <meta name="twitter:image" content="https://ryabkovevgeny.github.io/russgods/images/og-image.jpg">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Russo+One&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Russo+One&display=swap"></noscript>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//mc.yandex.ru">
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Критические стили (неблокирующие) -->
+    <style>
+        body{font-family:'Comfortaa',Arial,sans-serif;background:#191970;color:#f5f5f5;margin:0;padding:0;min-height:100vh}
+        .slavic-title{font-family:'Russo One',sans-serif;font-size:1.7rem;text-align:center;color:#ffd700;text-shadow:2px 2px 4px rgba(0,0,0,0.5);margin:1rem 0}
+        .deity-card{display:flex;flex-direction:column;align-items:center;padding:1rem;background:rgba(255,255,255,0.1);border-radius:10px;margin:1rem}
+        .deity-image{max-width:100%;height:auto;border-radius:8px}
+        @media(min-width:768px){.slavic-title{font-size:2.5rem}}
+    </style>
+    
+    <!-- Schema.org: WebSite + FAQPage -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Древнерусский Пантеон Богов",
-      "description": "Интерактивная схема восточнославянской мифологии: божества, духи, уровни Прави, Яви и Нави.",
-      "url": "https://ryabkovevgeny.github.io/russgods/",
-      "thumbnailUrl": "https://ryabkovevgeny.github.io/russgods/images/social-preview.jpg"
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ВсеБогиДухи",
+        "url": "https://ryabkovevgeny.github.io/russgods/",
+        "description": "Интерактивная энциклопедия древнерусской мифологии",
+        "inLanguage": "ru-RU",
+        "author": {"@type": "Person", "name": "Евгений Рябков"},
+        "publisher": {"@type": "Organization", "name": "ВсеБогиДухи", "logo": {"@type": "ImageObject", "url": "https://ryabkovevgeny.github.io/russgods/images/favicon.png"}}
     }
     </script>
-    <!-- 🔼 КОНЕЦ СНИППЕТОВ 🔼 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Кто такой Род в славянской мифологии?", "acceptedAnswer": {"@type": "Answer", "text": "Род — верховный бог-творец, источник жизни и создатель всего сущего в древнерусском пантеоне."}},
+            {"@type": "Question", "name": "Что такое Правь, Явь и Навь?", "acceptedAnswer": {"@type": "Answer", "text": "Три мира славянской космологии: Правь — мир богов, Явь — мир людей, Навь — мир духов и подсознания."}}
+        ]
+    }
+    </script>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'Comfortaa', 'Russo One', Arial, sans-serif;
-            background:
-                linear-gradient(rgba(25, 25, 112, 0.85), rgba(43, 15, 0, 0.85)),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%238B4513" opacity="0.1"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23FFD700" stroke-width="1" opacity="0.1"/></svg>');
-            color: #f5f5f5;
-            line-height: 1.6;
-            padding: 10px;
-            min-height: 100vh;
-        }
-
-        .slavic-pantheon-container { max-width: 1400px; margin: 0 auto; padding: 10px; }
-
-        .slavic-header { text-align: center; padding: 15px 5px; margin-bottom: 15px; position: relative; }
-
-        .slavic-title {
-            font-family: 'Russo One', sans-serif;
-            font-size: 1.7rem;
-            margin-bottom: 8px;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-            background: linear-gradient(45deg, #ffd700, #ff8c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            padding: 0 10px;
-        }
-
-        .slavic-subtitle { font-size: 0.9rem; color: #bdc3c7; max-width: 100%; margin: 0 auto; line-height: 1.4; padding: 0 5px; }
-
-        /* Панель управления */
-        .control-panel {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-        }
-        .controls-wrapper { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center; }
-
-        .search-container { flex: 1; min-width: 200px; max-width: 400px; position: relative; }
-        .search-input {
-            width: 100%; padding: 10px 40px 10px 15px; border-radius: 25px;
-            border: 1px solid rgba(255, 215, 0, 0.3); background: rgba(0, 0, 0, 0.3);
-            color: #fff; font-size: 0.9rem; transition: all 0.3s;
-        }
-        .search-input:focus { outline: none; border-color: #ffd700; box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
-        .search-input::placeholder { color: #95a5a6; }
-        .search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #ffd700; pointer-events: none; }
-
-        .filter-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-        .filter-btn {
-            padding: 8px 20px; border: 1px solid rgba(255, 215, 0, 0.3); background: rgba(0, 0, 0, 0.3);
-            color: #bdc3c7; border-radius: 20px; cursor: pointer; transition: all 0.3s;
-            font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 5px;
-        }
-        .filter-btn:hover { border-color: #ffd700; color: #ffd700; }
-        .filter-btn.active {
-            background: linear-gradient(45deg, #ffd700, #ff8c00); color: #000;
-            border-color: #ffd700; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
-        .main-content { display: flex; flex-direction: column; gap: 15px; margin-top: 10px; }
-        .detail-container {
-            background: rgba(0, 0, 0, 0.5); border-radius: 10px; padding: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 215, 0, 0.2); width: 100%;
-            position: relative;
-        }
-        .tree-container {
-            background: rgba(0, 0, 0, 0.5); border-radius: 10px; padding: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 215, 0, 0.2); width: 100%;
-        }
-
-        .pantheon-levels { display: flex; flex-direction: column; gap: 20px; }
-        .pantheon-level { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 15px; transition: opacity 0.3s; }
-        .pantheon-level.hidden { display: none; }
-
-        .world-title {
-            text-align: center; font-size: 1.2rem; padding: 8px; margin: 0 auto 12px; border-radius: 6px;
-            font-weight: bold; width: 100%; font-family: 'Russo One', sans-serif; letter-spacing: 0.5px;
-        }
-        .praw .world-title { background: linear-gradient(to right, #00838f, #006064); border: 1px solid #00bcd4; }
-        .jaw .world-title { background: linear-gradient(to right, #2e7d32, #1b5e20); border: 1px solid #4caf50; }
-        .naw .world-title { background: linear-gradient(to right, #c62828, #b71c1c); border: 1px solid #f44336; }
-
-        .deity-card {
-            width: 110px; height: 110px; background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
-            border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;
-            text-align: center; padding: 10px; cursor: pointer; position: relative;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); margin-bottom: 5px; transition: all 0.3s; opacity: 1;
-        }
-        .deity-card.hidden { display: none; }
-        .deity-card.dimmed { opacity: 0.3; transform: scale(0.9); }
-        .deity-card.active { box-shadow: 0 0 15px currentColor, inset 0 0 10px rgba(255, 215, 0, 0.2); transform: scale(1.05); z-index: 10; }
-        .deity-icon { font-size: 1.5rem; margin-bottom: 6px; filter: drop-shadow(0 0 3px currentColor); }
-        .deity-card-name { font-size: 0.8rem; font-weight: bold; font-family: 'Russo One', sans-serif; text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
-
-        .deity-type-badge {
-            position: absolute; top: -5px; right: -5px; background: rgba(255, 215, 0, 0.9);
-            color: #000; font-size: 0.65rem; padding: 2px 6px; border-radius: 10px; font-weight: bold;
-        }
-
-        .praw .deity-card { border: 2px solid #00bcd4; }
-        .jaw .deity-card { border: 2px solid #4caf50; }
-        .naw .deity-card { border: 2px solid #f44336; }
-
-        .detail-placeholder { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 200px; color: #95a5a6; padding: 20px; }
-        .placeholder-icon { font-size: 2.5rem; margin-bottom: 15px; opacity: 0.3; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-        .placeholder-text { font-size: 1rem; max-width: 100%; line-height: 1.5; }
-
-        .deity-detail { display: none; }
-        .deity-name { font-size: 1.7rem; margin-bottom: 10px; color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); font-family: 'Russo One', sans-serif; }
-        .deity-level { font-size: 0.95rem; display: inline-block; padding: 6px 15px; border-radius: 15px; margin-bottom: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .praw-bg { background: linear-gradient(to right, #00bcd4, #00838f); }
-        .jaw-bg { background: linear-gradient(to right, #4caf50, #2e7d32); }
-        .naw-bg { background: linear-gradient(to right, #f44336, #c62828); }
-
-        /* Блок изображения в деталях */
-        .deity-figure {
-            margin-bottom: 12px; border-radius: 10px; overflow: hidden;
-            border: 1px solid rgba(255, 215, 0, 0.15); background: rgba(0, 0, 0, 0.25);
-        }
-        .deity-image {
-            width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block;
-            background: rgba(0,0,0,0.15);
-        }
-        .deity-caption {
-            font-size: 0.8rem; color: #bdc3c7; padding: 6px 10px;
-            background: rgba(0,0,0, 0.25); border-top: 1px solid rgba(255, 215, 0, 0.1);
-        }
-
-        .deity-description {
-            font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px; color: #ecf0f1;
-            padding: 12px; background: rgba(0, 0, 0, 0.3); border-radius: 6px; border: 1px solid rgba(255, 215, 0, 0.1);
-        }
-
-        .relations { background: rgba(0, 0, 0, 0.3); padding: 12px; border-radius: 6px; margin-top: 12px; border: 1px solid rgba(255, 215, 0, 0.1); }
-        .relations h3 { margin-bottom: 10px; color: #ffd700; font-size: 1.2rem; font-family: 'Russo One', sans-serif; }
-        .relation-item { display: flex; margin-bottom: 8px; padding: 8px; border-radius: 5px; background: rgba(255, 255, 255, 0.07); cursor: pointer; align-items: center; font-size: 0.85rem; }
-        .relation-icon { margin-right: 8px; font-size: 0.9rem; width: 20px; text-align: center; color: #ffd700; }
-        .relation-type { width: 90px; color: #bdc3c7; font-weight: bold; flex-shrink: 0; font-size: 0.8rem; }
-
-        .sphere-item { display: flex; align-items: center; margin-bottom: 6px; padding: 6px; background: rgba(255, 255, 255, 0.07); border-radius: 5px; font-size: 0.85rem; }
-        .sphere-item i { margin-right: 8px; font-size: 0.9rem; width: 20px; text-align: center; color: #ffd700; }
-
-        .share-button {
-            position: absolute; top: 10px; right: 10px;
-            background: rgba(255, 215, 0, 0.2); border: 1px solid rgba(255, 215, 0, 0.5); color: #ffd700;
-            padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.85rem;
-            transition: all 0.3s; display: flex; align-items: center; gap: 5px;
-        }
-        .share-button:hover { background: rgba(255, 215, 0, 0.3); box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-        .share-button.copied { background: rgba(76, 175, 80, 0.3); border-color: #4caf50; color: #4caf50; }
-
-        .slavic-footer { text-align: center; padding: 15px 0; margin-top: 20px; color: #95a5a6; font-size: 0.8rem; }
-
-        .search-results {
-            position: absolute; top: 100%; left: 0; right: 0; margin-top: 5px;
-            background: rgba(0, 0, 0, 0.9); border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 10px; max-height: 300px; overflow-y: auto; display: none; z-index: 100;
-        }
-        .search-result-item { padding: 10px 15px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .search-result-item:last-child { border-bottom: none; }
-        .search-result-item:hover { background: rgba(255, 215, 0, 0.1); }
-        .search-result-icon { font-size: 1.2rem; width: 30px; text-align: center; color: #ffd700; }
-        .search-result-text { flex: 1; }
-        .search-result-name { font-weight: bold; color: #ffd700; }
-        .search-result-desc { font-size: 0.8rem; color: #95a5a6; }
-
-        /* Медиа */
-        @media (min-width: 600px) {
-            .slavic-title { font-size: 2rem; }
-            .slavic-subtitle { font-size: 1rem; }
-            .deity-card { width: 120px; height: 120px; }
-            .world-title { font-size: 1.3rem; }
-            .deity-name { font-size: 1.9rem; }
-        }
-        @media (min-width: 768px) {
-            .main-content { flex-direction: row; }
-            .detail-container {
-                flex: 1; margin-right: 15px; position: sticky; top: 10px;
-                max-height: calc(100vh - 20px); overflow-y: auto;
-            }
-            .tree-container { flex: 1; }
-            .slavic-title { font-size: 2.2rem; }
-            .deity-card { width: 110px; height: 110px; }
-            .deity-card:hover:not(.active):not(.dimmed) { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
-        }
-        @media (min-width: 1024px) {
-            .slavic-pantheon-container { padding: 20px; }
-            .slavic-title { font-size: 2.5rem; }
-            .slavic-subtitle { font-size: 1.1rem; }
-            .deity-card { width: 130px; height: 130px; }
-            .deity-icon { font-size: 1.8rem; }
-            .deity-card-name { font-size: 0.9rem; }
-            .world-title { font-size: 1.4rem; }
-            .deity-name { font-size: 2.2rem; }
-        }
-        @media (min-width: 1200px) {
-            .deity-card { width: 140px; height: 140px; }
-            .pantheon-level { gap: 15px; }
-        }
-    </style>
+    <!-- Яндекс.Метрика 104200189 -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+        ym(104200189,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true,trackHash:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/104200189" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+    <!-- /Яндекс.Метрика -->
 </head>
 <body>
-<!-- ИЗМЕНЕННАЯ НАВИГАЦИЯ -->
-<nav class="main-nav" style="
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Добавлено для мобильных устройств */
-    gap: 15px;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-">
-    <!-- Кнопка 1: Восточно-славянский пантеон (текущая страница) -->
-    <a href="index.html" class="nav-link" style="
-        padding: 10px 20px;
-        background: linear-gradient(45deg, #ffd700, #ff8c00);
-        border: 1px solid #ffd700;
-        border-radius: 25px;
-        color: #000;
-        text-decoration: none;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s;
-    ">
-        <i class="fas fa-sun"></i>
-        <!-- ТЕКСТ ИЗМЕНЕН -->
-        <span>Восточно-славянский пантеон</span>
-    </a>
+    <header class="main-header">
+        <h1 class="slavic-title">🔱 ВсеБогиДухи 🔱</h1>
+        <p class="subtitle">Интерактивное древо древнерусской мифологии</p>
+    </header>
 
-    <!-- Кнопка 2: Западно-славянский пантеон (новая страница) -->
-    <a href="western.html" class="nav-link" style="
-        padding: 10px 20px;
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 215, 0, 0.3);
-        border-radius: 25px;
-        color: #ffd700;
-        text-decoration: none;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s;
-    " onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'" onmouseout="this.style.background='rgba(0, 0, 0, 0.3)'">
-        <i class="fas fa-gavel"></i>
-        <!-- НОВАЯ КНОПКА -->
-        <span>Западно-славянский пантеон</span>
-    </a>
+    <main class="main-content">
+        <nav class="pantheon-nav" aria-label="Навигация по пантеону">
+            <a href="rod.html" class="nav-link deity-link">Род</a>
+            <a href="perun.html" class="nav-link deity-link">Перун</a>
+            <a href="veles.html" class="nav-link deity-link">Велес</a>
+            <a href="domovoy.html" class="nav-link deity-link">Домовой</a>
+        </nav>
 
-    <!-- Кнопка 3: Статьи (без изменений) -->
-    <a href="articles.html" class="nav-link" style="
-        padding: 10px 20px;
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 215, 0, 0.3);
-        border-radius: 25px;
-        color: #ffd700;
-        text-decoration: none;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s;
-    " onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'" onmouseout="this.style.background='rgba(0, 0, 0, 0.3)'">
-        <i class="fas fa-scroll"></i>
-        <span>Статьи</span>
-    </a>
-</nav>
-    <div class="slavic-pantheon-container">
-        <header class="slavic-header">
-            <h1 class="slavic-title">Древнерусский Пантеон Богов</h1>
-            <p class="slavic-subtitle">Интерактивная схема славянской мифологии с Ладой, Лёлей, Рожаницами, Ярилой, Купалой, Кострой и духами</p>
-        </header>
-
-        <!-- Панель управления -->
-        <div class="control-panel">
-            <div class="controls-wrapper">
-                <div class="search-container">
-                    <input type="text" class="search-input" id="searchInput" placeholder="Поиск по имени или описанию...">
-                    <i class="search-icon fas fa-search"></i>
-                    <div class="search-results" id="searchResults"></div>
-                </div>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all"><i class="fas fa-infinity"></i><span>Все</span></button>
-                    <button class="filter-btn" data-filter="gods"><i class="fas fa-crown"></i><span>Боги</span></button>
-                    <button class="filter-btn" data-filter="spirits"><i class="fas fa-ghost"></i><span>Духи</span></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="main-content">
-            <div class="detail-container" id="detail-section">
-                <button class="share-button" id="shareButton"><i class="fas fa-share-nodes"></i><span>Поделиться</span></button>
-
-                <div class="detail-placeholder" id="placeholder">
-                    <i class="placeholder-icon fas fa-hand-pointer"></i>
-                    <p class="placeholder-text">Выберите бога или духа из древа, чтобы узнать подробности</p>
-                </div>
-
-                <div class="deity-detail" id="deity-detail">
-                    <h2 class="deity-name" id="detail-name">Бог</h2>
-                    <div class="deity-level" id="detail-level">Уровень</div>
-
-                    <!-- Изображение персонажа -->
-                    <figure class="deity-figure">
-                        <img id="detail-image" class="deity-image" alt="" loading="lazy">
-                        <figcaption id="detail-image-caption" class="deity-caption">Иллюстрация</figcaption>
-                    </figure>
-
-                    <p class="deity-description" id="detail-description">Описание</p>
-
-                    <div class="relations">
-                        <h3>Родственные связи</h3>
-                        <div id="detail-relations"></div>
+        <section class="tree-container" aria-label="Древо славянских богов">
+            <h2 class="section-title">Древо Славянского Пантеона</h2>
+            <div class="tree-visual" id="slavicTree">
+                <!-- Уровень 1 -->
+                <div class="tree-level level-1">
+                    <div class="deity-card rod-card">
+                        <figure>
+                            <img src="images/rod.webp" alt="Род — верховный бог-творец славянской мифологии" title="Род: создатель Вселенной" width="200" height="200" loading="eager" class="deity-image" onerror="this.src='images/rod.png'">
+                        </figure>
+                        <h3 class="deity-name">Род</h3>
+                        <p class="deity-description">Верховный бог-творец, источник жизни</p>
+                        <a href="rod.html" class="deity-more">Подробнее →</a>
                     </div>
-
-                    <div class="relations">
-                        <h3>Сфера влияния</h3>
-                        <div id="detail-sphere"></div>
+                </div>
+                <!-- Уровень 2 -->
+                <div class="tree-level level-2">
+                    <div class="deity-card">
+                        <figure><img src="images/svarog.webp" alt="Сварог — бог неба и огня" title="Сварог" width="150" height="150" loading="lazy" class="deity-image" onerror="this.src='images/svarog.png'"></figure>
+                        <h3 class="deity-name">Сварог</h3><p class="deity-description">Бог неба, огня, кузнечного дела</p><a href="#" class="deity-more">Скоро →</a>
                     </div>
-
-                    <div class="relations">
-                        <h3>Культ и почитание</h3>
-                        <div id="detail-cult"></div>
+                    <div class="deity-card">
+                        <figure><img src="images/perun.webp" alt="Перун — бог грома и войны" title="Перун" width="150" height="150" loading="lazy" class="deity-image" onerror="this.src='images/perun.png'"></figure>
+                        <h3 class="deity-name">Перун</h3><p class="deity-description">Бог грома, молнии и войны</p><a href="perun.html" class="deity-more">Подробнее →</a>
+                    </div>
+                    <div class="deity-card">
+                        <figure><img src="images/veles.webp" alt="Велес — бог мудрости и скота" title="Велес" width="150" height="150" loading="lazy" class="deity-image" onerror="this.src='images/veles.png'"></figure>
+                        <h3 class="deity-name">Велес</h3><p class="deity-description">Бог мудрости, магии и скота</p><a href="veles.html" class="deity-more">Подробнее →</a>
+                    </div>
+                </div>
+                <!-- Уровень 3 -->
+                <div class="tree-level level-3">
+                    <div class="deity-card">
+                        <figure><img src="images/domovoy.webp" alt="Домовой — дух-хранитель дома" title="Домовой" width="120" height="120" loading="lazy" class="deity-image" onerror="this.src='images/domovoy.png'"></figure>
+                        <h3 class="deity-name">Домовой</h3><p class="deity-description">Дух-хранитель дома</p><a href="domovoy.html" class="deity-more">Подробнее →</a>
+                    </div>
+                    <div class="deity-card">
+                        <figure><img src="images/leshy.webp" alt="Леший — хозяин леса" title="Леший" width="120" height="120" loading="lazy" class="deity-image" onerror="this.src='images/leshy.png'"></figure>
+                        <h3 class="deity-name">Леший</h3><p class="deity-description">Дух-хозяин леса</p><a href="#" class="deity-more">Скоро →</a>
+                    </div>
+                    <div class="deity-card">
+                        <figure><img src="images/vodyanoy.webp" alt="Водяной — дух воды" title="Водяной" width="120" height="120" loading="lazy" class="deity-image" onerror="this.src='images/vodyanoy.png'"></figure>
+                        <h3 class="deity-name">Водяной</h3><p class="deity-description">Дух воды</p><a href="#" class="deity-more">Скоро →</a>
+                    </div>
+                    <div class="deity-card">
+                        <figure><img src="images/bannik.webp" alt="Банник — дух бани" title="Банник" width="120" height="120" loading="lazy" class="deity-image" onerror="this.src='images/bannik.png'"></figure>
+                        <h3 class="deity-name">Банник</h3><p class="deity-description">Дух бани</p><a href="#" class="deity-more">Скоро →</a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Древо (уровни + духи) -->
-            <div class="tree-container">
-                <div class="pantheon-levels">
-                    <!-- Правь -->
-                    <div class="pantheon-level praw" data-level="praw">
-                        <div class="world-title">Правь (Верхний мир)</div>
-                        <div class="deity-card" data-id="rod" data-type="god">
-                            <i class="deity-icon fas fa-globe"></i>
-                            <div class="deity-card-name">Род</div>
-                        </div>
-                    </div>
-                    <div class="pantheon-level praw" data-level="praw">
-                        <div class="deity-card" data-id="svarog" data-type="god">
-                            <i class="deity-icon fas fa-fire"></i>
-                            <div class="deity-card-name">Сварог</div>
-                        </div>
-                        <div class="deity-card" data-id="mat-zemlya" data-type="god">
-                            <i class="deity-icon fas fa-mountain"></i>
-                            <div class="deity-card-name">Мать-Земля</div>
-                        </div>
-                        <div class="deity-card" data-id="lada" data-type="god">
-                            <i class="deity-icon fas fa-heart"></i>
-                            <div class="deity-card-name">Лада</div>
-                        </div>
-                    </div>
-                    <div class="pantheon-level praw" data-level="praw">
-                        <div class="deity-card" data-id="stribog" data-type="god">
-                            <i class="deity-icon fas fa-wind"></i>
-                            <div class="deity-card-name">Стрибог</div>
-                        </div>
-                        <div class="deity-card" data-id="dazhdbog" data-type="god">
-                            <i class="deity-icon fas fa-sun"></i>
-                            <div class="deity-card-name">Даждьбог</div>
-                        </div>
-                        <div class="deity-card" data-id="hors" data-type="god">
-                            <i class="deity-icon fas fa-sun"></i>
-                            <div class="deity-card-name">Хорс</div>
-                        </div>
-                    </div>
-                    <div class="pantheon-level praw" data-level="praw">
-                        <div class="deity-card" data-id="semargl" data-type="god">
-                            <i class="deity-icon fas fa-fire-flame-curved"></i>
-                            <div class="deity-card-name">Семаргл</div>
-                        </div>
-                        <div class="deity-card" data-id="rojanicy" data-type="god">
-                            <i class="deity-icon fas fa-baby"></i>
-                            <div class="deity-card-name">Рожаницы</div>
-                        </div>
-                    </div>
-
-                    <!-- Явь -->
-                    <div class="pantheon-level jaw" data-level="jaw">
-                        <div class="world-title">Явь (Средний мир)</div>
-                        <div class="deity-card" data-id="perun" data-type="god"><i class="deity-icon fas fa-bolt"></i><div class="deity-card-name">Перун</div></div>
-                        <div class="deity-card" data-id="veles" data-type="god"><i class="deity-icon fas fa-paw"></i><div class="deity-card-name">Велес</div></div>
-                        <div class="deity-card" data-id="mokosh" data-type="god"><i class="deity-icon fas fa-person-dress"></i><div class="deity-card-name">Мокошь</div></div>
-                    </div>
-                    <div class="pantheon-level jaw" data-level="jaw">
-                        <div class="deity-card" data-id="lelya" data-type="god"><i class="deity-icon fas fa-seedling"></i><div class="deity-card-name">Лёля</div></div>
-                        <div class="deity-card" data-id="yarilo" data-type="god"><i class="deity-icon fas fa-fire"></i><div class="deity-card-name">Ярило</div></div>
-                        <div class="deity-card" data-id="kupala" data-type="god"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Купала</div></div>
-                        <div class="deity-card" data-id="kostroma" data-type="god"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Кострома</div></div>
-                    </div>
-                    <div class="pantheon-level jaw" data-level="jaw">
-                        <div class="deity-card" data-id="yarovit" data-type="god"><i class="deity-icon fas fa-shield-halved"></i><div class="deity-card-name">Яровит</div></div>
-                        <div class="deity-card" data-id="dolya" data-type="god"><i class="deity-icon fas fa-face-smile"></i><div class="deity-card-name">Доля</div></div>
-                        <div class="deity-card" data-id="nedolya" data-type="god"><i class="deity-icon fas fa-face-frown"></i><div class="deity-card-name">Недоля</div></div>
-                    </div>
-
-                    <!-- Духи Яви -->
-                    <div class="pantheon-level jaw" data-level="jaw-spirits">
-                        <div class="world-title">Духи Яви</div>
-                        <div class="deity-card" data-id="beregini" data-type="spirit"><i class="deity-icon fas fa-hand-holding-heart"></i><div class="deity-card-name">Берегини</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="leshy" data-type="spirit"><i class="deity-icon fas fa-tree"></i><div class="deity-card-name">Леший</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="vodyanoy" data-type="spirit"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Водяной</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="domovoy" data-type="spirit"><i class="deity-icon fas fa-house-chimney"></i><div class="deity-card-name">Домовой</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="kikimora" data-type="spirit"><i class="deity-icon fas fa-ghost"></i><div class="deity-card-name">Кикимора</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="ovinnik" data-type="spirit"><i class="deity-icon fas fa-wheat-awn"></i><div class="deity-card-name">Овинник</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="bannik" data-type="spirit"><i class="deity-icon fas fa-bath"></i><div class="deity-card-name">Банник</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="polevik" data-type="spirit"><i class="deity-icon fas fa-wheat-awn"></i><div class="deity-card-name">Полевик</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="lugovik" data-type="spirit"><i class="deity-icon fas fa-leaf"></i><div class="deity-card-name">Луговик</div><div class="deity-type-badge">Дух</div></div>
-                    </div>
-
-                    <!-- Навь -->
-                    <div class="pantheon-level naw" data-level="naw">
-                        <div class="world-title">Навь (Нижний мир)</div>
-                        <div class="deity-card" data-id="chernobog" data-type="god"><i class="deity-icon fas fa-moon"></i><div class="deity-card-name">Чернобог</div></div>
-                        <div class="deity-card" data-id="mora" data-type="god"><i class="deity-icon fas fa-skull"></i><div class="deity-card-name">Морана</div></div>
-                        <div class="deity-card" data-id="yascher" data-type="god"><i class="deity-icon fas fa-dragon"></i><div class="deity-card-name">Ящер</div></div>
-                        <!-- ДОБАВЛЕНА КАРНА -->
-                        <div class="deity-card" data-id="karna" data-type="god"><i class="deity-icon fas fa-dove"></i><div class="deity-card-name">Карна</div></div>
-                    </div>
-
-                    <!-- Духи Нави -->
-                    <div class="pantheon-level naw" data-level="naw-spirits">
-                        <div class="world-title">Духи Нави</div>
-                        <div class="deity-card" data-id="rusalki" data-type="spirit"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Русалки</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="viy" data-type="spirit"><i class="deity-icon fas fa-eye"></i><div class="deity-card-name">Вий</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="zlydni" data-type="spirit"><i class="deity-icon fas fa-triangle-exclamation"></i><div class="deity-card-name">Злыдни</div><div class="deity-type-badge">Дух</div></div>
-                    </div>
-                </div>
+        <section class="about-section">
+            <h2 class="section-title">О древнерусской мифологии</h2>
+            <div class="about-content">
+                <p>Древнерусская мифология — богатейшее наследие предков, включающее пантеон богов, духов природы и мифологических существ. Исследуйте древо, кликайте на персонажей, чтобы узнать больше о древней вере славян.</p>
+                <h3>Три мира:</h3>
+                <ul><li><strong>Правь</strong> — мир богов и высших законов</li><li><strong>Явь</strong> — мир людей и материальной реальности</li><li><strong>Навь</strong> — мир духов, предков и подсознания</li></ul>
             </div>
-        </div>
+        </section>
 
-        <div class="slavic-footer">
-            <p>☀ Полная интерактивная схема древнерусского пантеона богов и духов ☀</p>
-            <p>© 2023–2025 Древнерусская мифология | Версия с фильтрами, поиском и изображениями</p>
-        </div>
-    </div>
+        <!-- Место для партнёрских ссылок/рекламы -->
+        <aside class="sidebar-section" style="background:rgba(255,255,255,0.05);padding:1rem;border-radius:8px;margin:2rem auto;max-width:800px;text-align:center;">
+            <h3>📚 Рекомендуем</h3>
+            <p>Книги по славянской мифологии, обереги и этно-товары:</p>
+            <!-- ВСТАВЬТЕ СЮДА ПАРТНЁРСКИЕ ССЫЛКИ ИЛИ РЕКЛАМНЫЙ БЛОК -->
+        </aside>
+    </main>
 
+    <footer class="main-footer">
+        <p>&copy; 2025 ВсеБогиДухи. Энциклопедия славянской мифологии.</p>
+        <p><a href="sitemap.xml" style="color:#ffd700;">Карта сайта</a> | <a href="robots.txt" style="color:#ffd700;">Robots.txt</a></p>
+    </footer>
+
+    <script src="script.js" defer></script>
+    
+    <!-- Отслеживание кликов в Метрику -->
     <script>
-        // Данные (сокращено: те же, что в предыдущей версии) — см. ниже, поле type: god|spirit
-        const deitiesData = {
-            rod: { name: "Род", level: "praw-bg", title: "Верховный демиург, создатель Вселенной", description: "Верховный бог-творец в древнерусском пантеоне. Согласно реконструкциям Б.А. Рыбакова, Род воспринимался как источник жизни, создатель всего сущего. Он олицетворял единство всех живых существ и природных явлений. Культ Рода тесно связан с почитанием предков и семейных уз.", relations: [{type:"Дети",name:"Сварог",id:"svarog",icon:"child"},{type:"Дети",name:"Стрибог",id:"stribog",icon:"child"},{type:"Сотворенные",name:"Все божества",id:null,icon:"star"}], sphere: "Творение мира, жизненная сила, плодородие, судьба, время", cult: "Роду приносили жертвы в священных рощах. Следы культа сохранились в словах 'природа', 'родня', 'урожай'. После христианизации образ Рода слился с понятием Бога-отца.", type: "god" },
-            svarog: { name: "Сварог", level: "praw-bg", title: "Бог неба, огня и кузнечного ремесла", description: "Небесный бог-кузнец, отец огня и солнца. Сварог выковал небесный свод и подарил людям первые орудия труда. Считался отцом многих богов (Сварожичей) и покровителем ремесел, особенно кузнечного дела. По некоторым источникам, именно Сварог установил законы семейной жизни.", relations: [{type:"Отец",name:"Род",id:"rod",icon:"user"},{type:"Супруга",name:"Лада",id:"lada",icon:"heart"},{type:"Дети",name:"Даждьбог",id:"dazhdbog",icon:"child"},{type:"Дети",name:"Перун",id:"perun",icon:"child"},{type:"Дети",name:"Семаргл",id:"semargl",icon:"child"}], sphere: "Небо, небесный огонь, ремесла, закон, социальный порядок", cult: "Культ Сварога был особенно распространен среди ремесленников. Священным животным считался огненный петух. В честь Сварога разжигали священные костры и приносили дары кузнецам.", type: "god" },
-            "mat-zemlya": { name: "Мать-Сыра Земля", level: "praw-bg", title: "Богиня земли и плодородие", description: "Женское божество, олицетворение плодородной земли. Почиталась как мать всего живого. Считалось, что Земля чувствует ложь - отсюда обычай клятвы на земле. В народных поверьях 'стонет' перед бедствиями.", relations: [{type:"Сотворена",name:"Родом",id:"rod",icon:"user"},{type:"Дети",name:"Даждьбог",id:"dazhdbog",icon:"child"},{type:"Дети",name:"Мокошь",id:"mokosh",icon:"child"}], sphere: "Плодородие, земледелие, женское начало, исцеление, природные циклы", cult: "Земле кланялись, прося урожая, целовали землю в знак клятвы. Весной совершали обряды 'кормления земли'. После христианизации культ слился с почитанием Богородицы.", type: "god" },
-            lada: { name: "Лада", level: "praw-bg", title: "Богиня любви, весны и брака", description: "Верховная женская богиня, супруга Сварога, мать Лёли. Богиня красоты, любви и семейного благополучия. Покровительница весны, девичьей судьбы и брачных союзов. Ее имя связано со словами 'лад', 'согласие'.", relations: [{type:"Супруг",name:"Сварог",id:"svarog",icon:"heart"},{type:"Дочь",name:"Лёля",id:"lelya",icon:"female"},{type:"Связь",name:"Рожаницы",id:"rojanicy",icon:"baby"}], sphere: "Любовь, брак, весна, красота, гармония, плодородие", cult: "Ладе молились о счастливом браке и семейном благополучии. Весной в ее честь водили хороводы, плели венки. Главный праздник - Ладодение (6 мая). После христианизации образ слился с Богородицей.", type: "god" },
-            stribog: { name: "Стрибог", level: "praw-bg", title: "Повелитель ветров и пространства", description: "Бог ветров и воздушного пространства. Считался одним из древнейших богов, управляющим всеми ветрами на Земле. По некоторым реконструкциям, Стрибог распределял богатства между людьми. Ветры часто воспринимались как его внуки.", relations: [{type:"Отец",name:"Род",id:"rod",icon:"user"},{type:"Брат",name:"Сварог",id:"svarog",icon:"user-friends"}], sphere: "Ветры, воздушная стихия, пространство, распределение богатств", cult: "Моряки и земледельцы молились Стрибогу о попутном ветре и хорошей погоде. В жертву приносили ленты и муку, развеиваемые по ветру.", type: "god" },
-            dazhdbog: { name: "Даждьбог", level: "praw-bg", title: "Бог солнечного света и благополучия", description: "Солнечное божество, податель благ, один из главных богов киевского пантеона. Даждьбог ассоциировался с солнечным светом, теплом и плодородием. Считался покровителем Русской земли и княжеской власти.", relations: [{type:"Отец",name:"Сварог",id:"svarog",icon:"user"},{type:"Мать",name:"Мать-Земля",id:"mat-zemlya",icon:"female"},{type:"Сопутствует",name:"Хорс",id:"hors",icon:"sun"},{type:"Противник",name:"Морана",id:"mora",icon:"skull"}], sphere: "Солнечный свет, лето, урожай, благополучие, княжеская власть, дождь", cult: "Даждьбогу молились о богатом урожае и семейном благополучии. Праздники в его честь проводились летом.", type: "god" },
-            hors: { name: "Хорс", level: "praw-bg", title: "Бог солнечного диска", description: "Олицетворение солнечного диска, бог солнечного света. Часто упоминается вместе с Даждьбогом как дополняющая фигура.", relations: [{type:"Сопутствует",name:"Даждьбог",id:"dazhdbog",icon:"sun"},{type:"Брат",name:"Семаргл",id:"semargl",icon:"user-friends"}], sphere: "Солнечный диск, солнечный свет, движение светил, дневной цикл", cult: "Хорсу поклонялись с воздетыми к солнцу руками; символ — солнечное колесо.", type: "god" },
-            semargl: { name: "Семаргл", level: "praw-bg", title: "Огненный бог-посредник", description: "Загадочное божество, возможно, заимствованное из иранской мифологии (Симург). Изображался как крылатый пес или грифон.", relations: [{type:"Отец",name:"Сварог",id:"svarog",icon:"user"},{type:"Брат",name:"Хорс",id:"hors",icon:"user-friends"},{type:"Функция",name:"Охраняет семена",id:null,icon:"seedling"}], sphere: "Огонь, защита посевов, посредничество между мирами, домашний очаг", cult: "Жертвы при посеве и сборе урожая; огненные обереги для дома.", type: "god" },
-            rojanicy: { name: "Рожаницы", level: "praw-bg", title: "Богини судьбы и рождения", description: "Две или три богини, покровительницы рождения, судьбы и плодородия.", relations: [{type:"Связаны с",name:"Род",id:"rod",icon:"user"},{type:"Помощницы",name:"Лады",id:"lada",icon:"female"},{type:"Связь",name:"Мокошь",id:"mokosh",icon:"female"}], sphere: "Рождение, судьба, плодородие, женские ремесла, защита младенцев", cult: "Дары при родах и на крестины, первые стрижки волос.", type: "god" },
-
-            perun: { name: "Перун", level: "jaw-bg", title: "Бог-громовержец, покровитель воинов", description: "Грозное божество, управляющее громом и молниями. Покровитель князя и дружины.", relations: [{type:"Отец",name:"Сварог",id:"svarog",icon:"user"},{type:"Враг",name:"Велес",id:"veles",icon:"fist-raised"},{type:"Символ",name:"Дуб",id:null,icon:"tree"}], sphere: "Гроза, воинская доблесть, правосудие, княжеская власть, дубовые рощи", cult: "Жертвы под священными дубами; после христианизации — Илья-пророк.", type: "god" },
-            veles: { name: "Велес", level: "jaw-bg", title: "Бог мудрости, скота и подземного мира", description: "Покровитель домашних животных, богатства, торговли; бог мудрости и магии.", relations: [{type:"Враг",name:"Перун",id:"perun",icon:"fist-raised"},{type:"Супруга",name:"Мокошь",id:"mokosh",icon:"heart"},{type:"Сын",name:"Ярило",id:"yarilo",icon:"child"},{type:"Связан с",name:"Карна",id:"karna",icon:"heart"}], sphere: "Скот, богатство, торговля, мудрость, поэзия, магия, Нижний мир", cult: "Идолы в низинах, жертвы быками и овцами; христианский аналог — Власий.", type: "god" },
-            mokosh: { name: "Мокошь", level: "jaw-bg", title: "Богиня судьбы, плодородия и ткачества", description: "Покровительница женщин, судьбы и ремесел (прядение, ткачество).", relations: [{type:"Супруг",name:"Велес",id:"veles",icon:"heart"},{type:"Дочери",name:"Доля и Недоля",id:"dolya",icon:"female"}], sphere: "Судьба, плодородие, ткачество, женские занятия, вода, урожай", cult: "Молитвы о здоровье детей, удачном замужестве; образ слился с Параскевой Пятницей.", type: "god" },
-            lelya: { name: "Лёля", level: "jaw-bg", title: "Богиня весны, молодости и любви", description: "Дочь Лады; олицетворение пробуждения природы, цветения и девичьей любви.", relations: [{type:"Мать",name:"Лада",id:"lada",icon:"female"},{type:"Связь",name:"Ярило",id:"yarilo",icon:"heart"}], sphere: "Весна, молодость, любовь, красота, цветение, невинность", cult: "Хороводы, венки, выбор «Лёли»; выпечка в форме птиц.", type: "god" },
-            yarilo: { name: "Ярило", level: "jaw-bg", title: "Бог весеннего солнца и плодородия", description: "Олицетворял весеннее возрождение природы, страсть и плодородие.", relations: [{type:"Отец",name:"Велес",id:"veles",icon:"user"},{type:"Связь",name:"Лёля",id:"lelya",icon:"heart"}], sphere: "Весеннее солнце, страсть, плодородие, сексуальная энергия, земледелие", cult: "Весенние праздники с чучелом Ярилы — в конце весны сжигали/хоронили.", type: "god" },
-            kupala: { name: "Купала", level: "jaw-bg", title: "Бог летнего солнцеворота и любви", description: "Покровитель воды и трав; ночь на Иван Купалу — костры, купания, гадания.", relations: [{type:"Брат",name:"Ярило",id:"yarilo",icon:"user-friends"},{type:"Сестра",name:"Кострома",id:"kostroma",icon:"female"}], sphere: "Летнее солнцестояние, любовь, вода, травы, очищение, магические силы", cult: "Прыжки через костры, поиск цветка папоротника, сбор трав.", type: "god" },
-            kostroma: { name: "Кострома", level: "jaw-bg", title: "Богиня плодородия, лета и любви", description: "Сестра Купалы; символ увядания природы к концу лета.", relations: [{type:"Брат",name:"Купала",id:"kupala",icon:"user-friends"},{type:"Связь",name:"Морана",id:"mora",icon:"snowflake"}], sphere: "Лето, любовь, плодородие, вода, увядание природы", cult: "Обряд «проводы Костромы» — топление/сожжение чучела.", type: "god" },
-            yarovit: { name: "Яровит", level: "jaw-bg", title: "Бог плодородия и весеннего возрождения", description: "Западнославянский аналог Ярилы; покровитель урожая и воинской силы.", relations: [{type:"Аналог",name:"Ярило",id:"yarilo",icon:"user"}], sphere: "Плодородие, весеннее возрождение, воинская сила, защита урожая", cult: "Приношения мёда и хлеба, воинские состязания; золотой щит.", type: "god" },
-            dolya: { name: "Доля", level: "jaw-bg", title: "Богиня удачи и счастливой судьбы", description: "Персонификация удачи; прядет «золотую нить» судьбы трудолюбивым.", relations: [{type:"Мать",name:"Мокошь",id:"mokosh",icon:"female"},{type:"Сестра",name:"Недоля",id:"nedolya",icon:"female"}], sphere: "Счастливая судьба, удача, успех, благополучие", cult: "Просили благополучия; «заходит» к добрым и трудолюбивым.", type: "god" },
-            nedolya: { name: "Недоля", level: "jaw-bg", title: "Богиня несчастья и неудачной судьбы", description: "Персонификация бед и несчастий; плетёт рваную нить для ленивых.", relations: [{type:"Мать",name:"Мокошь",id:"mokosh",icon:"female"},{type:"Сестра",name:"Доля",id:"dolya",icon:"female"}], sphere: "Несчастливая судьба, неудачи, бедность, болезни", cult: "Обереги и очищение, порядок и трудолюбие в доме.", type: "god" },
-
-            chernobog: { name: "Чернобог", level: "naw-bg", title: "Владыка Нави, бог хаоса и разрушения", description: "Антипод светлых богов, воплощение мрака и смерти; часть цикла жизни-смерти.", relations: [{type:"Дочь",name:"Морана",id:"mora",icon:"female"},{type:"Служитель",name:"Ящер",id:"yascher",icon:"dragon"}], sphere: "Смерть, разрушение, хаос, темнота, Нижний мир", cult: "Жертвы в пещерах и оврагах; чёрные изображения.", type: "god" },
-            mora: { name: "Морана", level: "naw-bg", title: "Богиня смерти, зимы и ночи", description: "Олицетворение зимы и умирания природы; «умирает» весной, возрождается зимой.", relations: [{type:"Отец",name:"Чернобог",id:"chernobog",icon:"user"},{type:"Противник",name:"Даждьбог",id:"dazhdbog",icon:"fist-raised"},{type:"Связана с",name:"Карна",id:"karna",icon:"snowflake"}], sphere: "Смерть, зима, ночь, болезни, увядание", cult: "Сжигание/топление чучела в конце зимы.", type: "god" },
-            yascher: { name: "Ящер", level: "naw-bg", title: "Хранитель подземных вод", description: "Хтонический дракон/ящерица подземных вод и болот; может даровать дождь.", relations: [{type:"Повелитель",name:"Чернобог",id:"chernobog",icon:"user"}], sphere: "Подземные воды, болота, дожди, рыбные богатства", cult: "Жертвы в болота и озёра; первые уловы в дар.", type: "god" },
-            // ДОБАВЛЕНА КАРНА
-            karna: { name: "Карна", level: "naw-bg", title: "Богиня перехода, плакальщица и проводница душ", description: "Богиня, встречающая душу в момент смерти и сопровождающая её в загробный мир (Навь). Олицетворяет ритуальный плач и скорбь. Особо опекает души тех, кто умер не своей смертью. Действует в связке с Велесом, владыкой Нави.", relations: [{type:"Связана с",name:"Велес",id:"veles",icon:"heart"},{type:"Связана с",name:"Морана",id:"mora",icon:"snowflake"}], sphere: "Смерть, переход в загробный мир, плач, скорбь, возрождение", cult: "Карне молились об упокоении душ умерших. В её честь совершали плачи и причитания. После христианизации черты Карны перешли к образу Богородицы-плакальщицы.", type: "god" },
-
-            // Духи Яви
-            beregini: { name: "Берегини", level: "jaw-bg", title: "Духи-покровительницы берегов и вод", description: "Женские охранительные образы берегов, ключей и детей.", relations: [{type:"Связь",name:"Мать-Земля",id:"mat-zemlya",icon:"mountain"}], sphere: "Защита, вода, берега, источники, материнская опека, обереги", cult: "Ленты, холсты и хлеб у источников как дары.", type: "spirit" },
-            leshy: { name: "Леший", level: "jaw-bg", title: "Хозяин леса", description: "Повелевает зверями, может выводить или путать путников.", relations: [{type:"Связь",name:"Велес",id:"veles",icon:"tree"}], sphere: "Леса, звери, охота, тропы, защита природы", cult: "Дары на пнях: хлеб, соль, табак, монеты.", type: "spirit" },
-            vodyanoy: { name: "Водяной", level: "jaw-bg", title: "Хозяин рек и озёр", description: "Властитель глубин; благоволит рыбакам за дары.", relations: [{type:"Спутницы",name:"Русалки",id:"rusalki",icon:"water"}], sphere: "Реки, озёра, рыбалка, глубины, водовороты", cult: "Хлеб, пиво, табак; первые уловы отпускали в воду.", type: "spirit" },
-            domovoy: { name: "Домовой", level: "jaw-bg", title: "Дух-хранитель дома", description: "Хранитель очага и семейного благополучия.", relations: [{type:"Соперник",name:"Кикимора",id:"kikimora",icon:"ghost"}], sphere: "Дом, очаг, хозяйство, семья, благополучие", cult: "Каша и хлеб; перенос угля при переезде.", type: "spirit" },
-            kikimora: { name: "Кикимора", level: "jaw-bg", title: "Зловредный дух дома", description: "Путает пряжу, пугает; усмиряется порядком и оберегами.", relations: [{type:"Противник",name:"Домовой",id:"domovoy",icon:"hand-fist"}], sphere: "Дом, ночные страхи, беспорядок, порча", cult: "Обереги, заговоры, поддержание чистоты.", type: "spirit" },
-            ovinnik: { name: "Овинник", level: "jaw-bg", title: "Дух овина и гумна", description: "Хранитель зерна; может устроить пожар при неуважении.", relations: [{type:"Связь",name:"Полевик",id:"polevik",icon:"seedling"}], sphere: "Амбары, зерно, уборка, огонь", cult: "Крошки хлеба и соль на ночь; просьбы о хранении.", type: "spirit" },
-            bannik: { name: "Банник", level: "jaw-bg", title: "Дух бани", description: "Суровый хозяин бани; не любит присутствие при парении.", relations: [{type:"Связь",name:"Вода и пар",id:null,icon:"water"}], sphere: "Баня, очищение, гадания, пар", cult: "Веник, вода, хлеб, мыло в дар.", type: "spirit" },
-            polevik: { name: "Полевик", level: "jaw-bg", title: "Дух поля", description: "Оберегает нивы и межи; может путать в полуденный зной.", relations: [{type:"Связь",name:"Даждьбог",id:"dazhdbog",icon:"sun"}], sphere: "Поля, межи, урожай, полуденный зной", cult: "Первые колоски и хлеб в дар; соблюдение меж.", type: "spirit" },
-            lugovik: { name: "Луговик", level: "jaw-bg", title: "Дух лугов и трав", description: "Хранитель трав и сенокосов.", relations: [{type:"Связь",name:"Лёля",id:"lelya",icon:"leaf"}], sphere: "Луга, травы, цветы, медосбор", cult: "Кланялись лугу; часть трав оставляли.", type: "spirit" },
-
-            // Духи Нави
-            rusalki: { name: "Русалки", level: "naw-bg", title: "Духи воды и полей", description: "Амбивалентные духи: плодородие и опасность; «русальная неделя».", relations: [{type:"Связь",name:"Водяной",id:"vodyanoy",icon:"water"}], sphere: "Реки, озёра, поля, русальная неделя, плодородие/опасность", cult: "Избегали купания и работ в поле, оставляли угощения у воды.", type: "spirit" },
-            viy: { name: "Вий", level: "naw-bg", title: "Грозный владыка Нави (фольклор; статус спорен)", description: "Поздний образ: взгляд убивает; ассоциация со смертью и подземным миром.", relations: [{type:"Связь",name:"Чернобог",id:"chernobog",icon:"skull"}], sphere: "Навь, страх, смерть, мрак", cult: "Культа нет; живёт в преданиях и литературе.", type: "spirit" },
-            zlydni: { name: "Злыдни", level: "naw-bg", title: "Духи несчастья и нищеты", description: "Селятся там, где ссоры и леность; приносят упадок.", relations: [{type:"Связаны с",name:"Недоля",id:"nedolya",icon:"spinner"}], sphere: "Нищета, болезни, раздор, несчастья", cult: "Чистота, труд, молитвы и обереги; не брать «плохие» дары.", type: "spirit" }
-        };
-
-        // Состояние
-        let activeFilter = 'all';
-        let searchTerm = '';
-        let activeDeityId = null;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            initPantheon();
-            initFilters();
-            initSearch();
-            initShare();
-
-            const hash = window.location.hash.slice(1);
-            if (hash && deitiesData[hash]) {
-                showDeityDetails(hash);
-                activateCard(hash);
-                setTimeout(() => {
-                    const card = document.querySelector(`.deity-card[data-id="${hash}"]`);
-                    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 100);
-            } else {
-                showDeityDetails('rod');
-                activateCard('rod');
-            }
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.deity-more, .deity-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const card = this.closest('.deity-card');
+                const name = card?.querySelector('.deity-name')?.textContent?.trim() || 'unknown';
+                if(typeof ym !== 'undefined') ym(104200189, 'reachGoal', 'deity_click', {deity: name});
+            });
         });
-
-        function initPantheon() {
-            document.querySelectorAll('.deity-card').forEach(card => {
-                card.addEventListener('click', function() {
-                    const deityId = this.getAttribute('data-id');
-                    showDeityDetails(deityId);
-                    activateCard(deityId);
-                    window.location.hash = deityId;
-
-                    if (window.innerWidth < 768) {
-                        document.getElementById('detail-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-        }
-
-        function initFilters() {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.addEventListener('click', function() { setActiveFilter(this.getAttribute('data-filter')); });
-            });
-        }
-
-        function setActiveFilter(filter) {
-            activeFilter = filter;
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.toggle('active', btn.getAttribute('data-filter') === filter));
-            applyFilters();
-        }
-
-        function applyFilters() {
-            const cards = document.querySelectorAll('.deity-card');
-            const levels = document.querySelectorAll('.pantheon-level');
-
-            cards.forEach(card => {
-                const type = card.getAttribute('data-type');
-                const name = deitiesData[card.getAttribute('data-id')].name.toLowerCase();
-                const searchMatch = searchTerm === '' || name.includes(searchTerm.toLowerCase());
-
-                let show = searchMatch;
-                if (activeFilter !== 'all') {
-                    show = show && ((activeFilter === 'gods' && type === 'god') || (activeFilter === 'spirits' && type === 'spirit'));
-                }
-
-                card.classList.toggle('hidden', !show);
-                card.classList.toggle('dimmed', searchTerm !== '' && !searchMatch);
-            });
-
-            levels.forEach(level => {
-                const visibleCards = level.querySelectorAll('.deity-card:not(.hidden)');
-                level.classList.toggle('hidden', visibleCards.length === 0);
-            });
-        }
-
-        function initSearch() {
-            const searchInput = document.getElementById('searchInput');
-            let searchTimeout;
-
-            searchInput.addEventListener('input', function(e) {
-                clearTimeout(searchTimeout);
-                searchTerm = e.target.value.trim();
-                searchTimeout = setTimeout(() => {
-                    applyFilters();
-                    if (searchTerm.length > 0) showSearchResults(searchTerm); else hideSearchResults();
-                }, 300);
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.search-container')) hideSearchResults();
-            });
-        }
-
-        function showSearchResults(term) {
-            const searchResults = document.getElementById('searchResults');
-            const termLower = term.toLowerCase();
-            const results = [];
-
-            Object.entries(deitiesData).forEach(([id, deity]) => {
-                const nameLower = deity.name.toLowerCase();
-                const descLower = deity.description.toLowerCase();
-                if (nameLower.includes(termLower) || descLower.includes(termLower)) results.push({ id, deity });
-            });
-
-            if (results.length > 0) {
-                searchResults.innerHTML = results.map(({ id, deity }) => {
-                    const iconClass = document.querySelector(`.deity-card[data-id="${id}"] .deity-icon`)?.className || 'fa-solid fa-star';
-                    return `
-                        <div class="search-result-item" data-id="${id}">
-                            <div class="search-result-icon"><i class="${iconClass.replace('deity-icon ', '')}"></i></div>
-                            <div class="search-result-text">
-                                <div class="search-result-name">${deity.name}</div>
-                                <div class="search-result-desc">${deity.title}</div>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-
-                searchResults.querySelectorAll('.search-result-item').forEach(item => {
-                    item.addEventListener('click', function() {
-                        const deityId = this.getAttribute('data-id');
-                        showDeityDetails(deityId);
-                        activateCard(deityId);
-                        window.location.hash = deityId;
-                        hideSearchResults();
-                        const card = document.querySelector(`.deity-card[data-id="${deityId}"]`);
-                        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        document.getElementById('searchInput').value = '';
-                        searchTerm = '';
-                        applyFilters();
-                    });
-                });
-
-                searchResults.style.display = 'block';
-            } else {
-                hideSearchResults();
-            }
-        }
-
-        function hideSearchResults() {
-            document.getElementById('searchResults').style.display = 'none';
-        }
-
-        function initShare() {
-            const shareButton = document.getElementById('shareButton');
-            shareButton.addEventListener('click', function() {
-                const url = window.location.href;
-                if (navigator.share) {
-                    navigator.share({
-                        title: document.title,
-                        text: activeDeityId ? `${deitiesData[activeDeityId].name} - ${deitiesData[activeDeityId].title}` : 'Древнерусский Пантеон Богов',
-                        url: url
-                    }).catch(() => copyToClipboard(url));
-                } else {
-                    copyToClipboard(url);
-                }
-            });
-        }
-
-        function copyToClipboard(text) {
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(text).then(showCopiedMessage);
-            } else {
-                const textArea = document.createElement('textarea');
-                textArea.value = text; textArea.style.position = 'fixed'; textArea.style.left = '-999999px';
-                document.body.appendChild(textArea); textArea.focus(); textArea.select();
-                try { document.execCommand('copy'); showCopiedMessage(); } catch (err) { console.error('Не удалось скопировать:', err); }
-                document.body.removeChild(textArea);
-            }
-        }
-
-        function showCopiedMessage() {
-            const shareButton = document.getElementById('shareButton');
-            const originalHTML = shareButton.innerHTML;
-            shareButton.classList.add('copied');
-            shareButton.innerHTML = '<i class="fas fa-check"></i><span>Скопировано!</span>';
-            setTimeout(() => { shareButton.classList.remove('copied'); shareButton.innerHTML = originalHTML; }, 2000);
-        }
-
-        function activateCard(deityId) {
-            document.querySelectorAll('.deity-card').forEach(c => c.classList.remove('active'));
-            const targetCard = document.querySelector(`.deity-card[data-id="${deityId}"]`);
-            if (targetCard) {
-                targetCard.classList.add('active');
-                if (targetCard.classList.contains('hidden')) {
-                    targetCard.classList.remove('hidden');
-                    targetCard.classList.add('highlighted');
-                    setTimeout(() => targetCard.classList.remove('highlighted'), 1000);
-                }
-            }
-            activeDeityId = deityId;
-        }
-
-        function showDeityDetails(deityId) {
-            const deity = deitiesData[deityId];
-            const detailContainer = document.getElementById('deity-detail');
-            const placeholder = document.getElementById('placeholder');
-            if (!deity) { console.error('Данные не найдены для божества/духа:', deityId); return; }
-
-            detailContainer.style.display = 'block';
-            placeholder.style.display = 'none';
-
-            document.getElementById('detail-name').textContent = deity.name;
-            document.getElementById('detail-level').textContent = deity.title;
-            document.getElementById('detail-level').className = `deity-level ${deity.level}`;
-            document.getElementById('detail-description').textContent = deity.description;
-
-            // Изображение
-            setDetailImage(deityId, deity);
-
-            renderRelations(deity);
-            renderSphere(deity);
-            renderCult(deity);
-        }
-
-        function renderRelations(deity) {
-            const relationsContainer = document.getElementById('detail-relations');
-            relationsContainer.innerHTML = '';
-
-            deity.relations.forEach(relation => {
-                const relationItem = document.createElement('div');
-                relationItem.className = 'relation-item';
-
-                let iconClass = 'fa-solid fa-user';
-                if (relation.icon === 'child') iconClass = 'fa-solid fa-child';
-                if (relation.icon === 'heart') iconClass = 'fa-solid fa-heart';
-                if (relation.icon === 'female') iconClass = 'fa-solid fa-person-dress';
-                if (relation.icon === 'user-friends' || relation.icon === 'user-group') iconClass = 'fa-solid fa-user-group';
-                if (relation.icon === 'baby') iconClass = 'fa-solid fa-baby';
-                if (relation.icon === 'star') iconClass = 'fa-solid fa-star';
-                if (relation.icon === 'fist-raised' || relation.icon === 'hand-fist') iconClass = 'fa-solid fa-hand-fist';
-                if (relation.icon === 'tree') iconClass = 'fa-solid fa-tree';
-                if (relation.icon === 'mountain') iconClass = 'fa-solid fa-mountain';
-                if (relation.icon === 'spa') iconClass = 'fa-solid fa-spa';
-                if (relation.icon === 'leaf') iconClass = 'fa-solid fa-leaf';
-                if (relation.icon === 'fire') iconClass = 'fa-solid fa-fire';
-                if (relation.icon === 'spinner') iconClass = 'fa-solid fa-spinner';
-                if (relation.icon === 'snowflake') iconClass = 'fa-solid fa-snowflake';
-                if (relation.icon === 'water') iconClass = 'fa-solid fa-water';
-                if (relation.icon === 'dove') iconClass = 'fa-solid fa-dove';
-                if (relation.icon === 'dragon') iconClass = 'fa-solid fa-dragon';
-                if (relation.icon === 'sun') iconClass = 'fa-solid fa-sun';
-                if (relation.icon === 'skull') iconClass = 'fa-solid fa-skull';
-                if (relation.icon === 'seedling') iconClass = 'fa-solid fa-seedling';
-                if (relation.icon === 'eye') iconClass = 'fa-solid fa-eye';
-                if (relation.icon === 'house') iconClass = 'fa-solid fa-house-chimney';
-                if (relation.icon === 'ghost') iconClass = 'fa-solid fa-ghost';
-                if (relation.icon === 'bath') iconClass = 'fa-solid fa-bath';
-                if (relation.icon === 'wheat') iconClass = 'fa-solid fa-wheat-awn';
-                if (relation.icon === 'fish') iconClass = 'fa-solid fa-fish';
-                if (relation.icon === 'moon') iconClass = 'fa-solid fa-moon';
-
-                if (relation.id) {
-                    relationItem.innerHTML = `
-                        <div class="relation-icon"><i class="${iconClass}"></i></div>
-                        <div class="relation-type">${relation.type}:</div>
-                        <div class="relation-name">${relation.name}</div>
-                    `;
-                    relationItem.addEventListener('click', () => {
-                        showDeityDetails(relation.id);
-                        activateCard(relation.id);
-                        window.location.hash = relation.id;
-                    });
-                } else {
-                    relationItem.innerHTML = `
-                        <div class="relation-icon"><i class="${iconClass}"></i></div>
-                        <div class="relation-type">${relation.type}:</div>
-                        <div class="relation-name">${relation.name}</div>
-                    `;
-                }
-
-                relationsContainer.appendChild(relationItem);
-            });
-        }
-
-        function renderSphere(deity) {
-            const sphereContainer = document.getElementById('detail-sphere');
-            sphereContainer.innerHTML = '';
-            deity.sphere.split(', ').forEach(item => {
-                const sphereItem = document.createElement('div');
-                sphereItem.className = 'sphere-item';
-
-                let iconClass = 'fa-solid fa-check-circle';
-                const text = item.toLowerCase();
-
-                if (text.includes('любов') || text.includes('брак')) iconClass = 'fa-solid fa-heart';
-                if (text.includes('войн') || text.includes('сила') || text.includes('защит')) iconClass = 'fa-solid fa-shield-halved';
-                if (text.includes('плодород') || text.includes('урожай')) iconClass = 'fa-solid fa-seedling';
-                if (text.includes('судьб')) iconClass = 'fa-solid fa-dice';
-                if (text.includes('смерт')) iconClass = 'fa-solid fa-skull';
-                if (text.includes('вода') || text.includes('реки') || text.includes('оз')) iconClass = 'fa-solid fa-water';
-                if (text.includes('солнц') || text.includes('лето')) iconClass = 'fa-solid fa-sun';
-                if (text.includes('земл')) iconClass = 'fa-solid fa-mountain';
-                if (text.includes('ветр')) iconClass = 'fa-solid fa-wind';
-                if (text.includes('ремес')) iconClass = 'fa-solid fa-tools';
-                if (text.includes('дом') || text.includes('очаг') || text.includes('семь')) iconClass = 'fa-solid fa-house-chimney';
-                if (text.includes('лес') || text.includes('звер') || text.includes('охот')) iconClass = 'fa-solid fa-tree';
-                if (text.includes('рыб')) iconClass = 'fa-solid fa-fish';
-                if (text.includes('бан')) iconClass = 'fa-solid fa-bath';
-                if (text.includes('трава') || text.includes('луг') || text.includes('цвет')) iconClass = 'fa-solid fa-leaf';
-                if (text.includes('договор')) iconClass = 'fa-solid fa-handshake';
-                if (text.includes('богат')) iconClass = 'fa-solid fa-coins';
-                if (text.includes('маг')) iconClass = 'fa-solid fa-wand-magic-sparkles';
-                if (text.includes('огонь') || text.includes('огн')) iconClass = 'fa-solid fa-fire';
-                if (text.includes('зим')) iconClass = 'fa-solid fa-snowflake';
-                if (text.includes('страх') || text.includes('мрак') || text.includes('ноч')) iconClass = 'fa-solid fa-moon';
-
-                sphereItem.innerHTML = `<i class="${iconClass}"></i><div>${item}</div>`;
-                sphereContainer.appendChild(sphereItem);
-            });
-        }
-
-        function renderCult(deity) {
-            const cultContainer = document.getElementById('detail-cult');
-            cultContainer.innerHTML = '';
-            const cultItem = document.createElement('div');
-            cultItem.className = 'deity-description';
-            cultItem.textContent = deity.cult;
-            cultContainer.appendChild(cultItem);
-        }
-
-        // --- Изображения: загрузка с резервом и заглушкой ---
-        function setDetailImage(deityId, deity) {
-            const imgEl = document.getElementById('detail-image');
-            const capEl = document.getElementById('detail-image-caption');
-
-            capEl.textContent = 'Иллюстрация (' + deity.name + ') — кликните для увеличения';
-            imgEl.alt = deity.name;
-
-            const sources = [];
-            // Можно задать индивидуальный путь: deity.image = 'images/custom/xxx.jpg'
-            if (deity.image) sources.push(deity.image);
-            sources.push(`images/${deityId}.webp`, `images/${deityId}.jpg`, `images/${deityId}.png`);
-
-            const placeholder = makePlaceholderDataURL(deity.name, deity.level);
-
-            loadImageWithFallback(imgEl, sources, placeholder);
-
-            imgEl.onclick = () => window.open(imgEl.src, '_blank');
-        }
-
-        function loadImageWithFallback(imgEl, sources, placeholder) {
-            let index = 0;
-            imgEl.onerror = () => {
-                if (index < sources.length) {
-                    imgEl.src = sources[index++];
-                } else {
-                    imgEl.onerror = null;
-                    imgEl.src = placeholder;
-                }
-            };
-            // Старт с первой
-            if (sources.length > 0) {
-                index = 1;
-                imgEl.src = sources[0];
-            } else {
-                imgEl.src = placeholder;
-            }
-        }
-
-        function makePlaceholderDataURL(name, levelClass) {
-            const colors = getLevelColors(levelClass);
-            const svg = `
-                <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 800 800'>
-                    <defs>
-                        <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-                            <stop offset='0%' stop-color='${colors[0]}'/>
-                            <stop offset='100%' stop-color='${colors[1]}'/>
-                        </linearGradient>
-                    </defs>
-                    <rect width='1200' height='675' fill='url(#g)'/>
-                    <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle'
-                          font-family='Russo One, Arial, sans-serif' font-size='64' fill='#ffffff' opacity='0.95'>
-                        ${escapeXML(name)}
-                    </text>
-                    <text x='50%' y='86%' text-anchor='middle' font-family='Comfortaa, Arial, sans-serif'
-                          font-size='24' fill='rgba(255,255,255,0.85)'>Изображение отсутствует</text>
-                </svg>
-            `.trim();
-            return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
-        }
-
-        function getLevelColors(levelClass) {
-            if (levelClass === 'praw-bg') return ['#00bcd4', '#00838f'];
-            if (levelClass === 'jaw-bg')  return ['#4caf50', '#2e7d32'];
-            if (levelClass === 'naw-bg')  return ['#f44336', '#b71c1c'];
-            return ['#7f8c8d', '#2c3e50'];
-        }
-
-        function escapeXML(str) {
-            return String(str)
-                .replace(/&/g, '&amp;')
-                .replace(/"/g, '&quot;')
-                .replace(/'/g, '&apos;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;');
-        }
-
-        // Обработка изменений hash
-        window.addEventListener('hashchange', function() {
-            const hash = window.location.hash.slice(1);
-            if (hash && deitiesData[hash]) {
-                showDeityDetails(hash);
-                activateCard(hash);
-            }
-        });
+    });
     </script>
 </body>
 </html>
-
-
-
