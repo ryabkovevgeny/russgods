@@ -25,15 +25,15 @@
 <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Древнерусский Пантеон Богов</title>
+    <title>Западно-славянский Пантеон Богов</title>
     
-    <meta name="description" content="Интерактивная схема славянской мифологии: боги, духи, родственные связи и сферы влияния. Род, Перун, Велес, Лада, Домовой и другие персонажи древнерусского пантеона.">
-    <meta name="keywords" content="славянские боги, мифология, Род, Перун, Велес, Лада, древняя Русь, язычество, пантеон, духи, интерактивная схема">
-<link rel="canonical" href="https://ryabkovevgeny.github.io/russgods/">
+    <meta name="description" content="Интерактивная схема западнославянской мифологии: боги балтийских славян, духи, родственные связи и сферы влияния. Святовит, Триглав, Радегаст, Чернобог и другие персонажи.">
+    <meta name="keywords" content="западнославянские боги, балтийские славяне, Святовит, Триглав, Радегаст, Чернобог, мифология, пантеон, духи">
+<link rel="canonical" href="https://ryabkovevgeny.github.io/russgods/western.html">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Древнерусский Пантеон Богов">
-<meta name="twitter:description" content="Интерактивная схема славянской мифологии: боги, духи, родственные связи">
+<meta name="twitter:title" content="Западно-славянский Пантеон Богов">
+<meta name="twitter:description" content="Интерактивная схема западнославянской мифологии: боги, духи, родственные связи">
 <meta name="twitter:image" content="https://ryabkovevgeny.github.io/russgods/images/social-preview.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,19 +41,19 @@
 <link rel="dns-prefetch" href="//mc.yandex.ru">
 <link rel="dns-prefetch" href="//www.googletagmanager.com">
     
-    <meta property="og:title" content="Древнерусский Пантеон Богов" />
-    <meta property="og:description" content="Интерактивная схема славянской мифологии: боги, духи, родственные связи и сферы влияния." />
+    <meta property="og:title" content="Западно-славянский Пантеон Богов" />
+    <meta property="og:description" content="Интерактивная схема западнославянской мифологии: боги, духи, родственные связи и сферы влияния." />
     <meta property="og:image" content="https://ryabkovevgeny.github.io/russgods/images/social-preview.jpg" />
-    <meta property="og:url" content="https://ryabkovevgeny.github.io/russgods/" />
+    <meta property="og:url" content="https://ryabkovevgeny.github.io/russgods/western.html" />
     <meta property="og:type" content="website" />
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Древнерусский Пантеон Богов",
-      "description": "Интерактивная схема восточнославянской мифологии: божества, духи, уровни Прави, Яви и Нави.",
-      "url": "https://ryabkovevgeny.github.io/russgods/",
+      "name": "Западно-славянский Пантеон Богов",
+      "description": "Интерактивная схема западнославянской мифологии: божества, духи, уровни Яви и Нави.",
+      "url": "https://ryabkovevgeny.github.io/russgods/western.html",
       "thumbnailUrl": "https://ryabkovevgeny.github.io/russgods/images/social-preview.jpg"
     }
     </script>
@@ -147,7 +147,6 @@
             text-align: center; font-size: 1.2rem; padding: 8px; margin: 0 auto 12px; border-radius: 6px;
             font-weight: bold; width: 100%; font-family: 'Russo One', sans-serif; letter-spacing: 0.5px;
         }
-        .praw .world-title { background: linear-gradient(to right, #00838f, #006064); border: 1px solid #00bcd4; }
         .jaw .world-title { background: linear-gradient(to right, #2e7d32, #1b5e20); border: 1px solid #4caf50; }
         .naw .world-title { background: linear-gradient(to right, #c62828, #b71c1c); border: 1px solid #f44336; }
 
@@ -176,13 +175,11 @@
             width: 30px; height: 4px; border-radius: 2px;
             box-shadow: 0 0 8px currentColor;
         }
-        .deity-card.source-letopis::before { background: #4caf50; color: #4caf50; }
-        .deity-card.source-folklor::before { background: #2196f3; color: #2196f3; }
-        .deity-card.source-obryad::before { background: #ffc107; color: #ffc107; }
-        .deity-card.source-spornoe::before { background: #ff9800; color: #ff9800; }
-        .deity-card.source-literatura::before { background: #f44336; color: #f44336; }
+        .deity-card.source-attested::before,
+        .deity-card.source-common-slavic::before { background: #4caf50; color: #4caf50; }
+        .deity-card.source-folklore::before { background: #2196f3; color: #2196f3; }
+        .deity-card.source-hypothetical::before { background: #ff9800; color: #ff9800; }
 
-        .praw .deity-card { border: 2px solid #00bcd4; }
         .jaw .deity-card { border: 2px solid #4caf50; }
         .naw .deity-card { border: 2px solid #f44336; }
 
@@ -194,7 +191,6 @@
         .deity-detail { display: none; }
         .deity-name { font-size: 1.7rem; margin-bottom: 10px; color: #ffd700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); font-family: 'Russo One', sans-serif; }
         .deity-level { font-size: 0.95rem; display: inline-block; padding: 6px 15px; border-radius: 15px; margin-bottom: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .praw-bg { background: linear-gradient(to right, #00bcd4, #00838f); }
         .jaw-bg { background: linear-gradient(to right, #4caf50, #2e7d32); }
         .naw-bg { background: linear-gradient(to right, #f44336, #c62828); }
 
@@ -204,11 +200,10 @@
             margin-left: 10px; font-weight: 600;
             border: 1px solid currentColor;
         }
-        .source-badge.letopis { color: #4caf50; background: rgba(76, 175, 80, 0.15); }
-        .source-badge.folklor { color: #2196f3; background: rgba(33, 150, 243, 0.15); }
-        .source-badge.obryad { color: #ffc107; background: rgba(255, 193, 7, 0.15); }
-        .source-badge.spornoe { color: #ff9800; background: rgba(255, 152, 0, 0.15); }
-        .source-badge.literatura { color: #f44336; background: rgba(244, 67, 54, 0.15); }
+        .source-badge.attested { color: #4caf50; background: rgba(76, 175, 80, 0.15); }
+        .source-badge.folklore { color: #2196f3; background: rgba(33, 150, 243, 0.15); }
+        .source-badge.hypothetical { color: #ff9800; background: rgba(255, 152, 0, 0.15); }
+        .source-badge.common-slavic { color: #4caf50; background: rgba(76, 175, 80, 0.15); }
 
         .deity-figure { margin-bottom: 12px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255, 215, 0, 0.15); background: rgba(0, 0, 0, 0.25); }
         .deity-image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: rgba(0,0,0,0.15); }
@@ -299,23 +294,6 @@
 ">
     <a href="index.html" class="nav-link" style="
         padding: 10px 20px;
-        background: linear-gradient(45deg, #ffd700, #ff8c00);
-        border: 1px solid #ffd700;
-        border-radius: 25px;
-        color: #000;
-        text-decoration: none;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: all 0.3s;
-    ">
-        <i class="fas fa-sun"></i>
-        <span>Восточно-славянский пантеон</span>
-    </a>
-
-    <a href="western.html" class="nav-link" style="
-        padding: 10px 20px;
         background: rgba(0, 0, 0, 0.3);
         border: 1px solid rgba(255, 215, 0, 0.3);
         border-radius: 25px;
@@ -327,6 +305,23 @@
         gap: 8px;
         transition: all 0.3s;
     " onmouseover="this.style.background='rgba(255, 215, 0, 0.2)'" onmouseout="this.style.background='rgba(0, 0, 0, 0.3)'">
+        <i class="fas fa-sun"></i>
+        <span>Восточно-славянский пантеон</span>
+    </a>
+
+    <a href="western.html" class="nav-link" style="
+        padding: 10px 20px;
+        background: linear-gradient(45deg, #ffd700, #ff8c00);
+        border: 1px solid #ffd700;
+        border-radius: 25px;
+        color: #000;
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s;
+    ">
         <i class="fas fa-gavel"></i>
         <span>Западно-славянский пантеон</span>
     </a>
@@ -350,8 +345,8 @@
 </nav>
     <div class="slavic-pantheon-container">
         <header class="slavic-header">
-            <h1 class="slavic-title">Древнерусский Пантеон Богов</h1>
-            <p class="slavic-subtitle">Интерактивная схема славянской мифологии с Ладой, Лёлей, Рожаницами, Ярилой, Купалой, Кострой и духами</p>
+            <h1 class="slavic-title">Западно-славянский Пантеон Богов</h1>
+            <p class="slavic-subtitle">Интерактивная схема мифологии балтийских славян: от исторически засвидетельствованных богов до фольклорных духов. Все данные имеют справочный характер и возможны отличия в зависимости от региона.</p>
         </header>
 
         <div class="control-panel">
@@ -373,11 +368,10 @@
                     <div class="filter-label">Источник</div>
                     <div class="filter-buttons" id="source-filters">
                         <button class="filter-btn filter-btn-source active" data-source-filter="all">Все</button>
-                        <button class="filter-btn filter-btn-source" data-source-filter="letopis">Летописные</button>
-                        <button class="filter-btn filter-btn-source" data-source-filter="folklor">Фольклорные</button>
-                        <button class="filter-btn filter-btn-source" data-source-filter="obryad">Обрядовые</button>
-                        <button class="filter-btn filter-btn-source" data-source-filter="spornoe">Спорные</button>
-                        <button class="filter-btn filter-btn-source" data-source-filter="literatura">Литературные</button>
+                        <button class="filter-btn filter-btn-source" data-source-filter="attested">Исторические</button>
+                        <button class="filter-btn filter-btn-source" data-source-filter="common-slavic">Общеславянские</button>
+                        <button class="filter-btn filter-btn-source" data-source-filter="folklore">Фольклорные</button>
+                        <button class="filter-btn filter-btn-source" data-source-filter="hypothetical">Гипотетические</button>
                     </div>
                 </div>
             </div>
@@ -389,7 +383,7 @@
 
                 <div class="detail-placeholder" id="placeholder">
                     <i class="placeholder-icon fas fa-hand-pointer"></i>
-                    <p class="placeholder-text">Выберите бога или духа из древа, чтобы узнать подробности</p>
+                    <p class="placeholder-text">Выберите бога или духа, чтобы узнать подробности</p>
                 </div>
 
                 <div class="deity-detail" id="deity-detail">
@@ -425,684 +419,305 @@
 
             <div class="tree-container">
                 <div class="pantheon-levels">
-                    <!-- Правь -->
-                    <div class="pantheon-level praw" data-level="praw">
-                        <div class="world-title">Правь (Верхний мир)</div>
-                        <div class="deity-card source-spornoe" data-id="rod" data-type="god" data-source="spornoe">
-                            <i class="deity-icon fas fa-globe"></i>
-                            <div class="deity-card-name">Род</div>
-                            <div class="deity-disputed-badge" title="Спорный статус верховного бога">?</div>
-                        </div>
-                    </div>
-                    <div class="pantheon-level praw" data-level="praw">
-                        <div class="deity-card source-letopis" data-id="svarog" data-type="god" data-source="letopis">
-                            <i class="deity-icon fas fa-fire"></i>
-                            <div class="deity-card-name">Сварог</div>
-                        </div>
-                        <div class="deity-card source-folklor" data-id="mat-zemlya" data-type="god" data-source="folklor">
-                            <i class="deity-icon fas fa-mountain"></i>
-                            <div class="deity-card-name">Мать-Земля</div>
-                        </div>
-                        <div class="deity-card source-spornoe" data-id="lada" data-type="god" data-source="spornoe">
-                            <i class="deity-icon fas fa-heart"></i>
-                            <div class="deity-card-name">Лада</div>
-                            <div class="deity-disputed-badge" title="Спорная богиня, известна в основном по фольклору">?</div>
-                        </div>
-                    </div>
-                    <div class="pantheon-level praw" data-level="praw">
-                        <div class="deity-card source-letopis" data-id="stribog" data-type="god" data-source="letopis">
-                            <i class="deity-icon fas fa-wind"></i>
-                            <div class="deity-card-name">Стрибог</div>
-                        </div>
-                        <div class="deity-card source-letopis" data-id="dazhdbog" data-type="god" data-source="letopis">
-                            <i class="deity-icon fas fa-sun"></i>
-                            <div class="deity-card-name">Даждьбог</div>
-                        </div>
-                        <div class="deity-card source-letopis" data-id="hors" data-type="god" data-source="letopis">
-                            <i class="deity-icon fas fa-sun"></i>
-                            <div class="deity-card-name">Хорс</div>
-                        </div>
-                    </div>
-                    <div class="pantheon-level praw" data-level="praw">
-                        <div class="deity-card source-letopis" data-id="semargl" data-type="god" data-source="letopis">
-                            <i class="deity-icon fas fa-fire-flame-curved"></i>
-                            <div class="deity-card-name">Семаргл</div>
-                        </div>
-                        <div class="deity-card source-letopis" data-id="rojanicy" data-type="god" data-source="letopis">
-                            <i class="deity-icon fas fa-baby"></i>
-                            <div class="deity-card-name">Рожаницы</div>
-                        </div>
-                        <div class="deity-card source-spornoe" data-id="pereplut" data-type="god" data-source="spornoe">
-                            <i class="deity-icon fas fa-seedling"></i>
-                            <div class="deity-card-name">Переплут</div>
-                            <div class="deity-disputed-badge" title="Упоминается в поучениях, функции неясны">?</div>
-                        </div>
-                    </div>
-
                     <!-- Явь -->
                     <div class="pantheon-level jaw" data-level="jaw">
-                        <div class="world-title">Явь (Средний мир)</div>
-                        <div class="deity-card source-letopis" data-id="perun" data-type="god" data-source="letopis"><i class="deity-icon fas fa-bolt"></i><div class="deity-card-name">Перун</div></div>
-                        <div class="deity-card source-letopis" data-id="veles" data-type="god" data-source="letopis"><i class="deity-icon fas fa-paw"></i><div class="deity-card-name">Велес</div></div>
-                        <div class="deity-card source-letopis" data-id="mokosh" data-type="god" data-source="letopis"><i class="deity-icon fas fa-person-dress"></i><div class="deity-card-name">Мокошь</div></div>
-                    </div>
-                    <div class="pantheon-level jaw" data-level="jaw">
-                        <div class="deity-card source-spornoe" data-id="lelya" data-type="god" data-source="spornoe"><i class="deity-icon fas fa-seedling"></i><div class="deity-card-name">Лёля</div><div class="deity-disputed-badge" title="Спорная богиня, известна по песенным припевам">?</div></div>
-                        <div class="deity-card source-obryad" data-id="yarilo" data-type="god" data-source="obryad"><i class="deity-icon fas fa-fire"></i><div class="deity-card-name">Ярило</div></div>
-                        <div class="deity-card source-obryad" data-id="kupala" data-type="god" data-source="obryad"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Купала</div></div>
-                        <div class="deity-card source-obryad" data-id="kostroma" data-type="god" data-source="obryad"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Кострома</div></div>
-                    </div>
-                    <div class="pantheon-level jaw" data-level="jaw">
-                        <div class="deity-card source-folklor" data-id="dolya" data-type="god" data-source="folklor"><i class="deity-icon fas fa-face-smile"></i><div class="deity-card-name">Доля</div></div>
-                        <div class="deity-card source-folklor" data-id="nedolya" data-type="god" data-source="folklor"><i class="deity-icon fas fa-face-frown"></i><div class="deity-card-name">Недоля</div></div>
-                        <div class="deity-card source-obryad" data-id="kolyada" data-type="god" data-source="obryad"><i class="deity-icon fas fa-star"></i><div class="deity-card-name">Коляда</div></div>
-                        <div class="deity-card source-obryad" data-id="maslenitsa" data-type="god" data-source="obryad"><i class="deity-icon fas fa-sun"></i><div class="deity-card-name">Масленица</div></div>
-                        <div class="deity-card source-letopis" data-id="trojan" data-type="god" data-source="letopis"><i class="deity-icon fas fa-dice-three"></i><div class="deity-card-name">Троян</div></div>
-                        <div class="deity-card source-letopis" data-id="div" data-type="spirit" data-source="letopis"><i class="deity-icon fas fa-dove"></i><div class="deity-card-name">Див</div><div class="deity-type-badge">Дух</div></div>
-                    </div>
-
-                    <!-- Духи Яви -->
-                    <div class="pantheon-level jaw" data-level="jaw-spirits">
-                        <div class="world-title">Духи Яви</div>
-                        <div class="deity-card source-folklor" data-id="beregini" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-hand-holding-heart"></i><div class="deity-card-name">Берегини</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="leshy" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-tree"></i><div class="deity-card-name">Леший</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="vodyanoy" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Водяной</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="domovoy" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-house-chimney"></i><div class="deity-card-name">Домовой</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="kikimora" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-ghost"></i><div class="deity-card-name">Кикимора</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="ovinnik" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-wheat-awn"></i><div class="deity-card-name">Овинник</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="bannik" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-bath"></i><div class="deity-card-name">Банник</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="polevik" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-wheat-awn"></i><div class="deity-card-name">Полевик</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="lugovik" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-leaf"></i><div class="deity-card-name">Луговик</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="gumennik" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-wheat-awn"></i><div class="deity-card-name">Гуменник</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="kletnik" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-warehouse"></i><div class="deity-card-name">Клетник</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="podpolye" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-house-chimney"></i><div class="deity-card-name">Подпольник</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="bolotnik" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Болотник</div><div class="deity-type-badge">Дух</div></div>
+                        <div class="world-title">Боги из хроник и общеславянские</div>
+                        <div class="deity-card source-attested" data-id="svyatovit" data-type="god" data-source="attested"><i class="deity-icon fas fa-gavel"></i><div class="deity-card-name">Святовит</div></div>
+                        <div class="deity-card source-attested" data-id="triglav" data-type="god" data-source="attested"><i class="deity-icon fas fa-dice-three"></i><div class="deity-card-name">Триглав</div></div>
+                        <div class="deity-card source-attested" data-id="radegast" data-type="god" data-source="attested"><i class="deity-icon fas fa-sun"></i><div class="deity-card-name">Радегаст</div></div>
+                        <div class="deity-card source-attested" data-id="yarovit" data-type="god" data-source="attested"><i class="deity-icon fas fa-shield-halved"></i><div class="deity-card-name">Яровит</div></div>
+                        <div class="deity-card source-attested" data-id="prove" data-type="god" data-source="attested"><i class="deity-icon fas fa-tree"></i><div class="deity-card-name">Прове</div></div>
+                        <div class="deity-card source-common-slavic" data-id="svarog" data-type="god" data-source="common-slavic"><i class="deity-icon fas fa-hammer"></i><div class="deity-card-name">Сварог</div></div>
+                        <div class="deity-card source-attested" data-id="zhiva" data-type="god" data-source="attested"><i class="deity-icon fas fa-seedling"></i><div class="deity-card-name">Жива</div></div>
+                        <div class="deity-card source-attested" data-id="podaga" data-type="god" data-source="attested"><i class="deity-icon fas fa-wind"></i><div class="deity-card-name">Подага</div></div>
+                        <div class="deity-card source-attested" data-id="chernobog" data-type="god" data-source="attested"><i class="deity-icon fas fa-moon"></i><div class="deity-card-name">Чернобог</div></div>
+                        <div class="deity-card source-attested" data-id="ruevit" data-type="god" data-source="attested"><i class="deity-icon fas fa-hand-fist"></i><div class="deity-card-name">Руевит</div></div>
+                        <div class="deity-card source-attested" data-id="porevit" data-type="god" data-source="attested"><i class="deity-icon fas fa-balance-scale"></i><div class="deity-card-name">Поревит</div></div>
+                        <div class="deity-card source-attested" data-id="porenut" data-type="god" data-source="attested"><i class="deity-icon fas fa-question-circle"></i><div class="deity-card-name">Поренут</div></div>
+                        <div class="deity-card source-attested" data-id="pripegala" data-type="god" data-source="attested"><i class="deity-icon fas fa-fire-alt"></i><div class="deity-card-name">Припегала</div></div>
+                        <div class="deity-card source-common-slavic" data-id="veles" data-type="spirit" data-source="common-slavic"><i class="deity-icon fas fa-paw"></i><div class="deity-card-name">Велес</div><div class="deity-type-badge">Дух</div></div>
                     </div>
 
                     <!-- Навь -->
                     <div class="pantheon-level naw" data-level="naw">
-                        <div class="world-title">Навь (Нижний мир)</div>
-                        <div class="deity-card source-letopis" data-id="chernobog" data-type="god" data-source="letopis"><i class="deity-icon fas fa-moon"></i><div class="deity-card-name">Чернобог</div></div>
-                        <div class="deity-card source-obryad" data-id="mora" data-type="god" data-source="obryad"><i class="deity-icon fas fa-skull"></i><div class="deity-card-name">Морана</div></div>
-                        <div class="deity-card source-folklor" data-id="yascher" data-type="god" data-source="folklor"><i class="deity-icon fas fa-dragon"></i><div class="deity-card-name">Ящер</div></div>
-                        <div class="deity-card source-spornoe" data-id="karna" data-type="god" data-source="spornoe"><i class="deity-icon fas fa-dove"></i><div class="deity-card-name">Карна</div><div class="deity-disputed-badge" title="Спорная богиня, известна по поздним источникам">?</div></div>
-                    </div>
-
-                    <!-- Духи Нави -->
-                    <div class="pantheon-level naw" data-level="naw-spirits">
-                        <div class="world-title">Духи Нави</div>
-                        <div class="deity-card source-folklor" data-id="rusalki" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Русалки</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-literatura" data-id="viy" data-type="spirit" data-source="literatura"><i class="deity-icon fas fa-eye"></i><div class="deity-card-name">Вий</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Литературный персонаж Гоголя">?</div></div>
-                        <div class="deity-card source-folklor" data-id="zlydni" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-triangle-exclamation"></i><div class="deity-card-name">Злыдни</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="mavka" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-water"></i><div class="deity-card-name">Мавка</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="upyr" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-skull"></i><div class="deity-card-name">Упырь</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="volkolak" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-paw"></i><div class="deity-card-name">Волколак</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="likhoradki" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-skull"></i><div class="deity-card-name">Лихорадки</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="navyi" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-ghost"></i><div class="deity-card-name">Навьи</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="mara" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-moon"></i><div class="deity-card-name">Мара</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card source-folklor" data-id="baba-yaga" data-type="spirit" data-source="folklor"><i class="deity-icon fas fa-hat-wizard"></i><div class="deity-card-name">Баба-Яга</div><div class="deity-type-badge">Дух</div></div>
+                        <div class="world-title">Реконструированные, фольклорные и спорные</div>
+                        <div class="deity-card source-hypothetical" data-id="belobog" data-type="god" data-source="hypothetical"><i class="deity-icon fas fa-certificate"></i><div class="deity-card-name">Белобог</div><div class="deity-disputed-badge" title="Гипотетический бог, реконструирован на основе дуализма">?</div></div>
+                        <div class="deity-card source-folklore" data-id="marena" data-type="god" data-source="folklore"><i class="deity-icon fas fa-snowflake"></i><div class="deity-card-name">Марена</div><div class="deity-disputed-badge" title="Богиня, известная в основном по обрядам и фольклору">?</div></div>
+                        <div class="deity-card source-folklore" data-id="dziewanna" data-type="god" data-source="folklore"><i class="deity-icon fas fa-bow-arrow"></i><div class="deity-card-name">Дзеванна</div><div class="deity-disputed-badge" title="Упомянута в поздних источниках (Ян Длугош)">?</div></div>
+                        <div class="deity-card source-folklore" data-id="nyja" data-type="god" data-source="folklore"><i class="deity-icon fas fa-key"></i><div class="deity-card-name">Ныя</div><div class="deity-disputed-badge" title="Упомянут в поздних источниках (Ян Длугош)">?</div></div>
+                        <div class="deity-card source-folklore" data-id="rarog" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-dove"></i><div class="deity-card-name">Рарог</div><div class="deity-type-badge">Дух</div></div>
+                        <div class="deity-card source-folklore" data-id="pogwizd" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-tornado"></i><div class="deity-card-name">Погвизд</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Упомянут в поздних источниках (Ян Длугош)">?</div></div>
+                        <div class="deity-card source-folklore" data-id="poswist" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-cloud-sun"></i><div class="deity-card-name">Посьвист</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Фольклорный дух погоды, брат Погвизда">?</div></div>
+                        <div class="deity-card source-folklore" data-id="boruta" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-hat-wizard"></i><div class="deity-card-name">Борута</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Поздний фольклорный персонаж, демон/дьявол">?</div></div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="slavic-footer">
-            <p>☀ Полная интерактивная схема древнерусского пантеона богов и духов ☀</p>
-            <p>© 2023–2025 Древнерусская мифология | Версия с фильтрами, поиском и изображениями</p>
+            <p>☀ Интерактивная схема западно-славянского пантеона богов ☀</p>
+            <p>Изображения взяты из каталога images/western. Все данные имеют справочный характер и возможны отличия в зависимости от региона.</p>
+            <p>Администратор сайта всегда готов выслушать и добавить информацию: <a href="mailto:admin@example.com" style="color: #ffd700;">admin@example.com</a></p>
         </div>
     </div>
 
     <script>
         // ======= ДАННЫЕ: ИСПРАВЛЕННЫЕ СВЯЗИ + РАСШИРЕННЫЙ КУЛЬТ + РЕКОНСТРУКЦИИ =======
         const deitiesData = {
-            rod: {
-                name: "Род", level: "praw-bg", title: "Верховный демиург, создатель Вселенной", source: "spornoe",
-                description: "Верховный бог-творец в древнерусском пантеоне. Согласно реконструкциям Б.А. Рыбакова, Род воспринимался как источник жизни, создатель всего сущего. В академической науке его верховный статус считается спорным: в источниках Род упоминается вместе с Рожаницами как персонаж, связанный с судьбой и рождением.",
+            svyatovit: {
+                name: "Святовит (Свентовит)", level: "jaw-bg", title: "Верховный бог-воитель, бог плодородия", source: "attested",
+                description: "«Бог богов» для руян, верховное божество с крупным храмом в Арконе. Связан с войной, победой и будущим урожаем. Его главные атрибуты — меч, рог изобилия и священный белый конь.",
                 relations: [
-                    { type: "Связь", name: "Рожаницы", id: "rojanicy", icon: "baby" },
-                    { type: "Реконструкция (Рыбаков)", name: "Сварог", id: "svarog", icon: "child" }
+                    { type: "Соратник", name: "Руевит", id: "ruevit", icon: "user-friends" },
+                    { type: "Реконструкция (Гиейштор)", name: "Триглав", id: "triglav", icon: "user-friends" }
                 ],
-                sphere: "Творение мира, жизненная сила, плодородие, судьба, время",
-                cult: "Культ Рода был связан с почитанием предков и семейных уз. Ему приносили жертвы в священных рощах, у воды и на возвышенностях. Следы почитания сохранились в словах «родня», «родить», «род». Роду и Рожаницам посвящались обряды при рождении ребёнка. После христианизации образ Рода частично слился с понятием Бога-отца. В народной традиции ему приписывали влияние на судьбу и жизненную силу.",
+                sphere: "Война, победа, плодородие, предсказания, высшая власть",
+                cult: "Святовит почитался как «бог богов» у балтийских славян, и его храм в Арконе на острове Рюген был главным религиозным центром всего Поморья. Ему приносили треть военной добычи, а купцы обязаны были жертвовать часть товаров перед началом торговли. Раз в год после сбора урожая в Аркону стекалось множество народа, пригонялся скот и привозилось вино для жертв и пира. Жрец Святовита накануне праздника выметал святилище, стараясь не дышать, чтобы не осквернить святое место. На следующий день он вынимал из рук идола рог с вином и по его содержимому предсказывал урожай на будущий год. Святовиту был посвящён белый конь, на котором жрец гадал о ходе войны и урожае. Арконский храм был разрушен датчанами в 1168 году, а идол Святовита сожжён.",
+                type: "god"
+            },
+
+            triglav: {
+                name: "Триглав", level: "jaw-bg", title: "Владыка трёх миров", source: "attested",
+                description: "Верховный бог поморян (Щецин, Волин). Его три головы символизировали власть над небом, землёй и подземным миром. Идолы часто имели повязку на глазах, чтобы бог не видел людских грехов.",
+                relations: [
+                    { type: "Реконструкция (Гиейштор)", name: "Святовит", id: "svyatovit", icon: "user-friends" },
+                    { type: "Реконструкция (Гиейштор)", name: "Радегаст", id: "radegast", icon: "user-friends" }
+                ],
+                sphere: "Власть над вселенной, управление тремя мирами, судьба, война",
+                cult: "Триглав почитался в Щецине и Волине как «высший бог», чьи три головы символизировали власть над небом, землёй и подземным миром. Его атрибутом был священный конь, принимавший участие в гаданиях, а идол имел три головы. Идолы Триглава часто имели повязку на глазах, чтобы бог не видел людских грехов. В Щецине ему был посвящён главный из трёх холмов, на котором стоял храм. После принятия христианства храм Триглава был разрушен, а идол уничтожен. По одной из гипотез, Свентовит, Триглав и Радгост восходят к образу Перуна.",
+                type: "god"
+            },
+
+            radegast: {
+                name: "Радегаст (Сварожич)", level: "jaw-bg", title: "Бог солнца, войны и гостеприимства", source: "attested",
+                description: "Верховный бог ратарей из Ретры. Считался сыном Сварога, богом солнечного и огненного начала. Выступал как защитник племени, податель благ и покровитель совета.",
+                relations: [
+                    { type: "Отец", name: "Сварог", id: "svarog", icon: "user" },
+                    { type: "Реконструкция (Гиейштор)", name: "Святовит", id: "svyatovit", icon: "user-friends" }
+                ],
+                sphere: "Солнце, огонь, гостеприимство, война, совет",
+                cult: "Радегаст был верховным богом племени ратарей, и его культовый центр находился в городе Ретра. Согласно Титмару Мерзебургскому, в Ретре первым богом был Сварожич, то есть Радегаст. Адам Бременский называет его главным богом Ретры, и храм его пользовался чрезвычайным уважением и почестями со стороны всех балтийских славян. Радегасту приносили в жертву животных и пленных врагов; его храм славился гаданиями. Гельмольд называет Радегаста «богом земли Бодрицкой». В «Славянской хронике» он упоминается как один из главных богов.",
+                type: "god"
+            },
+
+            yarovit: {
+                name: "Яровит (Геровит)", level: "jaw-bg", title: "Бог весеннего плодородия и войны", source: "attested",
+                description: "Бог ярой, жизненной силы и войны. Его священный золотой щит хранился в храме и считался символом победы, его выносили перед войском.",
+                relations: [
+                    { type: "Антагонист", name: "Марена", id: "marena", icon: "snowflake" }
+                ],
+                sphere: "Весеннее плодородие, яровая сила, война, защита",
+                cult: "Яровит почитался как бог войны и весеннего плодородия, и его священный золотой щит хранился в храме. Этот щит не выносили из капища кроме важных военных случаев, и язычники имели такое благоговение к этой вещи, что при виде щита падали на землю. Жрец Яровита от имени бога говорил: «Я бог твой, я тот, который одеваю поля хлебами и леса листьями; плоды нив и деревьев, приплод стад и все, что служит на пользу человеку — в моей власти». В источниках отождествлялся с Марсом. В Вольгасте и Хафельберге в его честь устраивались весенние игрища.",
+                type: "god"
+            },
+
+            prove: {
+                name: "Прове (Проно)", level: "jaw-bg", title: "Бог правосудия и священных дубрав", source: "attested",
+                description: "Бог, почитавшийся в Старгарде. Вероятно, был богом правосудия и закона. Считался покровителем священных дубовых рощ, где проходили суды и ритуалы.",
+                relations: [],
+                sphere: "Правосудие, закон, предсказания, священные дубравы",
+                cult: "Прове почитался в Старгарде (Альденбург) как бог правосудия и закона. Гельмольд описывает священную дубовую рощу, посвящённую Прове, окружённую двором и деревянной оградой с двумя воротами. Это место было святилищем для целого края, имело своего жреца, свои праздники и разные обряды при жертвоприношениях. Сюда раз в неделю сходился народ на суд, со жрецом и князем. Вход во двор был запрещён всякому, кроме жреца и тех, кто желал приносить жертвы или искал убежища. Суд вершился в священной роще от его имени.",
                 type: "god"
             },
 
             svarog: {
-                name: "Сварог", level: "praw-bg", title: "Бог неба, огня и кузнечного ремесла", source: "letopis",
-                description: "Небесный бог-кузнец, отец Дажьбога. Даровал людям орудия труда и установил законы семейной жизни. В летописях назван отцом Дажьбога, а не Перуна.",
+                name: "Сварог", level: "jaw-bg", title: "Бог-кузнец, небесный огонь", source: "common-slavic",
+                description: "Древнее верховное божество. Бог-творец, небесный кузнец, установивший первые законы. Отец богов Сварожичей. Дал людям плуг и научил обрабатывать металл.",
                 relations: [
-                    { type: "Дети", name: "Даждьбог", id: "dazhdbog", icon: "child" },
-                    { type: "Реконструкция (Рыбаков)", name: "Род", id: "rod", icon: "user" }
+                    { type: "Сын", name: "Радегаст", id: "radegast", icon: "child" }
                 ],
-                sphere: "Небо, небесный огонь, ремесла, закон, социальный порядок",
-                cult: "Культ Сварога был особенно распространён среди ремесленников, особенно кузнецов. Священным животным считался огненный петух. В честь Сварога разжигали священные костры и приносили дары кузнецам. Ему молились об удаче в кузнечном деле. Сварога связывали с небесным огнём и солнцем. После христианизации его образ слился с образом Бога-Отца и святых кузнецов.",
+                sphere: "Небесный огонь, кузнечное дело, ремесла, закон, созидание",
+                cult: "Сварог почитался как древнее верховное божество, бог-творец и небесный кузнец, установивший первые законы. Он считался отцом богов Сварожичей, к которым относился и Радегаст. Сварог дал людям плуг и научил обрабатывать металл. Его культ был общеславянским, хотя у балтийских славян он мог быть оттеснён более молодыми богами-воителями. Сварог упоминается в древнерусских источниках; у балтийских славян его культ не засвидетельствован. После христианизации его функции частично слились с образом Бога-Отца.",
                 type: "god"
             },
 
-            "mat-zemlya": {
-                name: "Мать-Сыра Земля", level: "praw-bg", title: "Богиня земли и плодородия", source: "folklor",
-                description: "Женское божество, олицетворение плодородной земли. Почиталась как мать всего живого. Считалось, что Земля чувствует ложь - отсюда обычай клятвы на земле.",
+            zhiva: {
+                name: "Жива (Сива)", level: "jaw-bg", title: "Богиня жизни, весны и плодородия", source: "attested",
+                description: "Воплощение жизненной силы («живы»), богиня весны, плодородия и урожая. Пробуждает природу после зимнего сна. Упомянута Гельмольдом как Siwa.",
+                relations: [
+                    { type: "Антагонист", name: "Марена", id: "marena", icon: "skull" }
+                ],
+                sphere: "Жизнь, плодородие, весна, урожай",
+                cult: "Жива упоминается Гельмольдом как Siwa и почиталась как богиня жизни и плодородия у полабских славян. Она была главной богиней своей местности и считалась воплощением жизненной силы. Весенние обряды были связаны с призывом жизненной силы и пробуждением природы. Жива противопоставлялась Марене как богиня жизни и смерти соответственно. В глоссе «Mater Verborum» Жива упоминается как богиня. После христианизации её образ слился с Богородицей и святыми жёнами.",
+                type: "god"
+            },
+
+            podaga: {
+                name: "Подага", level: "jaw-bg", title: "Божество из Плёна", source: "attested",
+                description: "Божество, почитавшееся в городе Плён племенем вагров. Упомянут Гельмольдом, но его функции неизвестны. Этимология имени спорна, связывают со словами «погода» или «подать».",
                 relations: [],
-                sphere: "Плодородие, земледелие, женское начало, исцеление, природные циклы",
-                cult: "Земле кланялись, прося урожая, и целовали её в знак клятвы. Весной совершали обряды «кормления земли» — приносили хлеб и зерно. Считалось, что Земля чувствует ложь и может наказать клятвопреступника. Ей молились о плодородии и хорошем урожае. После христианизации культ слился с почитанием Богородицы. Земле кланялись перед началом полевых работ.",
+                sphere: "Погода, плодородие (предположительно)",
+                cult: "Подага упоминается Гельмольдом как божество, которому поклонялись в Плёне. Она имела храм и идола в Плёне, и её культ был локальным для племени вагров. Точные функции Подаги неизвестны, но этимология имени связывает её со словами «погода» или «подать». По одной из гипотез, Подага могла быть богиней погоды. Подробности культа не сохранились из-за скудости источников. После христианизации её культ был забыт.",
                 type: "god"
             },
 
-            lada: {
-                name: "Лада", level: "praw-bg", title: "Богиня любви, весны и брака", source: "spornoe",
-                description: "Богиня красоты, любви и семейного благополучия. Покровительница весны, девичьей судьбы и брачных союзов. В источниках не является супругой Сварога — эта связь поздняя реконструкция.",
+            chernobog: {
+                name: "Чернобог (Цернобог)", level: "jaw-bg", title: "Бог зла, тьмы и разрушения", source: "attested",
+                description: "Олицетворение всего злого, тёмного и отрицательного. Бог несчастья, смерти и разрушения. Ему приносили жертвы, чтобы умилостивить и отвести беду.",
                 relations: [
-                    { type: "Дочь", name: "Лёля", id: "lelya", icon: "female" }
+                    { type: "Антипод", name: "Белобог", id: "belobog", icon: "certificate" }
                 ],
-                sphere: "Любовь, брак, весна, красота, гармония, плодородие",
-                cult: "Ладе молились о счастливом браке и семейном благополучии. Весной в её честь водили хороводы, плели венки и пели песни. Девушки просили Ладу о хорошем женихе и удачном замужестве. Ей приносили дары хлебом и мёдом. После христианизации её образ слился с Богородицей. В народной традиции Лада считалась покровительницей семейного счастья.",
+                sphere: "Зло, тьма, несчастье, смерть, Навь",
+                cult: "Чернобог прямо упомянут в «Славянской хронике» Гельмольда как злой бог, приносящий несчастье. Гельмольд описывает ритуал пиршества, на котором пускали вкруговую чашу и произносили заклинания от имени двух богов — доброго и злого, приписывая счастье доброму богу, а несчастье — злому. Балтийские славяне называли злого бога Diabol или Zcerneboch, что значит «чёрный бог». Существование Чернобога косвенно подтверждается топонимами. Ему приносили жертвы, чтобы отвести беду. После христианизации его образ слился с сатаной.",
                 type: "god"
             },
 
-            stribog: {
-                name: "Стрибог", level: "praw-bg", title: "Повелитель ветров и пространства", source: "letopis",
-                description: "Бог ветров и воздушного пространства. Считался одним из древнейших богов, управляющим всеми ветрами на Земле. Ветры часто воспринимались как его внуки.",
-                relations: [],
-                sphere: "Ветры, воздушная стихия, пространство",
-                cult: "Моряки и земледельцы молились Стрибогу о попутном ветре и хорошей погоде. В жертву приносили ленты, развеиваемые по ветру. Считалось, что он управляет всеми ветрами на Земле. Ветры воспринимались как его внуки. Ему молились перед дальней дорогой и торговыми походами. После христианизации его функции перешли к святым, управляющим погодой.",
-                type: "god"
-            },
-
-            dazhdbog: {
-                name: "Даждьбог", level: "praw-bg", title: "Бог солнечного света и благополучия", source: "letopis",
-                description: "Солнечное божество, податель благ, один из главных богов киевского пантеона. Сын Сварога. Считался покровителем Русской земли и княжеской власти.",
+            ruevit: {
+                name: "Руевит (Ругевит)", level: "jaw-bg", title: "Бог войны, защитник от злых сил", source: "attested",
+                description: "Семиликий бог-воин, почитавшийся в Коренице на о. Рюген. У пояса висело семь мечей, восьмой он держал в руке. Могучий защитник, чья сила была направлена на отражение угроз.",
                 relations: [
-                    { type: "Отец", name: "Сварог", id: "svarog", icon: "user" },
-                    { type: "Сопутствует", name: "Хорс", id: "hors", icon: "sun" }
+                    { type: "Соратник", name: "Святовит", id: "svyatovit", icon: "user-friends" },
+                    { type: "Связан с", name: "Поревит", id: "porevit", icon: "user" }
                 ],
-                sphere: "Солнечный свет, лето, урожай, благополучие, княжеская власть, дождь",
-                cult: "Даждьбогу молились о богатом урожае и семейном благополучии. Праздники в его честь проводились летом. Ему приносили дары зерном и хлебом. Даждьбог считался покровителем Русской земли и княжеской власти. В «Слове о полку Игореве» русские названы «внуками Дажьбога». После христианизации его функции перешли к Илье-пророку и Христу.",
+                sphere: "Война, защита от злых сил, воинская мощь",
+                cult: "Руевит почитался в Коренице на острове Рюген, где ему был посвящён главный из трёх храмов. Его идол имел семь голов и семь мечей у пояса, а восьмой он держал в руке. Саксон Грамматик описывает его как бога войны, сходного с Марсом. По описанию Саксона Грамматика, идол Руевита был древним и грубо вырезанным. В 1168 году храм Руевита был разрушен датчанами под предводительством епископа Абсалона. По одной из этимологий, имя Руевит связано со словом «руйный» — красный.",
                 type: "god"
             },
 
-            hors: {
-                name: "Хорс", level: "praw-bg", title: "Бог солнечного диска", source: "letopis",
-                description: "Олицетворение солнечного диска, бог солнечного света. Часто упоминается вместе с Даждьбогом как дополняющая фигура.",
+            porevit: {
+                name: "Поревит", level: "jaw-bg", title: "Бог правосудия и закона", source: "attested",
+                description: "Бог из пантеона Кореницы. Его идол имел пять голов и был безоружным, что указывает на его функции, связанные с мирным временем — правосудием и законом.",
                 relations: [
-                    { type: "Сопутствует", name: "Даждьбог", id: "dazhdbog", icon: "sun" }
+                    { type: "Связан с", name: "Руевит", id: "ruevit", icon: "user-friends" },
+                    { type: "Связан с", name: "Поренут", id: "porenut", icon: "user-friends" }
                 ],
-                sphere: "Солнечный диск, солнечный свет, движение светил, дневной цикл",
-                cult: "Хорсу поклонялись с воздетыми к солнцу руками. Символом Хорса было солнечное колесо. Ему приносили дары на рассвете. Хорс считался богом солнечного диска и дневного света. Его имя имеет иранское происхождение. После христианизации его образ слился с Ильёй-пророком.",
+                sphere: "Правосудие, закон, порядок, справедливость",
+                cult: "Поревит был одним из трёх богов, почитавшихся в Коренице, и его храм стоял рядом с храмом Руевита. Его идол имел пять голов и был безоружным, что указывает на его функции, связанные с мирным временем — правосудием и законом. Предположительно, Поревит считался богом мира и правосудия. Его культ был локальным для племени ранов и прерван христианизацией. В 1168 году храм Поревита был уничтожен датчанами вместе с другими святилищами Кореницы.",
                 type: "god"
             },
 
-            semargl: {
-                name: "Семаргл", level: "praw-bg", title: "Огненный бог-посредник", source: "letopis",
-                description: "Загадочное божество, возможно, заимствованное из иранской мифологии (Симург). Изображался как крылатый пес или грифон.",
-                relations: [],
-                sphere: "Огонь, защита посевов, посредничество между мирами, домашний очаг",
-                cult: "Семарглу приносили жертвы при посеве и сборе урожая. Огненные обереги для дома были связаны с его культом. По одной из реконструкций, Семаргл считался посредником между мирами. Ему молились о защите посевов и семян. На предметах искусства его изображали в виде крылатого пса. После христианизации его функции перешли к святым-защитникам.",
-                type: "god"
-            },
-
-            rojanicy: {
-                name: "Рожаницы", level: "praw-bg", title: "Богини судьбы и рождения", source: "letopis",
-                description: "Две или три богини, покровительницы рождения, судьбы и плодородия.",
+            porenut: {
+                name: "Поренут", level: "jaw-bg", title: "Бог судьбы и будущего", source: "attested",
+                description: "Третий бог из Кореницы. Его идол имел четыре лица на голове и пятое на груди. Вероятно, был связан с судьбой, будущим и жизненным путем человека.",
                 relations: [
-                    { type: "Связь", name: "Род", id: "rod", icon: "user" },
-                    { type: "Связь", name: "Мокошь", id: "mokosh", icon: "female" }
+                    { type: "Связан с", name: "Поревит", id: "porevit", icon: "user-friends" }
                 ],
-                sphere: "Рождение, судьба, плодородие, женские ремесла, защита младенцев",
-                cult: "Рожаницам приносили дары при родах и на крестины. Им молились о здоровье младенцев и удачной судьбе. Рожаницы считались покровительницами женских ремёсел. В их честь готовили родильную кашу. После христианизации их образ слился с Богородицей и святыми жёнами. В народной традиции их называли «рожаницами».",
+                sphere: "Судьба, будущее, предопределение",
+                cult: "Поренут был третьим богом из пантеона Кореницы, и его идол имел четыре лица на голове и пятое на груди. Вероятно, он был связан с судьбой, будущим и жизненным путём человека. По одной из этимологий, имя Поренут связано со словом «породить». В 1168 году его храм был уничтожен датчанами вместе с другими святилищами Кореницы. Сведения о его культе крайне скудны из-за отсутствия подробных описаний в источниках.",
                 type: "god"
             },
 
-            pereplut: {
-                name: "Переплут", level: "praw-bg", title: "Бог изобилия и растительности", source: "spornoe",
-                description: "Упоминается в поучениях против язычества. Связан с водой, корнями и произрастанием. Точные функции неизвестны.",
+            pripegala: {
+                name: "Припегала", level: "jaw-bg", title: "Бог войны с кровавыми ритуалами", source: "attested",
+                description: "Бог, упомянутый в письме магдебургского архиепископа Адельгота. Его культ описывается как крайне жестокий, с человеческими жертвоприношениями. Вероятно, был богом войны и победы.",
                 relations: [
-                    { type: "Связь", name: "Рожаницы", id: "rojanicy", icon: "baby" }
+                    { type: "Схожие функции", name: "Святовит", id: "svyatovit", icon: "gavel" },
+                    { type: "Схожие функции", name: "Яровит", id: "yarovit", icon: "shield-halved" }
                 ],
-                sphere: "Растительность, вода, изобилие",
-                cult: "Переплуту приносили жертвы у воды. Его культ был связан с растительностью и изобилием. Точные обряды неизвестны из-за скудости источников. Упоминается в поучениях против язычества. После христианизации его функции были забыты. Культ не засвидетельствован.",
-                type: "god"
-            },
-
-            perun: {
-                name: "Перун", level: "jaw-bg", title: "Бог-громовержец, покровитель воинов", source: "letopis",
-                description: "Грозное божество, управляющее громом и молниями. Покровитель князя и дружины. Глава киевского пантеона Владимира.",
-                relations: [
-                    { type: "Враг", name: "Велес", id: "veles", icon: "fist-raised" },
-                    { type: "Реконструкция (ВК, спорно)", name: "Даждьбог", id: "dazhdbog", icon: "child" }
-                ],
-                sphere: "Гроза, воинская доблесть, правосудие, княжеская власть, дубовые рощи",
-                cult: "Перуну приносили жертвы под священными дубами. Ему молились о победе в войне и защите от врагов. Князья и дружинники считали его своим покровителем. Ему приносили клятвы на оружии. Священным животным Перуна был бык. После христианизации его образ слился с Ильёй-пророком.",
+                sphere: "Война, победа, жертвоприношения",
+                cult: "Припегала упоминается в письме магдебургского архиепископа Адельгота как бог, чей культ описывается как крайне жестокий. По письму Адельгота, ему приносили человеческие жертвы. Припегала, вероятно, был богом войны и победы, близким по функциям к Святовиту и Яровиту. Его культ был локальным и, возможно, связан с племенем, проживавшим в районе Магдебурга. Сведения о Припегале ограничиваются письмом Адельгота, и его историчность оспаривается некоторыми исследователями.",
                 type: "god"
             },
 
             veles: {
-                name: "Велес", level: "jaw-bg", title: "Бог мудрости, скота и подземного мира", source: "letopis",
-                description: "Покровитель домашних животных, богатства, торговли; бог мудрости и магии. «Скотий бог». В «Слове о полку Игореве» Боян назван «Велесовым внуком».",
+                name: "Велес (Волос)", level: "jaw-bg", title: "«Скотий бог», бог мудрости и магии", source: "common-slavic",
+                description: "Один из ключевых общеславянских богов. Покровитель скота, богатства, мудрости, магии, поэзии и хозяин подземного мира. У западных славян его функции могли переноситься на Триглава или Чернобога.",
                 relations: [
-                    { type: "Враг", name: "Перун", id: "perun", icon: "fist-raised" },
-                    { type: "Реконструкция (Иванов/Топоров)", name: "Мокошь", id: "mokosh", icon: "heart" }
+                    { type: "Функции у", name: "Триглав", id: "triglav", icon: "dice-three" },
+                    { type: "Функции у", name: "Чернобог", id: "chernobog", icon: "moon" }
                 ],
-                sphere: "Скот, богатство, торговля, мудрость, поэзия, магия, Нижний мир",
-                cult: "Велесу приносили жертвы быками и овцами. Его идолы стояли в низинах, у воды и на пастбищах. Ему молились о здоровье скота и приплоде. Велес считался покровителем торговцев и путешественников. Ему молились перед началом выпаса скота. После христианизации его образ слился со святым Власием.",
+                sphere: "Навь, богатство, скот, мудрость, магия",
+                cult: "Велес был общеславянским богом, покровителем скота, богатства, мудрости и магии. У западных славян его прямое почитание зафиксировано слабо, но его функции могли переноситься на Триглава или Чернобога. По одной из гипотез, в польских источниках упоминается храм в Волерогце (городе Велеса). Это указывает на то, что культ Велеса был известен и западным славянам. После христианизации его образ слился со святым Власием.",
+                type: "spirit"
+            },
+
+            belobog: {
+                name: "Белобог (Белбог)", level: "naw-bg", title: "Бог света, добра и удачи", source: "hypothetical",
+                description: "Гипотетический бог светлого начала, антипод Чернобога. Прямых упоминаний его культа в источниках нет, но его существование реконструируется на основе дуализма. Символизирует удачу, день и небо.",
+                relations: [
+                    { type: "Антипод", name: "Чернобог", id: "chernobog", icon: "moon" }
+                ],
+                sphere: "Добро, свет, удача, счастье, дневной свет",
+                cult: "Белобог — гипотетическое божество, реконструируемое на основе дуализма, отражённого в «Славянской хронике» Гельмольда. Гельмольд упоминает только злого бога Чернобога, но из его слов следует, что должен был существовать и добрый бог. Существование Белобога подтверждается топонимами, такими как гора Белобог у лужицких сербов. В глоссе «Mater Verborum» «Белобог» сопоставлен с Baal. Однако многие исследователи считают Белобога созданием кабинетной мифологии. Его культ не засвидетельствован напрямую, но предполагается в рамках дуалистических верований.",
                 type: "god"
             },
 
-            mokosh: {
-                name: "Мокошь", level: "jaw-bg", title: "Богиня судьбы, плодородия и ткачества", source: "letopis",
-                description: "Покровительница женщин, судьбы и ремесел (прядение, ткачество). Единственное женское божество в киевском пантеоне.",
+            marena: {
+                name: "Марена (Морана)", level: "naw-bg", title: "Богиня зимы, смерти и увядания", source: "folklore",
+                description: "Богиня, олицетворяющая зиму, смерть и увядание. Враг Живы. Её чучело ритуально сжигали или топили весной, чтобы прогнать зиму и призвать тепло.",
                 relations: [
-                    { type: "Связь", name: "Доля и Недоля", id: "dolya", icon: "female" },
-                    { type: "Реконструкция (Иванов/Топоров)", name: "Велес", id: "veles", icon: "heart" }
+                    { type: "Антагонист", name: "Жива", id: "zhiva", icon: "seedling" },
+                    { type: "Антагонист", name: "Яровит", id: "yarovit", icon: "shield-halved" }
                 ],
-                sphere: "Судьба, плодородие, ткачество, женские занятия, вода, урожай",
-                cult: "Мокоши молились о здоровье детей и удачном замужестве. Ей приносили дары пряжей и тканями. Мокошь считалась покровительницей женских ремёсел. В её честь устраивали обряды по пятницам (позже — Параскева Пятница). После христианизации её образ слился с Параскевой Пятницей. В народе её называли «Матушка Мокошь».",
+                sphere: "Смерть, зима, увядание, ночь, болезни",
+                cult: "Марена известна в основном по обрядам и фольклору западных славян, особенно поляков и чехов. Обряд проводов зимы и сожжения (или утопления) чучела Марены символизировал победу весны и обеспечивал плодородие. Ян Длугош отождествлял Марену с Церерой; чешские глоссы соотносили её с Гекатой. В славянских обрядах чучело Марены топили в реке или сжигали, чтобы прогнать зиму и призвать тепло. Верили, что уничтожение чучела обеспечит быстрый приход лета, хороший урожай и защиту от мора.",
                 type: "god"
             },
 
-            lelya: {
-                name: "Лёля", level: "jaw-bg", title: "Богиня весны, молодости и любви", source: "spornoe",
-                description: "Дочь Лады; олицетворение пробуждения природы, цветения и девичьей любви.",
+            dziewanna: {
+                name: "Дзеванна (Девана)", level: "naw-bg", title: "Богиня лесов, охоты и дикой природы", source: "folklore",
+                description: "Польская богиня, упомянутая Яном Длугошем, который сравнивал её с римской Дианой. Покровительница дикой природы, лесов, зверей и охоты.",
                 relations: [
-                    { type: "Мать", name: "Лада", id: "lada", icon: "female" },
-                    { type: "Связь", name: "Ярило", id: "yarilo", icon: "heart" }
+                    { type: "Аналог", name: "Диана", id: null, icon: "female" },
+                    { type: "Противопоставление", name: "Марена", id: "marena", icon: "snowflake" }
                 ],
-                sphere: "Весна, молодость, любовь, красота, цветение, невинность",
-                cult: "Лёле пели весенние песни и водили хороводы. В её честь плели венки и выпекали хлеб в форме птиц. Девушки просили Лёлю о любви и счастливом замужестве. Праздники в её честь проводились в конце весны. Ей приносили дары венками и лентами. После христианизации её образ был вытеснен христианскими святыми.",
+                sphere: "Дикая природа, леса, охота, звери, луна",
+                cult: "Дзеванна упоминается Яном Длугошем, который сравнивал её с римской Дианой. Она почиталась как богиня дикой природы, лесов, зверей и охоты. В польских обрядах после утопления Марены в село вносили зелёное деревце, называемое «лято» (лето). Сведения о её культе происходят из поздних источников (XV в.), и его историчность оспаривается. Дзеванна противопоставлялась Марене как богиня жизни и смерти соответственно. После христианизации её образ слился с образами святых жён и Богородицы.",
                 type: "god"
             },
 
-            yarilo: {
-                name: "Ярило", level: "jaw-bg", title: "Бог весеннего солнца и плодородия", source: "obryad",
-                description: "Олицетворял весеннее возрождение природы, страсть и плодородие. Обрядовый персонаж, чьё чучело сжигали летом.",
+            nyja: {
+                name: "Ныя (Ний)", level: "naw-bg", title: "Бог подземного мира и душ умерших", source: "folklore",
+                description: "Польский бог, упомянутый Яном Длугошем и отождествлённый им с Плутоном. Владыка подземного царства (Нави), проводник душ умерших. Возможно, ипостась Велеса.",
                 relations: [
-                    { type: "Связь", name: "Лёля", id: "lelya", icon: "heart" }
+                    { type: "Аналог", name: "Велес", id: "veles", icon: "paw" },
+                    { type: "Аналог", name: "Плутон", id: null, icon: "user-secret" }
                 ],
-                sphere: "Весеннее солнце, страсть, плодородие, сексуальная энергия, земледелие",
-                cult: "Яриле посвящали весенние праздники с чучелом. Чучело Ярилы в конце весны хоронили. Ему молились о плодородии и хорошем урожае. В его честь устраивали игры и гуляния. Ярило считался богом страсти и жизненной силы. После христианизации его образ слился со святым Юрием.",
+                sphere: "Подземный мир, смерть, души предков, Навь",
+                cult: "Ныя упоминается Яном Длугошем и отождествляется им с Плутоном. Согласно Длугошу, Ныя имел главный храм в Гнезно, где ему приносили десятину от урожая. Он почитался как владыка подземного мира и проводник душ умерших. Возможно, Ныя был ипостасью Велеса или его польским вариантом. По одной из гипотез, сведения о Ныя — поздняя реконструкция Длугоша. После христианизации его образ слился с сатаной и властителями ада.",
                 type: "god"
             },
 
-            kupala: {
-                name: "Купала", level: "jaw-bg", title: "Бог летнего солнцеворота и любви", source: "obryad",
-                description: "Покровитель воды и трав; ночь на Иван Купалу — костры, купания, гадания. Обрядовый персонаж.",
+            rarog: {
+                name: "Рарог", level: "naw-bg", title: "Огненный дух, сокол", source: "folklore",
+                description: "Мифологический огненный дух в образе сокола или огненного вихря, связанный с культом огня и домашнего очага. Считался воплощением небесного огня Сварога.",
                 relations: [
-                    { type: "Сестра", name: "Кострома", id: "kostroma", icon: "female" }
+                    { type: "Связан с", name: "Сварог", id: "svarog", icon: "hammer" },
+                    { type: "Связан с", name: "Радегаст", id: "radegast", icon: "sun" }
                 ],
-                sphere: "Летнее солнцестояние, любовь, вода, травы, очищение, магические силы",
-                cult: "Купале посвящали ночь на Ивана Купалу. В эту ночь прыгали через костры, купались в воде и искали цветок папоротника. Ему молились о любви и очищении. Девушки плели венки и пускали их по воде. Купала считался богом летнего солнцестояния. Праздник Купалы был приурочен к Рождеству Иоанна Предтечи.",
-                type: "god"
+                sphere: "Огонь, домашний очаг, солнечный огонь",
+                cult: "Рарог — западнославянский мифологический персонаж, огненный дух в образе сокола или огненного вихря. Его имя имеет иранское происхождение и связано с представлениями о священной птице. В чешской и словацкой традициях рарашек — это дух-обогатитель, который выводится из яйца и приносит богатство. Рарог считался воплощением небесного огня Сварога. В поздних западнославянских поверьях рарог мог появляться в виде огненного змея или шара. После христианизации образ Рарога слился с представлениями о чёрте.",
+                type: "spirit"
             },
 
-            kostroma: {
-                name: "Кострома", level: "jaw-bg", title: "Богиня плодородия, лета и любви", source: "obryad",
-                description: "Сестра Купалы; символ увядания природы к концу лета. Обрядовый персонаж.",
+            pogwizd: {
+                name: "Погвизд (Похвист)", level: "naw-bg", title: "Дух или бог ветра и непогоды", source: "folklore",
+                description: "Божество ветра, бури и плохой погоды, упомянутое в польских источниках. Его имя происходит от слова «свист». Представлялся как суровое существо, приносящее холод и метели.",
                 relations: [
-                    { type: "Брат", name: "Купала", id: "kupala", icon: "user-friends" }
+                    { type: "Брат", name: "Посьвист", id: "poswist", icon: "user-friends" }
                 ],
-                sphere: "Лето, любовь, плодородие, вода, увядание природы",
-                cult: "Костроме посвящали обряд «проводы Костромы». Чучело Костромы топили или сжигали в конце лета. Ей молились о плодородии и хорошем урожае. В её честь устраивали игры и хороводы. Кострома считалась символом увядания природы. После христианизации её образ был забыт.",
-                type: "god"
+                sphere: "Ветер, буря, метель, непогода",
+                cult: "Погвизд — западнославянский дух ветра и непогоды, упомянутый в польских источниках. Его имя происходит от слова «свист», и его представляли как суровое существо, приносящее холод и метели. Погвизд персонифицировал стихийные силы, которых пытались задобрить. В фольклоре ветер персонифицировался как «пан Ветровский». После христианизации образ Погвизда слился с представлениями о бесах и демонах воздуха.",
+                type: "spirit"
             },
 
-            dolya: {
-                name: "Доля", level: "jaw-bg", title: "Богиня удачи и счастливой судьбы", source: "folklor",
-                description: "Персонификация удачи; прядет «золотую нить» судьбы трудолюбивым.",
+            poswist: {
+                name: "Посьвист", level: "naw-bg", title: "Дух или бог ясной погоды", source: "folklore",
+                description: "Брат Погвизда, божество хорошей погоды и ласкового ветра. Его представляли как красивого юношу, приносящего тепло и разгоняющего тучи. Его появление означало конец бури.",
                 relations: [
-                    { type: "Сестра", name: "Недоля", id: "nedolya", icon: "female" }
+                    { type: "Брат", name: "Погвизд", id: "pogwizd", icon: "user-friends" }
                 ],
-                sphere: "Счастливая судьба, удача, успех, благополучие",
-                cult: "Доле молились о счастливой судьбе и удаче. Ей приносили дары хлебом и мёдом. Доля считалась покровительницей трудолюбивых. Её призывали при гаданиях о судьбе. Она «заходит» к добрым и трудолюбивым. После христианизации её образ слился с ангелом-хранителем.",
-                type: "god"
+                sphere: "Хорошая погода, легкий ветер, ясное небо",
+                cult: "Посьвист — брат Погвизда, божество хорошей погоды и ласкового ветра. Его представляли как красивого юношу, приносящего тепло и разгоняющего тучи. Появление Посьвиста означало конец бури и наступление ясной погоды. Как и его брат, он являлся олицетворением природных сил в народных верованиях. По одной из гипотез, Посьвист соответствует Стрибогу. После христианизации его образ слился с представлениями об ангелах воздуха.",
+                type: "spirit"
             },
 
-            nedolya: {
-                name: "Недоля", level: "jaw-bg", title: "Богиня несчастья и неудачной судьбы", source: "folklor",
-                description: "Персонификация бед и несчастий; плетёт рваную нить для ленивых.",
-                relations: [
-                    { type: "Сестра", name: "Доля", id: "dolya", icon: "female" }
-                ],
-                sphere: "Несчастливая судьба, неудачи, бедность, болезни",
-                cult: "Недоле молились об избавлении от бед и несчастий. Ей приносили дары, чтобы задобрить. Недоля считалась причиной неудач и бедности. Её изгоняли оберегами и порядком в доме. Она «заходит» к ленивым и злым. После христианизации её образ был забыт.",
-                type: "god"
-            },
-
-            kolyada: {
-                name: "Коляда", level: "jaw-bg", title: "Бог зимнего солнцеворота", source: "obryad",
-                description: "Олицетворение нового солнечного цикла. Обрядовый персонаж.",
-                relations: [
-                    { type: "Связь", name: "Даждьбог", id: "dazhdbog", icon: "sun" }
-                ],
-                sphere: "Зимнее солнцестояние, Новый год",
-                cult: "Коляде посвящали зимние гуляния и песни. В её честь колядовали и желали благополучия. Ей приносили дары обрядовым печеньем. Коляда считалась персонажем зимнего солнцестояния. В её честь устраивали обряды с чучелом. Праздник Коляды был приурочен к Рождеству Христову.",
-                type: "god"
-            },
-
-            maslenitsa: {
-                name: "Масленица", level: "jaw-bg", title: "Персонификация проводов зимы", source: "obryad",
-                description: "Олицетворяет праздник весны. Обрядовый персонаж.",
-                relations: [
-                    { type: "Связь", name: "Морана", id: "mora", icon: "snowflake" }
-                ],
-                sphere: "Завершение зимы, пиры",
-                cult: "Масленице посвящали неделю блинов и гуляний. В её честь сжигали чучело зимы. Ей приносили дары блинами. Масленица считалась символом проводов зимы. В её честь устраивали игры и хороводы. Масленица сохранилась как Сырная неделя.",
-                type: "god"
-            },
-
-            trojan: {
-                name: "Троян", level: "jaw-bg", title: "Божество трёх миров", source: "letopis",
-                description: "Персонаж «Слова о полку Игореве» и поучений. Символ древности, возможно, божество, связанное с тремя мирами или тремя головами.",
+            boruta: {
+                name: "Борута", level: "naw-bg", title: "Дьявол, леший, хранитель кладов", source: "folklore",
+                description: "Персонаж польского фольклора, дьявол или леший, обитающий в болотах и лесах в окрестностях города Ленчица. Может представать в образе шляхтича. Охраняет скрытые сокровища.",
                 relations: [],
-                sphere: "Три мира, древность",
-                cult: "Культа не имел. Упоминается в «Слове о полку Игореве» как символ древности. По одной из гипотез, был божеством, связанным с тремя мирами. В поучениях против язычества упоминается как «Троян». После христианизации его функции были забыты. Точные обряды неизвестны.",
-                type: "god"
-            },
-
-            div: {
-                name: "Див", level: "jaw-bg", title: "Вещая птица или грифон", source: "letopis",
-                description: "Существо из «Слова о полку Игореве», возможно, грифон или вещая птица. Связан с предзнаменованиями.",
-                relations: [],
-                sphere: "Предзнаменования, небо",
-                cult: "Культа не имел. Упоминается в «Слове о полку Игореве» как вещая птица или грифон. Связан с предзнаменованиями. В поучениях против язычества не упоминается. После христианизации его образ был забыт. Точные обряды неизвестны.",
-                type: "spirit"
-            },
-
-            chernobog: {
-                name: "Чернобог", level: "naw-bg", title: "Владыка Нави, бог хаоса и разрушения", source: "letopis",
-                description: "Антипод светлых богов, воплощение мрака и смерти; часть цикла жизни-смерти. В источниках известен у балтийских славян.",
-                relations: [],
-                sphere: "Смерть, разрушение, хаос, темнота, Нижний мир",
-                cult: "Чернобогу приносили жертвы в пещерах и оврагах. Ему приносили жертвы, чтобы отвести беду. Чернобог считался владыкой Нави. Ему приносили дары чёрного цвета. После христианизации его образ слился с сатаной. В источниках известен у балтийских славян.",
-                type: "god"
-            },
-
-            mora: {
-                name: "Морана", level: "naw-bg", title: "Богиня смерти, зимы и ночи", source: "obryad",
-                description: "Олицетворение зимы и умирания природы; «умирает» весной, возрождается зимой.",
-                relations: [],
-                sphere: "Смерть, зима, ночь, болезни, увядание",
-                cult: "Моране посвящали обряд сожжения чучела в конце зимы. Её чучело сжигали/топили, чтобы прогнать зиму. Морана считалась богиней зимы и увядания. В её честь устраивали обряды проводов зимы. После христианизации её образ слился с Марьей-Моревной. Культ засвидетельствован в фольклоре.",
-                type: "god"
-            },
-
-            yascher: {
-                name: "Ящер", level: "naw-bg", title: "Хранитель подземных вод", source: "folklor",
-                description: "Хтонический дракон/ящерица подземных вод и болот; может даровать дождь.",
-                relations: [],
-                sphere: "Подземные воды, болота, дожди, рыбные богатства",
-                cult: "Ящеру приносили жертвы в болотах и озёрах. Ящер считался хранителем подземных вод. В его честь устраивали обряды у воды. Ему приносили дары рыбой. После христианизации его образ слился с водяным. Культ засвидетельствован в фольклоре.",
-                type: "god"
-            },
-
-            karna: {
-                name: "Карна", level: "naw-bg", title: "Богиня перехода, плакальщица и проводница душ", source: "spornoe",
-                description: "Богиня, встречающая душу в момент смерти и сопровождающая её в загробный мир (Навь). Олицетворяет ритуальный плач и скорбь.",
-                relations: [
-                    { type: "Связь", name: "Мир мёртвых", id: null, icon: "skull" }
-                ],
-                sphere: "Смерть, переход в загробный мир, плач, скорбь, возрождение",
-                cult: "Карне молились об упокоении душ умерших. В её честь совершали плачи и причитания. По одной из реконструкций, Карна считалась проводницей душ в Навь. Ей приносили дары хлебом. В её честь устраивали поминальные обряды. После христианизации её образ слился с Богородицей-плакальщицей.",
-                type: "god"
-            },
-
-            beregini: {
-                name: "Берегини", level: "jaw-bg", title: "Духи-покровительницы берегов и вод", source: "folklor",
-                description: "Женские охранительные образы берегов, ключей и детей.",
-                relations: [
-                    { type: "Связь", name: "Мать-Земля", id: "mat-zemlya", icon: "mountain" }
-                ],
-                sphere: "Защита, вода, берега, источники, материнская опека, обереги",
-                cult: "Берегиням приносили дары у рек и ключей. Им молились о защите детей и дома. В их честь устраивали обряды у воды. Берегини считались покровительницами материнства. Им приносили ленты и холсты. После христианизации их образ слился с Богородицей и святыми жёнами.",
-                type: "spirit"
-            },
-
-            leshy: {
-                name: "Леший", level: "jaw-bg", title: "Хозяин леса", source: "folklor",
-                description: "Повелевает зверями, может выводить или путать путников.",
-                relations: [
-                    { type: "Связь", name: "Велес", id: "veles", icon: "tree" }
-                ],
-                sphere: "Леса, звери, охота, тропы, защита природы",
-                cult: "Лешему приносили дары на пнях: хлеб, соль и монеты. Ему молились об удачной охоте и защите в лесу. Леший считался хозяином леса и зверей. В его честь устраивали обряды перед охотой. Ему приносили дары в лесу. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            vodyanoy: {
-                name: "Водяной", level: "jaw-bg", title: "Хозяин рек и озёр", source: "folklor",
-                description: "Властитель глубин; благоволит рыбакам за дары.",
-                relations: [
-                    { type: "Спутницы", name: "Русалки", id: "rusalki", icon: "water" }
-                ],
-                sphere: "Реки, озёра, рыбалка, глубины, водовороты",
-                cult: "Водяному приносили дары хлебом и пивом. Ему молились об удачной рыбалке и защите от утопления. Водяной считался хозяином рек и озёр. В его честь устраивали обряды у воды. Первые уловы отпускали в воду. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            domovoy: {
-                name: "Домовой", level: "jaw-bg", title: "Дух-хранитель дома", source: "folklor",
-                description: "Хранитель очага и семейного благополучия.",
-                relations: [
-                    { type: "Соперник", name: "Кикимора", id: "kikimora", icon: "ghost" }
-                ],
-                sphere: "Дом, очаг, хозяйство, семья, благополучие",
-                cult: "Домовому приносили дары кашей и хлебом. Ему молились о благополучии дома и семьи. Домовой считался хранителем очага. При переезде переносили угли из старого очага. Ему приносили дары за печкой. После христианизации его образ слился со святыми.",
-                type: "spirit"
-            },
-
-            kikimora: {
-                name: "Кикимора", level: "jaw-bg", title: "Зловредный дух дома", source: "folklor",
-                description: "Путает пряжу, пугает; усмиряется порядком и оберегами.",
-                relations: [
-                    { type: "Противник", name: "Домовой", id: "domovoy", icon: "hand-fist" }
-                ],
-                sphere: "Дом, ночные страхи, беспорядок, порча",
-                cult: "Кикиморе приносили дары, чтобы задобрить. Её задабривали или изгоняли оберегами. Кикимора считалась зловредным духом дома. В её честь устраивали обряды очищения. Ей приносили дары и обереги. После христианизации её образ слился с бесами.",
-                type: "spirit"
-            },
-
-            ovinnik: {
-                name: "Овинник", level: "jaw-bg", title: "Дух овина и гумна", source: "folklor",
-                description: "Хранитель зерна; может устроить пожар при неуважении.",
-                relations: [
-                    { type: "Связь", name: "Полевик", id: "polevik", icon: "seedling" }
-                ],
-                sphere: "Амбары, зерно, уборка, огонь",
-                cult: "Овиннику приносили дары крошками хлеба и солью. Ему молились о сохранении зерна и защите от огня. Овинник считался хранителем зерна. В его честь устраивали обряды в амбарах. Ему приносили дары на ночь. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            bannik: {
-                name: "Банник", level: "jaw-bg", title: "Дух бани", source: "folklor",
-                description: "Суровый хозяин бани; не любит присутствие при парении.",
-                relations: [],
-                sphere: "Баня, очищение, гадания, пар",
-                cult: "Баннику приносили дары веником, мылом и водой. Ему молились о здоровье и очищении. Банник считался хозяином бани. В его честь устраивали обряды в бане. Ему приносили дары после парения. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            polevik: {
-                name: "Полевик", level: "jaw-bg", title: "Дух поля", source: "folklor",
-                description: "Оберегает нивы и межи; может путать в полуденный зной.",
-                relations: [
-                    { type: "Связь", name: "Даждьбог", id: "dazhdbog", icon: "sun" }
-                ],
-                sphere: "Поля, межи, урожай, полуденный зной",
-                cult: "Полевику приносили дары первыми колосками и хлебом. Ему молились о хорошем урожае и защите от засухи. Полевик считался хозяином поля. В его честь устраивали обряды на межах. Ему приносили дары в поле. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            lugovik: {
-                name: "Луговик", level: "jaw-bg", title: "Дух лугов и трав", source: "folklor",
-                description: "Хранитель трав и сенокосов.",
-                relations: [
-                    { type: "Связь", name: "Лёля", id: "lelya", icon: "leaf" }
-                ],
-                sphere: "Луга, травы, цветы, медосбор",
-                cult: "Луговику приносили дары травами и цветами. Ему молились о хорошем сенокосе и медосборе. Луговик считался хозяином лугов. В его честь устраивали обряды на лугах. Кланялись лугу; несжатые полосы оставляли. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            gumennik: {
-                name: "Гуменник", level: "jaw-bg", title: "Дух гумна и овина", source: "folklor",
-                description: "Дух гумна — места для молотьбы. Следит за порядком и может наказать за лень.",
-                relations: [
-                    { type: "Связь", name: "Овинник", id: "ovinnik", icon: "seedling" }
-                ],
-                sphere: "Гумно, зерно, молотьба",
-                cult: "Гуменнику приносили дары хлебом и кашей. Ему молились о хорошем урожае и защите от огня. Гуменник считался хозяином гумна. В его честь устраивали обряды на гумне. Ему приносили дары после молотьбы. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            kletnik: {
-                name: "Клетник", level: "jaw-bg", title: "Дух клети", source: "folklor",
-                description: "Дух клети — хозяйственной постройки для хранения зерна и вещей.",
-                relations: [
-                    { type: "Связь", name: "Овинник", id: "ovinnik", icon: "home" }
-                ],
-                sphere: "Клеть, запасы",
-                cult: "Клетнику приносили дары хлебом и солью. Ему молились о сохранении запасов и защите от воров. Клетник считался хозяином клети. В его честь устраивали обряды в клети. Ему приносили дары после сбора урожая. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            podpolye: {
-                name: "Подпольник", level: "jaw-bg", title: "Дух подполья", source: "folklor",
-                description: "Дух, живущий в подполье дома. Может пугать, но иногда помогает.",
-                relations: [
-                    { type: "Связь", name: "Домовой", id: "domovoy", icon: "home" }
-                ],
-                sphere: "Подполье, дом",
-                cult: "Подпольнику приносили дары хлебом и кашей. Ему молились о защите дома и подполья. Подпольник считался хозяином подполья. В его честь устраивали обряды в подполье. Ему приносили дары в подполье. После христианизации его образ слился с домовым.",
-                type: "spirit"
-            },
-
-            bolotnik: {
-                name: "Болотник", level: "jaw-bg", title: "Дух болота", source: "folklor",
-                description: "Хозяин болота. Затягивает людей в трясину, может пугать огоньками.",
-                relations: [
-                    { type: "Связь", name: "Водяной", id: "vodyanoy", icon: "water" }
-                ],
-                sphere: "Болото, трясина",
-                cult: "Болотнику приносили дары у болота. Ему молились о защите от трясины и болезней. Болотник считался хозяином болота. В его честь устраивали обряды у болота. Ему приносили дары хлебом и мёдом. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            rusalki: {
-                name: "Русалки", level: "naw-bg", title: "Духи воды и полей", source: "folklor",
-                description: "Амбивалентные духи: плодородие и опасность; «русальная неделя».",
-                relations: [
-                    { type: "Связь", name: "Водяной", id: "vodyanoy", icon: "water" }
-                ],
-                sphere: "Реки, озёра, поля, русальная неделя, плодородие/опасность",
-                cult: "Русалкам приносили дары у воды. Им молились о плодородии и защите от болезней. Русалки считались духами воды и полей. На русальной неделе избегали купания и работ в поле, оставляли угощения у воды. Им приносили дары хлебом и мёдом. После христианизации их образ слился с святыми жёнами.",
-                type: "spirit"
-            },
-
-            viy: {
-                name: "Вий", level: "naw-bg", title: "Грозный владыка Нави (фольклор; статус спорен)", source: "literatura",
-                description: "Поздний образ: взгляд убивает; ассоциация со смертью и подземным миром. Литературный персонаж из повести Гоголя.",
-                relations: [
-                    { type: "Связь", name: "Чернобог", id: "chernobog", icon: "skull" }
-                ],
-                sphere: "Навь, страх, смерть, мрак",
-                cult: "Культа нет; литературный персонаж Гоголя. В фольклоре — демон со смертельным взглядом. Живёт в преданиях и литературе. После христианизации его образ слился с бесами. Точные обряды неизвестны. Статус спорен.",
-                type: "spirit"
-            },
-
-            zlydni: {
-                name: "Злыдни", level: "naw-bg", title: "Духи несчастья и нищеты", source: "folklor",
-                description: "Селятся там, где ссоры и леность; приносят упадок.",
-                relations: [
-                    { type: "Связаны с", name: "Недоля", id: "nedolya", icon: "spinner" }
-                ],
-                sphere: "Нищета, болезни, раздор, несчастья",
-                cult: "Злыдням приносили дары, чтобы задобрить. Их изгоняли обрядами и соблюдением порядка в доме. Злыдни считались духами несчастья. В их честь устраивали обряды очищения. Им приносили дары хлебом и солью. После христианизации их образ слился с бесами.",
-                type: "spirit"
-            },
-
-            mavka: {
-                name: "Мавка", level: "naw-bg", title: "Дух умерших детей", source: "folklor",
-                description: "Души некрещеных детей, часто как прекрасные девушки. Украинский персонаж.",
-                relations: [
-                    { type: "Связь", name: "Русалки", id: "rusalki", icon: "water" }
-                ],
-                sphere: "Души, соблазн",
-                cult: "Мавкам приносили дары у воды и в лесу. Им молились об упокоении душ умерших детей. Мавки считались духами умерших детей. В их честь ставили кресты и приносили угощения. Им приносили дары хлебом и мёдом. После христианизации их образ слился с святыми жёнами.",
-                type: "spirit"
-            },
-
-            upyr: {
-                name: "Упырь", level: "naw-bg", title: "Вампир", source: "folklor",
-                description: "Оживший мертвец, питающийся кровью.",
-                relations: [
-                    { type: "Связь", name: "Навьи", id: "navyi", icon: "skull" }
-                ],
-                sphere: "Смерть, болезни, кровь",
-                cult: "Упырю приносили дары, чтобы задобрить. Ему молились об избавлении от болезней и смерти. Упырь считался ожившим мертвецом. Защита: осиновые колья в могилах. Ему приносили дары хлебом и солью. После христианизации его образ слился с бесами.",
-                type: "spirit"
-            },
-
-            volkolak: {
-                name: "Волколак", level: "naw-bg", title: "Оборотень", source: "folklor",
-                description: "Человек, превращающийся в волка.",
-                relations: [
-                    { type: "Связь", name: "Велес", id: "veles", icon: "paw" }
-                ],
-                sphere: "Превращение, охота",
-                cult: "Культа не имел; фольклорный персонаж. Волколак считался оборотнем. В его честь устраивали обряды в лесу. Ему приносили дары мясом и хлебом. После христианизации его образ слился с бесами. Точные обряды неизвестны.",
-                type: "spirit"
-            },
-
-            likhoradki: {
-                name: "Лихорадки", level: "naw-bg", title: "Духи болезней", source: "folklor",
-                description: "Демоны-старухи, насылающие болезни. Обычно их представляли как 12 сестёр.",
-                relations: [
-                    { type: "Связь", name: "Морана", id: "mora", icon: "skull" }
-                ],
-                sphere: "Болезни, страдания",
-                cult: "Лихорадкам приносили дары, чтобы задобрить. Их изгоняли заговорами и оберегами. Лихорадки считались духами болезней. В их честь устраивали обряды исцеления. Им приносили дары хлебом и мёдом. После христианизации их образ слился с бесами.",
-                type: "spirit"
-            },
-
-            navyi: {
-                name: "Навьи", level: "naw-bg", title: "Нечистые мертвецы", source: "folklor",
-                description: "Покойники, «нечистые» мертвецы, которые могут приходить к живым (например, мыться в бане).",
-                relations: [
-                    { type: "Связь", name: "Упырь", id: "upyr", icon: "skull" }
-                ],
-                sphere: "Смерть, болезни",
-                cult: "Навьям приносили дары, чтобы задобрить. Им молились об избавлении от болезней и смерти. Навьи считались нечистыми мертвецами. Защита: обереги от навьих. Им приносили дары хлебом и солью. После христианизации их образ слился с бесами.",
-                type: "spirit"
-            },
-
-            mara: {
-                name: "Мара", level: "naw-bg", title: "Дух-душитель", source: "folklor",
-                description: "Дух, живущий на кладбище, является в виде черной тени и душит людей по ночам.",
-                relations: [
-                    { type: "Связь", name: "Морана", id: "mora", icon: "moon" }
-                ],
-                sphere: "Кошмары, смерть",
-                cult: "Маре приносили дары, чтобы задобрить. Её изгоняли оберегами. Мара считалась духом-душителем. В её честь устраивали обряды очищения. Ей приносили дары хлебом и солью. После христианизации её образ слился с бесами.",
-                type: "spirit"
-            },
-
-            "baba-yaga": {
-                name: "Баба-Яга", level: "naw-bg", title: "Ведьма лесная", source: "folklor",
-                description: "Могущественная старуха-чародейка, хранительница границы миров.",
-                relations: [
-                    { type: "Связь", name: "Леший", id: "leshy", icon: "tree" }
-                ],
-                sphere: "Мудрость, испытания, магия",
-                cult: "Культа не имела; фольклорный персонаж. Баба-Яга считалась ведьмой лесной. В её честь устраивали обряды в лесу. Ей приносили дары хлебом и мёдом. После христианизации её образ слился с ведьмами и бесами. Точные обряды неизвестны.",
+                sphere: "Болота, леса, клады, обман",
+                cult: "Борута — персонаж польского фольклора, дьявол или леший, обитающий в болотах и лесах в окрестностях города Ленчица. Он может представать в образе шляхтича и охраняет скрытые сокровища. Борута считается поздним фольклорным персонажем, не являющимся богом, и его образ сформировался под влиянием христианства. В польских быличках Борута часто выступает как искуситель и обманщик, заманивающий людей в болото. В позднем фольклоре он стал одним из местных дьяволов.",
                 type: "spirit"
             }
         };
 
         // ======= НАЗВАНИЯ ИСТОЧНИКОВ =======
         const sourceNames = {
-            letopis: "Летописный",
-            folklor: "Фольклорный",
-            obryad: "Обрядовый",
-            spornoe: "Спорный",
-            literatura: "Литературный"
+            attested: "Исторический",
+            folklore: "Фольклорный",
+            hypothetical: "Гипотетический",
+            "common-slavic": "Общеславянский"
         };
 
         // Состояние
@@ -1126,8 +741,8 @@
                     if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
             } else {
-                showDeityDetails('rod');
-                activateCard('rod');
+                showDeityDetails('svyatovit');
+                activateCard('svyatovit');
             }
         });
 
@@ -1270,7 +885,7 @@
                 if (navigator.share) {
                     navigator.share({
                         title: document.title,
-                        text: activeDeityId ? `${deitiesData[activeDeityId].name} - ${deitiesData[activeDeityId].title}` : 'Древнерусский Пантеон Богов',
+                        text: activeDeityId ? `${deitiesData[activeDeityId].name} - ${deitiesData[activeDeityId].title}` : 'Западно-славянский Пантеон Богов',
                         url: url
                     }).catch(() => copyToClipboard(url));
                 } else {
@@ -1388,6 +1003,8 @@
                 if (relation.icon === 'shield-halved') iconClass = 'fa-solid fa-shield-halved';
                 if (relation.icon === 'dice-three') iconClass = 'fa-solid fa-dice-three';
                 if (relation.icon === 'certificate') iconClass = 'fa-solid fa-certificate';
+                if (relation.icon === 'user-secret') iconClass = 'fa-solid fa-user-secret';
+                if (relation.icon === 'hammer') iconClass = 'fa-solid fa-hammer';
 
                 if (relation.id) {
                     relationItem.innerHTML = `
@@ -1468,7 +1085,7 @@
 
             const sources = [];
             if (deity.image) sources.push(deity.image);
-            sources.push(`images/${deityId}.webp`, `images/${deityId}.jpg`, `images/${deityId}.png`);
+            sources.push(`images/western/${deityId}.webp`, `images/western/${deityId}.jpg`, `images/western/${deityId}.png`);
 
             const placeholder = makePlaceholderDataURL(deity.name, deity.level);
 
@@ -1518,7 +1135,6 @@
         }
 
         function getLevelColors(levelClass) {
-            if (levelClass === 'praw-bg') return ['#00bcd4', '#00838f'];
             if (levelClass === 'jaw-bg')  return ['#4caf50', '#2e7d32'];
             if (levelClass === 'naw-bg')  return ['#f44336', '#b71c1c'];
             return ['#7f8c8d', '#2c3e50'];
