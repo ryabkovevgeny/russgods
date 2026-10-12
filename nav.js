@@ -4,10 +4,10 @@ const navDeities = {
         name: "Чернобог",
         level: "naw-bg",
         title: "Владыка Нави",
-        description: "Олицетворение мрака и хаоса.",
+        source: "letopis", // западнославянский, но в восточнославянской традиции реконструируется
+        description: "Олицетворение мрака и хаоса. В источниках известен у балтийских славян; в восточнославянской традиции его образ реконструируется как антагонист Белобога.",
         relations: [
-            {type:"Противоположность", name:"Белобог", id:"belobog", icon:"scale-balanced"},
-            {type:"Отец", name:"Морана", id:"mora", icon:"user"}
+            { type: "Отец", name: "Морана", id: "mora", icon: "user" }
         ],
         sphere: "Мрак, разрушение, смерть",
         cult: "Чёрные жертвоприношения.",
@@ -18,9 +18,10 @@ const navDeities = {
         name: "Морана",
         level: "naw-bg",
         title: "Богиня смерти и зимы",
+        source: "obryad", // обрядовый
         description: "Богиня увядания природы, связана с зимой.",
         relations: [
-            {type:"Отец", name:"Чернобог", id:"chernobog", icon:"user"}
+            { type: "Отец", name: "Чернобог", id: "chernobog", icon: "user" }
         ],
         sphere: "Зима, смерть, болезни",
         cult: "Сожжение чучела зимой.",
@@ -31,10 +32,9 @@ const navDeities = {
         name: "Ящер",
         level: "naw-bg",
         title: "Хтонический дракон",
-        description: "Чудовище подземных вод, иногда приносит дожди.",
-        relations: [
-            {type:"Повелитель", name:"Чернобог", id:"chernobog", icon:"dragon"}
-        ],
+        source: "folklor",
+        description: "Чудовище подземных вод, иногда приносит дожди. Хтоническое существо, связанное с водой и подземным миром.",
+        relations: [],
         sphere: "Подземные воды, дожди",
         cult: "Жертвы в лесные болота.",
         type: "god"
@@ -44,9 +44,10 @@ const navDeities = {
         name: "Русалки",
         level: "naw-bg",
         title: "Духи воды и полей",
-        description: "Могут приносить плодородие, но и навредить.",
+        source: "folklor",
+        description: "Могут приносить плодородие, но и навредить. Часто связаны с утопленницами или некрещеными детьми.",
         relations: [
-            {type:"Связь", name:"Водяной", id:"vodyanoy", icon:"water"}
+            { type: "Связь", name: "Водяной", id: "vodyanoy", icon: "water" }
         ],
         sphere: "Реки, поля, плодородие",
         cult: "Им жертвовали у воды.",
@@ -56,10 +57,11 @@ const navDeities = {
     viy: {
         name: "Вий",
         level: "naw-bg",
-        title: "Владыка Нави",
-        description: "Поздний образ, взглядом убивает.",
+        title: "Демон со смертельным взглядом",
+        source: "literatura", // литературный
+        description: "В фольклоре — демон, чей взгляд убивает. Литературный образ из повести Гоголя. Как отдельного культа не имел.",
         relations: [
-            {type:"Связь", name:"Чернобог", id:"chernobog", icon:"skull"}
+            { type: "Связь", name: "Чернобог", id: "chernobog", icon: "skull" }
         ],
         sphere: "Смерть, страх",
         cult: "Как отдельного культа не имел.",
@@ -70,9 +72,10 @@ const navDeities = {
         name: "Баба-Яга",
         level: "naw-bg",
         title: "Ведьма лесная",
+        source: "folklor",
         description: "Могущественная старуха-чародейка, хранительница границы миров.",
         relations: [
-            {type:"Связь", name:"Леший", id:"leshy", icon:"tree"}
+            { type: "Связь", name: "Леший", id: "leshy", icon: "tree" }
         ],
         sphere: "Мудрость, испытания, магия",
         cult: "Фольклорный персонаж, дары приносились для удачи.",
@@ -83,9 +86,10 @@ const navDeities = {
         name: "Мавка",
         level: "naw-bg",
         title: "Дух умерших детей",
-        description: "Души некрещеных детей, часто как прекрасные девушки.",
+        source: "folklor",
+        description: "Души некрещеных детей, часто как прекрасные девушки. Украинский персонаж.",
         relations: [
-            {type:"Связь", name:"Русалки", id:"rusalki", icon:"water"}
+            { type: "Связь", name: "Русалки", id: "rusalki", icon: "water" }
         ],
         sphere: "Души, соблазн",
         cult: "Ставили кресты и приносили угощения.",
@@ -96,9 +100,10 @@ const navDeities = {
         name: "Упырь",
         level: "naw-bg",
         title: "Вампир",
+        source: "folklor",
         description: "Оживший мертвец, питающийся кровью.",
         relations: [
-            {type:"Связь", name:"Чернобог", id:"chernobog", icon:"moon"}
+            { type: "Связь", name: "Навьи", id: "navyi", icon: "skull" }
         ],
         sphere: "Смерть, болезни, кровь",
         cult: "Осиновые колья в могилах.",
@@ -109,38 +114,8 @@ const navDeities = {
         name: "Волколак",
         level: "naw-bg",
         title: "Оборотень",
+        source: "folklor",
         description: "Человек, превращающийся в волка.",
         relations: [
-            {type:"Связь", name:"Велес", id:"veles", icon:"paw"}
+            { type: "Связь", name: "Велес", id: "veles", icon: "paw" }
         ],
-        sphere: "Превращение, охота",
-        cult: "Жертвы в лесу.",
-        type: "spirit"
-    },
-
-    likhoradki: {
-        name: "Лихорадки",
-        level: "naw-bg",
-        title: "Духи болезней",
-        description: "Демоны-старухи, насылающие болезни.",
-        relations: [
-            {type:"Связь", name:"Морана", id:"mora", icon:"skull"}
-        ],
-        sphere: "Болезни, страдания",
-        cult: "Обереги и заговоры.",
-        type: "spirit"
-    },
-
-    zlydni: {
-        name: "Злыдни",
-        level: "naw-bg",
-        title: "Духи бедности",
-        description: "Несут бедность и раздор.",
-        relations: [
-            {type:"Связь", name:"Недоля", id:"nedolya", icon:"face-frown"}
-        ],
-        sphere: "Нищета, несчастья",
-        cult: "Труд и порядок изгоняют их.",
-        type: "spirit"
-    }
-};
