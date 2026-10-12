@@ -1,28 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RVZMB5ZP8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6RVZMB5ZP8');
-</script>
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104200189', 'ym');
-
-    ym(104200189, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/104200189" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Западно-славянский Пантеон Богов</title>
@@ -66,6 +44,20 @@
         .deity-card-name { font-size: 0.8rem; font-weight: bold; font-family: 'Russo One', sans-serif; text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
         .deity-type-badge { position: absolute; top: -5px; right: -5px; background: rgba(255, 215, 0, 0.9); color: #000; font-size: 0.65rem; padding: 2px 6px; border-radius: 10px; font-weight: bold; }
         .deity-disputed-badge { position: absolute; top: -5px; left: -5px; background: #9b59b6; color: #fff; width: 20px; height: 20px; border-radius: 50%; font-size: 0.8rem; font-weight: bold; display: flex; align-items: center; justify-content: center; cursor: help; box-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+
+        /* 🎨 ЦВЕТОВЫЕ ИНДИКАТОРЫ ИСТОЧНИКА */
+        .deity-card::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: 50%; transform: translateX(-50%);
+            width: 30px; height: 4px; border-radius: 2px;
+            box-shadow: 0 0 8px currentColor;
+        }
+        .deity-card.source-attested::before,
+        .deity-card.source-common-slavic::before { background: #4caf50; color: #4caf50; }
+        .deity-card.source-folklore::before { background: #2196f3; color: #2196f3; }
+        .deity-card.source-hypothetical::before { background: #ff9800; color: #ff9800; }
+
         .jaw .deity-card { border: 2px solid #4caf50; }
         .naw .deity-card { border: 2px solid #f44336; }
         .detail-placeholder { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 200px; color: #95a5a6; padding: 20px; }
@@ -76,6 +68,19 @@
         .deity-level { font-size: 0.95rem; display: inline-block; padding: 6px 15px; border-radius: 15px; margin-bottom: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
         .jaw-bg { background: linear-gradient(to right, #4caf50, #2e7d32); }
         .naw-bg { background: linear-gradient(to right, #f44336, #c62828); }
+
+        /* 🎨 БЕЙДЖ ИСТОЧНИКА В ДЕТАЛЯХ */
+        .source-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.75rem; padding: 4px 12px; border-radius: 12px;
+            margin-left: 10px; font-weight: 600;
+            border: 1px solid currentColor;
+        }
+        .source-badge.attested { color: #4caf50; background: rgba(76, 175, 80, 0.15); }
+        .source-badge.folklore { color: #2196f3; background: rgba(33, 150, 243, 0.15); }
+        .source-badge.hypothetical { color: #ff9800; background: rgba(255, 152, 0, 0.15); }
+        .source-badge.common-slavic { color: #4caf50; background: rgba(76, 175, 80, 0.15); }
+
         .deity-figure { margin-bottom: 12px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255, 215, 0, 0.15); background: rgba(0, 0, 0, 0.25); }
         .deity-image { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; background: rgba(0,0,0,0.15); }
         .deity-caption { font-size: 0.8rem; color: #bdc3c7; padding: 6px 10px; background: rgba(0,0,0, 0.25); border-top: 1px solid rgba(255, 215, 0, 0.1); }
@@ -140,6 +145,7 @@
                         <button class="filter-btn filter-btn-source active" data-source-filter="all">Все</button>
                         <button class="filter-btn filter-btn-source" data-source-filter="attested">Исторические</button>
                         <button class="filter-btn filter-btn-source" data-source-filter="hypothetical">Гипотетические</button>
+                        <button class="filter-btn filter-btn-source" data-source-filter="folklore">Фольклорные</button>
                     </div>
                 </div>
             </div>
@@ -154,7 +160,10 @@
                 </div>
                 <div class="deity-detail" id="deity-detail">
                     <h2 class="deity-name" id="detail-name">Бог</h2>
-                    <div class="deity-level" id="detail-level">Уровень</div>
+                    <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px;">
+                        <div class="deity-level" id="detail-level">Уровень</div>
+                        <div class="source-badge" id="detail-source"></div>
+                    </div>
                     <figure class="deity-figure">
                         <img id="detail-image" class="deity-image" alt="" loading="lazy">
                         <figcaption id="detail-image-caption" class="deity-caption">Иллюстрация</figcaption>
@@ -170,31 +179,31 @@
                 <div class="pantheon-levels">
                     <div class="pantheon-level jaw" data-level="jaw">
                         <div class="world-title">Боги из хроник и общеславянские</div>
-                        <div class="deity-card" data-id="svyatovit" data-type="god" data-source="attested"><i class="deity-icon fas fa-gavel"></i><div class="deity-card-name">Святовит</div></div>
-                        <div class="deity-card" data-id="triglav" data-type="god" data-source="attested"><i class="deity-icon fas fa-dice-three"></i><div class="deity-card-name">Триглав</div></div>
-                        <div class="deity-card" data-id="radegast" data-type="god" data-source="attested"><i class="deity-icon fas fa-sun"></i><div class="deity-card-name">Радегаст</div></div>
-                        <div class="deity-card" data-id="yarovit" data-type="god" data-source="attested"><i class="deity-icon fas fa-shield-halved"></i><div class="deity-card-name">Яровит</div></div>
-                        <div class="deity-card" data-id="prove" data-type="god" data-source="attested"><i class="deity-icon fas fa-tree"></i><div class="deity-card-name">Прове</div></div>
-                        <div class="deity-card" data-id="svarog" data-type="god" data-source="common-slavic"><i class="deity-icon fas fa-hammer"></i><div class="deity-card-name">Сварог</div></div>
-                        <div class="deity-card" data-id="zhiva" data-type="god" data-source="attested"><i class="deity-icon fas fa-seedling"></i><div class="deity-card-name">Жива</div></div>
-                        <div class="deity-card" data-id="podaga" data-type="god" data-source="attested"><i class="deity-icon fas fa-wind"></i><div class="deity-card-name">Подага</div></div>
-                        <div class="deity-card" data-id="chernobog" data-type="god" data-source="attested"><i class="deity-icon fas fa-moon"></i><div class="deity-card-name">Чернобог</div></div>
-                        <div class="deity-card" data-id="ruevit" data-type="god" data-source="attested"><i class="deity-icon fas fa-hand-fist"></i><div class="deity-card-name">Руевит</div></div>
-                        <div class="deity-card" data-id="porevit" data-type="god" data-source="attested"><i class="deity-icon fas fa-balance-scale"></i><div class="deity-card-name">Поревит</div></div>
-                        <div class="deity-card" data-id="porenut" data-type="god" data-source="attested"><i class="deity-icon fas fa-question-circle"></i><div class="deity-card-name">Поренут</div></div>
-                        <div class="deity-card" data-id="pripegala" data-type="god" data-source="attested"><i class="deity-icon fas fa-fire-alt"></i><div class="deity-card-name">Припегала</div></div>
-                        <div class="deity-card" data-id="veles" data-type="spirit" data-source="common-slavic"><i class="deity-icon fas fa-paw"></i><div class="deity-card-name">Велес</div><div class="deity-type-badge">Дух</div></div>
+                        <div class="deity-card source-attested" data-id="svyatovit" data-type="god" data-source="attested"><i class="deity-icon fas fa-gavel"></i><div class="deity-card-name">Святовит</div></div>
+                        <div class="deity-card source-attested" data-id="triglav" data-type="god" data-source="attested"><i class="deity-icon fas fa-dice-three"></i><div class="deity-card-name">Триглав</div></div>
+                        <div class="deity-card source-attested" data-id="radegast" data-type="god" data-source="attested"><i class="deity-icon fas fa-sun"></i><div class="deity-card-name">Радегаст</div></div>
+                        <div class="deity-card source-attested" data-id="yarovit" data-type="god" data-source="attested"><i class="deity-icon fas fa-shield-halved"></i><div class="deity-card-name">Яровит</div></div>
+                        <div class="deity-card source-attested" data-id="prove" data-type="god" data-source="attested"><i class="deity-icon fas fa-tree"></i><div class="deity-card-name">Прове</div></div>
+                        <div class="deity-card source-common-slavic" data-id="svarog" data-type="god" data-source="common-slavic"><i class="deity-icon fas fa-hammer"></i><div class="deity-card-name">Сварог</div></div>
+                        <div class="deity-card source-attested" data-id="zhiva" data-type="god" data-source="attested"><i class="deity-icon fas fa-seedling"></i><div class="deity-card-name">Жива</div></div>
+                        <div class="deity-card source-attested" data-id="podaga" data-type="god" data-source="attested"><i class="deity-icon fas fa-wind"></i><div class="deity-card-name">Подага</div></div>
+                        <div class="deity-card source-attested" data-id="chernobog" data-type="god" data-source="attested"><i class="deity-icon fas fa-moon"></i><div class="deity-card-name">Чернобог</div></div>
+                        <div class="deity-card source-attested" data-id="ruevit" data-type="god" data-source="attested"><i class="deity-icon fas fa-hand-fist"></i><div class="deity-card-name">Руевит</div></div>
+                        <div class="deity-card source-attested" data-id="porevit" data-type="god" data-source="attested"><i class="deity-icon fas fa-balance-scale"></i><div class="deity-card-name">Поревит</div></div>
+                        <div class="deity-card source-attested" data-id="porenut" data-type="god" data-source="attested"><i class="deity-icon fas fa-question-circle"></i><div class="deity-card-name">Поренут</div></div>
+                        <div class="deity-card source-attested" data-id="pripegala" data-type="god" data-source="attested"><i class="deity-icon fas fa-fire-alt"></i><div class="deity-card-name">Припегала</div></div>
+                        <div class="deity-card source-common-slavic" data-id="veles" data-type="spirit" data-source="common-slavic"><i class="deity-icon fas fa-paw"></i><div class="deity-card-name">Велес</div><div class="deity-type-badge">Дух</div></div>
                     </div>
                     <div class="pantheon-level naw" data-level="naw">
                          <div class="world-title">Реконструированные, фольклорные и спорные</div>
-                        <div class="deity-card" data-id="belobog" data-type="god" data-source="hypothetical"><i class="deity-icon fas fa-certificate"></i><div class="deity-card-name">Белобог</div><div class="deity-disputed-badge" title="Гипотетический бог, реконструирован на основе дуализма">?</div></div>
-                        <div class="deity-card" data-id="marena" data-type="god" data-source="folklore"><i class="deity-icon fas fa-snowflake"></i><div class="deity-card-name">Марена</div><div class="deity-disputed-badge" title="Богиня, известная в основном по обрядам и фольклору">?</div></div>
-                        <div class="deity-card" data-id="dziewanna" data-type="god" data-source="folklore"><i class="deity-icon fas fa-bow-arrow"></i><div class="deity-card-name">Дзеванна</div><div class="deity-disputed-badge" title="Упомянута в поздних источниках (Ян Длугош)">?</div></div>
-                        <div class="deity-card" data-id="nyja" data-type="god" data-source="folklore"><i class="deity-icon fas fa-key"></i><div class="deity-card-name">Ныя</div><div class="deity-disputed-badge" title="Упомянут в поздних источниках (Ян Длугош)">?</div></div>
-                        <div class="deity-card" data-id="rarog" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-dove"></i><div class="deity-card-name">Рарог</div><div class="deity-type-badge">Дух</div></div>
-                        <div class="deity-card" data-id="pogwizd" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-tornado"></i><div class="deity-card-name">Погвизд</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Упомянут в поздних источниках (Ян Длугош)">?</div></div>
-                        <div class="deity-card" data-id="poswist" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-cloud-sun"></i><div class="deity-card-name">Посьвист</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Фольклорный дух погоды, брат Погвизда">?</div></div>
-                        <div class="deity-card" data-id="boruta" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-hat-wizard"></i><div class="deity-card-name">Борута</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Поздний фольклорный персонаж, демон/дьявол">?</div></div>
+                        <div class="deity-card source-hypothetical" data-id="belobog" data-type="god" data-source="hypothetical"><i class="deity-icon fas fa-certificate"></i><div class="deity-card-name">Белобог</div><div class="deity-disputed-badge" title="Гипотетический бог, реконструирован на основе дуализма">?</div></div>
+                        <div class="deity-card source-folklore" data-id="marena" data-type="god" data-source="folklore"><i class="deity-icon fas fa-snowflake"></i><div class="deity-card-name">Марена</div><div class="deity-disputed-badge" title="Богиня, известная в основном по обрядам и фольклору">?</div></div>
+                        <div class="deity-card source-folklore" data-id="dziewanna" data-type="god" data-source="folklore"><i class="deity-icon fas fa-bow-arrow"></i><div class="deity-card-name">Дзеванна</div><div class="deity-disputed-badge" title="Упомянута в поздних источниках (Ян Длугош)">?</div></div>
+                        <div class="deity-card source-folklore" data-id="nyja" data-type="god" data-source="folklore"><i class="deity-icon fas fa-key"></i><div class="deity-card-name">Ныя</div><div class="deity-disputed-badge" title="Упомянут в поздних источниках (Ян Длугош)">?</div></div>
+                        <div class="deity-card source-folklore" data-id="rarog" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-dove"></i><div class="deity-card-name">Рарог</div><div class="deity-type-badge">Дух</div></div>
+                        <div class="deity-card source-folklore" data-id="pogwizd" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-tornado"></i><div class="deity-card-name">Погвизд</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Упомянут в поздних источниках (Ян Длугош)">?</div></div>
+                        <div class="deity-card source-folklore" data-id="poswist" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-cloud-sun"></i><div class="deity-card-name">Посьвист</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Фольклорный дух погоды, брат Погвизда">?</div></div>
+                        <div class="deity-card source-folklore" data-id="boruta" data-type="spirit" data-source="folklore"><i class="deity-icon fas fa-hat-wizard"></i><div class="deity-card-name">Борута</div><div class="deity-type-badge">Дух</div><div class="deity-disputed-badge" title="Поздний фольклорный персонаж, демон/дьявол">?</div></div>
                     </div>
                 </div>
             </div>
@@ -225,12 +234,19 @@
             veles: { name: "Велес (Волос)", level: "jaw-bg", title: "«Скотий бог», бог мудрости и магии", description: "Один из ключевых общеславянских богов. Покровитель скота, богатства, мудрости, магии, поэзии и хозяин подземного мира. У западных славян его функции могли переноситься на Триглава или Чернобога.", relations: [{type:"Функции у",name:"Триглав",id:"triglav",icon:"dice-three"},{type:"Функции у",name:"Чернобог",id:"chernobog",icon:"moon"}], sphere: "Навь, богатство, скот, мудрость, магия", cult: "Культ Велеса был общеславянским, но на западе его прямое почитание зафиксировано слабо.", type: "spirit", source: "common-slavic" },
             belobog: { name: "Белобог (Белбог)", level: "naw-bg", title: "Бог света, добра и удачи", description: "Гипотетический бог светлого начала, антипод Чернобога. Прямых упоминаний его культа в источникаи нет, но его существование реконструируется на основе дуализма. Символизирует удачу, день и небо.", relations: [{type:"Антипод",name:"Чернобог",id:"chernobog",icon:"moon"}], sphere: "Добро, свет, удача, счастье, дневной свет", cult: "Культ не засвидетельствован напрямую, но предполагается в рамках дуалистических верований.", type: "god", source: "hypothetical", disputed: true },
             marena: { name: "Марена (Морана)", level: "naw-bg", title: "Богиня зимы, смерти и увядания", description: "Богиня, олицетворяющая зиму, смерть и увядание. Враг Живы. Её чучело ритуально сжигали или топили весной, чтобы прогнать зиму и призвать тепло.", relations: [{type:"Противник",name:"Жива",id:"zhiva",icon:"seedling"},{type:"Противник",name:"Яровит",id:"yarovit",icon:"shield-halved"}], sphere: "Смерть, зима, увядание, ночь, болезни", cult: "Обряд проводов зимы и сожжения чучела Марены, символизирующий победу весны.", type: "god", source: "folklore", disputed: true },
-            dziewanna: { name: "Дзеванна (Девана)", level: "naw-bg", title: "Богиня лесов, охоты и дикой природы", description: "Польская богиня, упомянутая Яном Длугошем, который сравнивал её с римской Дианой. Покровительница дикой природы, лесов, зверей и охоты.", relations: [{type:"Аналог",name:"Диана",id:null,icon:"female"}, {type:"Противопоставление",name:"Марена",id:"marena",icon:"s snowflake"}], sphere: "Дикая природа, леса, охота, звери, луна", cult: "Сведения о культе происходят из поздних источников (XV в.), его историчность оспаривается.", type: "god", source: "folklore", disputed: true },
+            dziewanna: { name: "Дзеванна (Девана)", level: "naw-bg", title: "Богиня лесов, охоты и дикой природы", description: "Польская богиня, упомянутая Яном Длугошем, который сравнивал её с римской Дианой. Покровительница дикой природы, лесов, зверей и охоты.", relations: [{type:"Аналог",name:"Диана",id:null,icon:"female"}, {type:"Противопоставление",name:"Марена",id:"marena",icon:"snowflake"}], sphere: "Дикая природа, леса, охота, звери, луна", cult: "Сведения о культе происходят из поздних источников (XV в.), его историчность оспаривается.", type: "god", source: "folklore", disputed: true },
             nyja: { name: "Ныя (Ний)", level: "naw-bg", title: "Бог подземного мира и душ умерших", description: "Польский бог, упомянутый Яном Длугошем и отождествлённый им с Плутоном. Владыка подземного царства (Нави), проводник душ умерших. Возможно, ипостась Велеса.", relations: [{type:"Аналог",name:"Велес",id:"veles",icon:"paw"}, {type:"Аналог",name:"Плутон",id:null,icon:"user-secret"}], sphere: "Подземный мир, смерть, души предков, Навь", cult: "Согласно Длугошу, имел главный храм в Гнезно. Сведения могут быть поздней реконструкцией.", type: "god", source: "folklore", disputed: true },
             rarog: { name: "Рарог", level: "naw-bg", title: "Огненный дух, сокол", description: "Мифологический огненный дух в образе сокола или огненного вихря, связанный с культом огня и домашнего очага. Считался воплощением небесного огня Сварога.", relations: [{type:"Связан с",name:"Сварог",id:"svarog",icon:"hammer"},{type:"Связан с",name:"Радегаст",id:"radegast",icon:"sun"}], sphere: "Огонь, домашний очаг, солнечный огонь", cult: "Вера в Рарога как духа-хранителя очага, приносящего в дом счастье.", type: "spirit", source: "folklore" },
             pogwizd: { name: "Погвизд (Похвист)", level: "naw-bg", title: "Дух или бог ветра и непогоды", description: "Божество ветра, бури и плохой погоды, упомянутое в польских источниках. Его имя происходит от слова «свист». Представлялся как суровое существо, приносящее холод и метели.", relations: [{type:"Брат", name:"Посьвист", id:"poswist", icon:"user-friends"}], sphere: "Ветер, буря, метель, непогода", cult: "Персонификация стихийных сил, которого пытались задобрить.", type: "spirit", source: "folklore", disputed: true },
             poswist: { name: "Посьвист", level: "naw-bg", title: "Дух или бог ясной погоды", description: "Брат Погвизда, божество хорошей погоды и ласкового ветра. Его представляли как красивого юношу, приносящего тепло и разгоняющего тучи. Его появление означало конец бури.", relations: [{type:"Брат", name:"Погвизд", id:"pogwizd", icon:"user-friends"}], sphere: "Хорошая погода, легкий ветер, ясное небо", cult: "Как и его брат, являлся олицетворением природных сил в народных верованиях.", type: "spirit", source: "folklore", disputed: true },
             boruta: { name: "Борута", level: "naw-bg", title: "Дьявол, леший, хранитель кладов", description: "Персонаж польского фольклора, дьявол или леший, обитающий в болотах и лесах в окрестностях города Ленчица. Может представать в образе шляхтича. Охраняет скрытые сокровища.", relations: [], sphere: "Болота, леса, клады, обман", cult: "Поздний фольклорный персонаж, не являющийся богом. Образ сформировался под влиянием христианства.", type: "spirit", source: "folklore", disputed: true }
+        };
+
+        const sourceNames = {
+            attested: "Исторический",
+            folklore: "Фольклорный",
+            hypothetical: "Гипотетический",
+            "common-slavic": "Общеславянский"
         };
 
         let activeTypeFilter = 'all';
@@ -304,10 +320,7 @@
                 
                 const searchMatch = termLower === '' || name.includes(termLower) || description.includes(termLower);
                 const typeMatch = activeTypeFilter === 'all' || type === activeTypeFilter;
-
-                let sourceMatch = activeSourceFilter === 'all' ||
-                    (activeSourceFilter === 'attested' && (source === 'attested' || source === 'common-slavic')) ||
-                    (activeSourceFilter === 'hypothetical' && (source === 'hypothetical' || source === 'folklore'));
+                const sourceMatch = activeSourceFilter === 'all' || source === activeSourceFilter;
 
                 const show = searchMatch && typeMatch && sourceMatch;
 
@@ -423,6 +436,16 @@
             document.getElementById('detail-level').className = `deity-level ${deity.level}`;
             document.getElementById('detail-description').textContent = deity.description;
 
+            // 🎨 Бейдж источника
+            const sourceBadge = document.getElementById('detail-source');
+            if (deity.source && sourceNames[deity.source]) {
+                sourceBadge.textContent = sourceNames[deity.source];
+                sourceBadge.className = `source-badge ${deity.source}`;
+                sourceBadge.style.display = 'inline-flex';
+            } else {
+                sourceBadge.style.display = 'none';
+            }
+
             setDetailImage(deityId, deity);
             renderRelations(deity);
             renderSphere(deity);
@@ -433,7 +456,6 @@
             const imgEl = document.getElementById('detail-image');
             const captionEl = document.getElementById('detail-image-caption');
             
-            // Все изображения берутся из папки images/western
             const imagePath = `images/western/${deityId}.jpg`;
             
             loadImageWithFallback(imgEl, [imagePath], makePlaceholderDataURL(deity.name, deity.level));
@@ -528,4 +550,3 @@
     </script>
 </body>
 </html>
-
